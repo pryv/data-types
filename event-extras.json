@@ -252,6 +252,14 @@
         "density": [
           "kg-m3"
         ],
+        "duration": [
+          "d",
+          "h",
+          "min",
+          "ms",
+          "s",
+          "yr"
+        ],
         "dynamic-viscosity": [
           "pa-s"
         ],
@@ -375,14 +383,6 @@
           "bbloil",
           "tbs",
           "tsp"
-        ],
-        "duration": [
-          "d",
-          "h",
-          "min",
-          "ms",
-          "s",
-          "yr"
         ]
       },
       "name": {
@@ -1310,14 +1310,9 @@
     "temperature": {
       "name": {
         "en": "Temperature",
-        "fr": "Temperature"
+        "fr": "Température"
       },
       "formats": {
-        "kelvin": {
-          "name": {
-            "en": "Kelvin"
-          }
-        },
         "c": {
           "name": {
             "en": "Degrees Celsius",
@@ -1572,23 +1567,6 @@
       "name": {
         "en": "Mass",
         "fr": "Masse"
-      }
-    },
-    "This table can be converted to JSON with https://github.com/pryv/dev-tools  data-types-manip script": {
-      "formats": {
-        
-      },
-      "name": {
-        "en": ""
-      }
-    },
-    "class": {
-      "formats": {
-        
-      },
-      "name": {
-        "en": "en",
-        "fr": "fr"
       }
     },
     "absorbed-dose": {
@@ -2076,7 +2054,7 @@
         "rpm": {
           "name": {
             "en": "Revolutions per minute",
-            "fr": "Rotations par minutes"
+            "fr": "Rotations par minute"
           },
           "symbol": "rpm"
         },
@@ -2092,12 +2070,12 @@
             "en": "Beats per minute",
             "fr": "Battements par minute"
           },
-          "symbol": "Bpm"
+          "symbol": "bpm"
         }
       },
       "name": {
-        "en": "Force",
-        "fr": "Force"
+        "en": "Frequency",
+        "fr": "Fréquence"
       }
     },
     "luminous-intensity": {
@@ -2303,7 +2281,7 @@
     },
     "time": {
       "formats": {
-        
+
       },
       "name": {
         "en": "Time",

@@ -1255,14 +1255,18 @@
       "description": "A push or pull upon an object resulting from the object's interaction with another object."
     },
     "frequency": {
-      "description": " The number of occurrences of a repeating event per unit time.",
+      "description": "The number of occurrences of a repeating event per unit time.",
       "formats": {
+        "bpm": {
+          "description": "Beats per minute",
+          "type": "number"
+        },
         "ghz": {
           "description": "Gigahertz",
           "type": "number"
         },
         "hz": {
-          "description": "Hertz (also known as cps cycles per second) ",
+          "description": "Hertz (also known as cycles per second) ",
           "type": "number"
         },
         "khz": {
@@ -1282,7 +1286,7 @@
           "type": "number"
         },
         "rpm": {
-          "description": "Revolution per minutes (rpm r/min)",
+          "description": "Revolutions per minute",
           "type": "number"
         },
         "thz": {
@@ -1290,11 +1294,7 @@
           "type": "number"
         },
         "uhz": {
-          "description": "Microertz",
-          "type": "number"
-        },
-        "bpm": {
-          "description": "Beat per minute",
+          "description": "Microhertz",
           "type": "number"
         }
       }
