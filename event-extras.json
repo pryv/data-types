@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "sets": {
     "generic-measurements-metric": {
       "name": {
@@ -22,6 +22,11 @@
           "cal",
           "j",
           "kcal"
+        ],
+        "frequency": [
+          "hz",
+          "bpm",
+          "rpm"
         ],
         "length": [
           "cm",
@@ -1571,23 +1576,15 @@
     },
     "This table can be converted to JSON with https://github.com/pryv/dev-tools  data-types-manip script": {
       "formats": {
-
+        
       },
       "name": {
         "en": ""
       }
     },
-    "": {
-      "formats": {
-
-      },
-      "name": {
-        "en": "name"
-      }
-    },
     "class": {
       "formats": {
-
+        
       },
       "name": {
         "en": "en",
@@ -2074,6 +2071,35 @@
         "fr": "Force"
       }
     },
+    "frequency": {
+      "formats": {
+        "rpm": {
+          "name": {
+            "en": "Revolutions per minute",
+            "fr": "Rotations par minutes"
+          },
+          "symbol": "rpm"
+        },
+        "hz": {
+          "name": {
+            "en": "Hertz",
+            "fr": "Hertz"
+          },
+          "symbol": "Hz"
+        },
+        "bpm": {
+          "name": {
+            "en": "Beats per minute",
+            "fr": "Battements par minute"
+          },
+          "symbol": "Bpm"
+        }
+      },
+      "name": {
+        "en": "Force",
+        "fr": "Force"
+      }
+    },
     "luminous-intensity": {
       "formats": {
         "cd": {
@@ -2277,7 +2303,7 @@
     },
     "time": {
       "formats": {
-
+        
       },
       "name": {
         "en": "Time",

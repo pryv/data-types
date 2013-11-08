@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
@@ -1006,6 +1006,15 @@
       },
       "description": "The rate of change of angular velocity."
     },
+    "angular-speed": {
+      "formats": {
+        "rad-s": {
+          "description": "Radians per second",
+          "type": "number"
+        }
+      },
+      "description": ""
+    },
     "area": {
       "formats": {
         "ac": {
@@ -1244,6 +1253,51 @@
         }
       },
       "description": "A push or pull upon an object resulting from the object's interaction with another object."
+    },
+    "frequency": {
+      "description": " The number of occurrences of a repeating event per unit time.",
+      "formats": {
+        "ghz": {
+          "description": "Gigahertz",
+          "type": "number"
+        },
+        "hz": {
+          "description": "Hertz (also known as cps cycles per second) ",
+          "type": "number"
+        },
+        "khz": {
+          "description": "Kilohertz",
+          "type": "number"
+        },
+        "megahz": {
+          "description": "Megahertz",
+          "type": "number"
+        },
+        "millihz": {
+          "description": "Millihertz",
+          "type": "number"
+        },
+        "nhz": {
+          "description": "Nanohertz",
+          "type": "number"
+        },
+        "rpm": {
+          "description": "Revolution per minutes (rpm r/min)",
+          "type": "number"
+        },
+        "thz": {
+          "description": "Terahertz",
+          "type": "number"
+        },
+        "uhz": {
+          "description": "Microertz",
+          "type": "number"
+        },
+        "bpm": {
+          "description": "Beat per minute",
+          "type": "number"
+        }
+      }
     },
     "length": {
       "description": "Length measurements. Format = unit.",
