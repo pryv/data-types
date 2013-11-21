@@ -199,6 +199,20 @@
         ]
       }
     },
+    "generic-medical": {
+      "name": {
+        "en": "Generic medical mesures",
+        "fr": "Mesures médicales courantes"
+      },
+      "types": {
+        "pressure": [
+          "mmhg"
+        ],
+        "frequency": [
+          "bpm"
+        ]
+      }
+    },
     "all-measures": {
       "types": {
         "absorbed-dose": [
@@ -2188,6 +2202,13 @@
           },
           "symbol": "kg/m²"
         },
+        "mmhg": {
+          "name": {
+            "en": "Millimeters of mercury",
+            "fr": "Millimètres de mercure"
+          },
+          "symbol": "mmHg"
+        },
         "pa": {
           "name": {
             "en": "Pascals",
@@ -2277,15 +2298,6 @@
       "name": {
         "en": "Speed",
         "fr": "Vitesse"
-      }
-    },
-    "time": {
-      "formats": {
-
-      },
-      "name": {
-        "en": "Time",
-        "fr": "Temps"
       }
     },
     "volume": {

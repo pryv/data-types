@@ -1490,6 +1490,10 @@
           "description": "Bars",
           "type": "number"
         },
+		 "mmhg": {
+          "description": "Millimeters of Mercury",
+          "type": "number"
+        },
         "cmhg": {
           "description": "Centimeters of Mercury",
           "type": "number"
