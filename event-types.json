@@ -1490,7 +1490,7 @@
           "description": "Bars",
           "type": "number"
         },
-		 "mmhg": {
+        "mmhg": {
           "description": "Millimeters of Mercury",
           "type": "number"
         },
@@ -1571,6 +1571,35 @@
         },
         "f": {
           "description": "Fahrenheit",
+          "type": "number"
+        }
+      }
+    },
+    "time": {
+      "description": "Amount of time. Use with care! In most cases the \"duration\" field of events is better. To store an activity or duration the preferred choice is \"pryv/activity\" event type. ",
+      "formats": {
+        "d": {
+          "description": "Day ",
+          "type": "number"
+        },
+        "h": {
+          "description": "Hour",
+          "type": "number"
+        },
+        "min": {
+          "description": "Minute",
+          "type": "number"
+        },
+        "ms": {
+          "description": "Millisecond",
+          "type": "number"
+        },
+        "s": {
+          "description": "Second",
+          "type": "number"
+        },
+        "y": {
+          "description": "Year",
           "type": "number"
         }
       }

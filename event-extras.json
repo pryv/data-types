@@ -266,7 +266,7 @@
         "density": [
           "kg-m3"
         ],
-        "duration": [
+        "time": [
           "d",
           "h",
           "min",
@@ -1373,7 +1373,7 @@
         "m": {
           "name": {
             "en": "Meters",
-            "fr": "Mètres carrés"
+            "fr": "Mètres"
           },
           "symbol": "m"
         },
@@ -2420,7 +2420,7 @@
         "fr": "Volume"
       }
     },
-    "duration": {
+    "time": {
       "formats": {
         "d": {
           "name": {
@@ -2466,8 +2466,8 @@
         }
       },
       "name": {
-        "en": "Duration",
-        "fr": "Durée"
+        "en": "Time",
+        "fr": "Temps"
       }
     }
   }
