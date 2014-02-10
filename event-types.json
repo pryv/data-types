@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.2.0",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
@@ -33,11 +33,11 @@
           "type": "null"
         },
         "skype": {
-          "type": "String"
+          "type": "string"
         },
         "telephone": {
           "description": "A phone number",
-          "type": "String"
+          "type": "string"
         }
       }
     },
@@ -50,15 +50,14 @@
           "additionalProperties": "true",
           "properties": {
             "id": {
-              "type": "string",
-              "required": true
+              "type": "string"
             }
-          }
+          },
+          "required": [ "id" ]
         },
         "vcard": {
           "description": "A business card in vcard 2.0 - 3.x format. See: rfc2425, rfc2426 ",
-          "type": "String",
-          "required": true
+          "type": "string"
         }
       }
     },
@@ -71,8 +70,7 @@
           "properties": {
             "payload": {
               "description": "The encrypted data.",
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "keyRef": {
               "description": "A reference (e.g. id, name in keychain) to the key to use for decryption.",
@@ -82,7 +80,8 @@
               "description": "Alternative to <code>keyRef</code>. A textual hint about which key to use for decryption.",
               "type": "string"
             }
-          }
+          },
+          "required": [ "payload" ]
         }
       }
     },
@@ -114,12 +113,10 @@
           "type": "object",
           "properties": {
             "from": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "to": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "cc": {
               "type": "string"
@@ -131,10 +128,10 @@
               "type": "string"
             },
             "message-id": {
-              "type": "String"
+              "type": "string"
             },
             "reply-to": {
-              "type": "String"
+              "type": "string"
             },
             "x-headers": {
               "description": "Key / Value map of X-* headers ",
@@ -142,10 +139,10 @@
               "additionalProperties": true
             },
             "body": {
-              "type": "string",
-              "required": true
+              "type": "string"
             }
-          }
+          },
+          "required": [ "from", "to", "body" ]
         },
         "facebook": {
           "description": "A Facebook post. See <a href=\"https://developers.facebook.com/docs/reference/api/post/\">Facebook's API doc</a> for reference. \n\n**map**: \n   fbPost.message -> pryvEvent.description\n   fbPost.created_time -> pryvEvent.time\n\n**optional** fields such as `link`, `source`, `privacy`.. are optional and can be saved on the object.\n\n**attached content**:  \nIf a picture is attached to this post, you may want to attach it to the \"Pryv\" Event.  \n \n - attach the picture and keep \"{filename}.png\" in the URL \n\n\n",
@@ -153,21 +150,19 @@
           "additionalProperties": true,
           "properties": {
             "id": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "from": {
               "type": "object",
               "properties": {
                 "name": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "id": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 }
-              }
+              },
+              "required": [ "name", "id" ]
             },
             "to": {
               "type": "object",
@@ -177,15 +172,19 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "name": "string",
-                      "id": "string"
-                    }
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [ "name", "id" ]
                   }
                 }
               }
             },
             "message": {
-              "required": true,
               "type": "string"
             },
             "source": {
@@ -199,13 +198,14 @@
             },
             "picture": {
               "description": "Either a fully qualified \"URL\" for an external picture or a \"filename\" for a picture attached to this event",
-              "type": "String"
+              "type": "string"
             },
             "status-type": {
               "description": "One of mobile_status_update, created_note, added_photos, added_video, shared_story, created_group, created_event, wall_post, app_created_story, published_story, tagged_in_photo, approved_friend",
               "type": "string"
             }
-          }
+          },
+          "required": [ "id", "message" ]
         },
         "twitter": {
           "description": "A Twitter post.  \n\n`Created_at` property should be used as the timestamp for the event.\n\nNot specified property that can be found in https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid\ncan be added to the event",
@@ -213,18 +213,17 @@
           "additionalProperties": true,
           "properties": {
             "id": {
-              "type": "integer",
-              "required": true
+              "type": "integer"
             },
             "screen-name": {
-              "type": "String",
-              "required": true
+              "type": "string"
             },
             "text": {
-              "type": "String",
+              "type": "string",
               "required": "true"
             }
-          }
+          },
+          "required": [ "id", "screen-name" ]
         }
       }
     },
@@ -757,13 +756,13 @@
           "type": "object",
           "properties": {
             "title": {
-              "type": "String"
+              "type": "string"
             },
             "artist": {
-              "type": "String"
+              "type": "string"
             },
             "album": {
-              "type": "String"
+              "type": "string"
             },
             "track": {
               "type": "integer"
@@ -772,7 +771,7 @@
               "type": "integer"
             },
             "genre": {
-              "type": "String"
+              "type": "string"
             }
           }
         },
@@ -782,10 +781,10 @@
           "additionalProperties": true,
           "properties": {
             "id": {
-              "type": "integer",
-              "required": true
+              "type": "integer"
             }
-          }
+          },
+          "required": [ "id" ]
         }
       }
     },
@@ -808,7 +807,6 @@
           "properties": {
             "url": {
               "type": "string",
-              "required": true,
               "pattern": "^(https?)://.+$"
             },
             "content": {
@@ -816,7 +814,8 @@
               "type": "string",
               "maxLength": "4194304"
             }
-          }
+          },
+          "required": [ "url" ]
         }
       }
     },
@@ -829,19 +828,18 @@
           "properties": {
             "payload": {
               "type": "string",
-              "description": "base64 encoded content",
-              "required": true
+              "description": "base64 encoded content"
             },
             "format": {
               "type": "string",
-              "description": "The data format \"gif\", \"jpeg\", \"png\", \"tiff\", \"vnd.microsoft.com\", \"svg+xml\"",
-              "required": true
+              "description": "The data format \"gif\", \"jpeg\", \"png\", \"tiff\", \"vnd.microsoft.com\", \"svg+xml\""
             },
             "filename": {
               "description": "A filename",
               "type": "string"
             }
-          }
+          },
+          "required": [ "payload", "format" ]
         },
         "attached": {
           "description": "The picture is the image file attached to the event (no explicit content defined). TODO: list accepted formats.",
@@ -864,40 +862,34 @@
           "properties": {
             "latitude": {
               "type": "number",
-              "required": true,
               "description": "Unit: degrees north from the equator."
             },
             "longitude": {
               "type": "number",
-              "required": true,
               "description": "Unit: degrees east from the zero meridian."
             },
             "altitude": {
               "type": "number",
-              "required": false,
               "description": "Unit: meters above sea level."
             },
             "horizontalAccuracy": {
               "type": "number",
-              "required": false,
               "description": "The radius of uncertainty for latitude and longitude. Unit: meters. Negative if latitude and longitude are invalid."
             },
             "verticalAccuracy": {
               "type": "number",
-              "required": false,
               "description": "The radius of uncertainty for altitude. Unit: meters. Negative if altitude is invalid."
             },
             "speed": {
               "type": "number",
-              "required": false,
               "description": "For informational purposes only. Unit: meters / second. Negative if invalid."
             },
             "bearing": {
               "type": "number",
-              "required": false,
               "description": "Unit: degrees clockwise from north. Negative if invalid."
             }
-          }
+          },
+          "required": [ "latitude", "longitude" ]
         }
       }
     },
@@ -909,14 +901,13 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": "number",
-              "required": true
+              "type": "number"
             },
             "relativeTo": {
-              "type": "number",
-              "required": true
+              "type": "number"
             }
-          }
+          },
+          "required": [ "value", "relativeTo" ]
         }
       }
     },
@@ -1079,8 +1070,7 @@
       "formats": {
         "generic": {
           "description": "For general items that demand no particular handling.",
-          "type": "number",
-          "required": true
+          "type": "number"
         }
       }
     },
