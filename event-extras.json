@@ -6,6 +6,9 @@
         "en": "Metric mesures",
         "fr": "Mesures métrique"
       },
+      "description": {
+        "en": "kg, m, km, ... "
+      },
       "types": {
         "area": [
           "ha",
@@ -68,6 +71,9 @@
       "name": {
         "en": "Imperial measures",
         "fr": "Mesures, système Impérial"
+      },
+      "description": {
+        "en": "lb, in, ft, ..."
       },
       "types": {
         "area": [
@@ -138,6 +144,9 @@
         "en": "US mesures",
         "fr": "Mesures USA"
       },
+      "description": {
+        "en": "yd, mil, oz, ..."
+      },
       "types": {
         "area": [
           "ac",
@@ -204,6 +213,9 @@
         "en": "Most used currencies",
         "fr": "Devises les plus utilisées"
       },
+      "description": {
+        "en": "$, €, ¥, ..."
+      },
       "types": {
         "money": [
           "eur",
@@ -220,6 +232,9 @@
       "name": {
         "en": "Currencies Europe",
         "fr": "Devises Europe"
+      },
+      "description": {
+        "en": "€, £, CHF, ..."
       },
       "types": {
         "money": [
@@ -263,6 +278,9 @@
         "en": "Currencies Americas",
         "fr": "Devises Amériques"
       },
+      "description": {
+        "en": "$US, $CAD,  BRL, ..."
+      },
       "types": {
         "money": [
           "ars",
@@ -304,6 +322,9 @@
         "en": "Currencies Asia",
         "fr": "Devises Asie"
       },
+      "description": {
+        "en": "¥, 元, INR, ..."
+      },
       "types": {
         "money": [
           "azn",
@@ -342,6 +363,9 @@
         "en": "Currencies Africa",
         "fr": "Devises Afrique"
       },
+      "description": {
+        "en": "BWP, EGP, GHC, ..."
+      },
       "types": {
         "money": [
           "bwp",
@@ -361,6 +385,9 @@
         "en": "Currencies Oceania Indonesia",
         "fr": "Devises Océanie Indonésie"
       },
+      "description": {
+        "en": "$AU, $NZ, PHP, ... "
+      },
       "types": {
         "money": [
           "aud",
@@ -375,6 +402,9 @@
       "name": {
         "en": "Currencies Middle East",
         "fr": "Devises Moyen-Orient"
+      },
+      "description": {
+        "en": "AFN, BND, OMR, ...."
       },
       "types": {
         "money": [
@@ -396,6 +426,9 @@
         "en": "Common medical mesures",
         "fr": "Mesures médicales courantes"
       },
+      "description": {
+        "en": "mmhg, bpm, ..."
+      },
       "types": {
         "pressure": [
           "mmhg"
@@ -409,6 +442,9 @@
       "name": {
         "en": "Navigation",
         "fr": "Navigation"
+      },
+      "description": {
+        "en": "nmi, °, kt, ..."
       },
       "types": {
         "angle": [
@@ -430,6 +466,9 @@
       "name": {
         "en": "All measures",
         "fr": "Toutes les mesures"
+      },
+      "description": {
+        "en": "..."
       },
       "types": {
         "absorbed-dose": [
@@ -620,6 +659,10 @@
   },
   "extras": {
     "money": {
+      "name": {
+        "en": "Money",
+        "fr": "Monnaie"
+      },
       "formats": {
         "chf": {
           "name": {
@@ -2485,7 +2528,7 @@
           },
           "symbol": "s"
         },
-        "yr": {
+        "y": {
           "name": {
             "en": "Years (Julian)",
             "fr": "Années (juliennes)"
