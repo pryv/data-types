@@ -3,11 +3,11 @@
   "sets": {
     "generic-measurements-metric": {
       "name": {
-        "en": "Metric mesures",
-        "fr": "Mesures métrique"
+        "en": "Metric measures",
+        "fr": "Mesures métriques"
       },
       "description": {
-        "en": "kg, m, km, ... "
+        "en": "Kg, m, Km, ... "
       },
       "types": {
         "area": [
@@ -70,7 +70,7 @@
     "generic-measurements-imperial": {
       "name": {
         "en": "Imperial measures",
-        "fr": "Mesures, système Impérial"
+        "fr": "Mesures, système impérial"
       },
       "description": {
         "en": "lb, in, ft, ..."
@@ -141,7 +141,7 @@
     },
     "generic-measurements-us": {
       "name": {
-        "en": "US mesures",
+        "en": "US measures",
         "fr": "Mesures USA"
       },
       "description": {
@@ -382,8 +382,8 @@
     },
     "money-indonesia-australia": {
       "name": {
-        "en": "Currencies Oceania Indonesia",
-        "fr": "Devises Océanie Indonésie"
+        "en": "Currencies Oceania & Indonesia",
+        "fr": "Devises Océanie & Indonésie"
       },
       "description": {
         "en": "$AU, $NZ, PHP, ... "
@@ -466,9 +466,6 @@
       "name": {
         "en": "All measures",
         "fr": "Toutes les mesures"
-      },
-      "description": {
-        "en": "..."
       },
       "types": {
         "absorbed-dose": [
@@ -661,7 +658,7 @@
     "money": {
       "name": {
         "en": "Money",
-        "fr": "Monnaie"
+        "fr": "Argent"
       },
       "formats": {
         "chf": {
