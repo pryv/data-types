@@ -1,6 +1,6 @@
 # Pryv data types
 
-Standard event and tag types.
+Standard event and tag types used in Pryv.
 
 
 ## Effective versions
