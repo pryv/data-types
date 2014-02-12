@@ -1,10 +1,10 @@
 {
-  "version": "0.1.1",
+  "version": "0.2.0",
   "sets": {
     "generic-measurements-metric": {
       "name": {
-        "en": "Common measurements (metric)",
-        "fr": "Mesures courantes (métrique)"
+        "en": "Metric mesures",
+        "fr": "Mesures métrique"
       },
       "types": {
         "area": [
@@ -66,8 +66,8 @@
     },
     "generic-measurements-imperial": {
       "name": {
-        "en": "Imperial common measurements",
-        "fr": "Mesures courantes, système Impérial"
+        "en": "Imperial measures",
+        "fr": "Mesures, système Impérial"
       },
       "types": {
         "area": [
@@ -135,8 +135,8 @@
     },
     "generic-measurements-us": {
       "name": {
-        "en": "US specific common measurements",
-        "fr": "Mesures courantes, spécifique USA"
+        "en": "US mesures",
+        "fr": "Mesures USA"
       },
       "types": {
         "area": [
@@ -199,9 +199,201 @@
         ]
       }
     },
+    "money-most-used": {
+      "name": {
+        "en": "Most used currencies",
+        "fr": "Devises les plus utilisées"
+      },
+      "types": {
+        "money": [
+          "eur",
+          "usd",
+          "cny",
+          "gbp",
+          "jpy",
+          "chf",
+          "cad"
+        ]
+      }
+    },
+    "money-europe": {
+      "name": {
+        "en": "Currencies Europe",
+        "fr": "Devises Europe"
+      },
+      "types": {
+        "money": [
+          "all",
+          "byr",
+          "bam",
+          "bgn",
+          "hrk",
+          "czk",
+          "dkk",
+          "eek",
+          "eur",
+          "fkp",
+          "gip",
+          "ggp",
+          "huf",
+          "isk",
+          "irr",
+          "jep",
+          "lvl",
+          "ltl",
+          "mkd",
+          "ang",
+          "nok",
+          "pln",
+          "ron",
+          "rub",
+          "shp",
+          "rsd",
+          "sek",
+          "chf",
+          "try",
+          "trl",
+          "uah",
+          "gbp"
+        ]
+      }
+    },
+    "money-america": {
+      "name": {
+        "en": "Currencies Americas",
+        "fr": "Devises Amériques"
+      },
+      "types": {
+        "money": [
+          "ars",
+          "bsd",
+          "bbd",
+          "bzd",
+          "bmd",
+          "bob",
+          "brl",
+          "cad",
+          "kyd",
+          "clp",
+          "cop",
+          "crc",
+          "cup",
+          "dop",
+          "xcd",
+          "svc",
+          "fjd",
+          "gtq",
+          "gyd",
+          "jmd",
+          "mxn",
+          "nio",
+          "pab",
+          "pyg",
+          "pen",
+          "shp",
+          "srd",
+          "ttd",
+          "usd",
+          "uyu",
+          "vef"
+        ]
+      }
+    },
+    "money-asia": {
+      "name": {
+        "en": "Currencies Asia",
+        "fr": "Devises Asie"
+      },
+      "types": {
+        "money": [
+          "azn",
+          "khr",
+          "cny",
+          "hnl",
+          "inr",
+          "idr",
+          "jpy",
+          "kzt",
+          "kpw",
+          "krw",
+          "kgs",
+          "lak",
+          "myr",
+          "mur",
+          "mnt",
+          "npr",
+          "pkr",
+          "rub",
+          "scr",
+          "sgd",
+          "lkr",
+          "syp",
+          "twd",
+          "thb",
+          "try",
+          "trl",
+          "uzs",
+          "vnd"
+        ]
+      }
+    },
+    "money-africa": {
+      "name": {
+        "en": "Currencies Africa",
+        "fr": "Devises Afrique"
+      },
+      "types": {
+        "money": [
+          "bwp",
+          "egp",
+          "ghc",
+          "mzn",
+          "nad",
+          "ngn",
+          "sos",
+          "zar",
+          "zwd"
+        ]
+      }
+    },
+    "money-indonesia-australia": {
+      "name": {
+        "en": "Currencies Oceania Indonesia",
+        "fr": "Devises Océanie Indonésie"
+      },
+      "types": {
+        "money": [
+          "aud",
+          "nzd",
+          "php",
+          "sbd",
+          "tvd"
+        ]
+      }
+    },
+    "money-middleeast": {
+      "name": {
+        "en": "Currencies Middle East",
+        "fr": "Devises Moyen-Orient"
+      },
+      "types": {
+        "money": [
+          "afn",
+          "bnd",
+          "egp",
+          "imp",
+          "lbp",
+          "omr",
+          "qar",
+          "sar",
+          "syp",
+          "yer"
+        ]
+      }
+    },
     "generic-medical": {
       "name": {
-        "en": "Generic medical mesures",
+        "en": "Common medical mesures",
         "fr": "Mesures médicales courantes"
       },
       "types": {
@@ -213,7 +405,32 @@
         ]
       }
     },
+    "navigation": {
+      "name": {
+        "en": "Navigation",
+        "fr": "Navigation"
+      },
+      "types": {
+        "angle": [
+          "deg",
+          "grad",
+          "rad"
+        ],
+        "length": [
+          "nmi",
+          "ftm",
+          "cb"
+        ],
+        "speed": [
+          "kt"
+        ]
+      }
+    },
     "all-measures": {
+      "name": {
+        "en": "All measures",
+        "fr": "Toutes les mesures"
+      },
       "types": {
         "absorbed-dose": [
           "gy"
@@ -397,195 +614,6 @@
           "bbloil",
           "tbs",
           "tsp"
-        ]
-      },
-      "name": {
-        "en": "All measures",
-        "fr": "Ensemble des mesures"
-      }
-    },
-    "navigation": {
-      "types": {
-        "angle": [
-          "deg",
-          "grad",
-          "rad"
-        ],
-        "length": [
-          "nmi",
-          "ftm",
-          "cb"
-        ],
-        "speed": [
-          "kt"
-        ]
-      }
-    },
-    "money-most-used": {
-      "name": {
-        "en": "Most used currencies",
-        "fr": "Devises les plus utilisées"
-      },
-      "types": {
-        "money": [
-          "eur",
-          "usd",
-          "cny",
-          "gbp",
-          "jpy",
-          "chf",
-          "cad"
-        ]
-      }
-    },
-    "money-europe": {
-      "types": {
-        "money": [
-          "all",
-          "byr",
-          "bam",
-          "bgn",
-          "hrk",
-          "czk",
-          "dkk",
-          "eek",
-          "eur",
-          "fkp",
-          "gip",
-          "ggp",
-          "huf",
-          "isk",
-          "irr",
-          "jep",
-          "lvl",
-          "ltl",
-          "mkd",
-          "ang",
-          "nok",
-          "pln",
-          "ron",
-          "rub",
-          "shp",
-          "rsd",
-          "sek",
-          "chf",
-          "try",
-          "trl",
-          "uah",
-          "gbp"
-        ]
-      }
-    },
-    "money-america": {
-      "types": {
-        "money": [
-          "ars",
-          "bsd",
-          "bbd",
-          "bzd",
-          "bmd",
-          "bob",
-          "brl",
-          "cad",
-          "kyd",
-          "clp",
-          "cop",
-          "crc",
-          "cup",
-          "dop",
-          "xcd",
-          "svc",
-          "fjd",
-          "gtq",
-          "gyd",
-          "jmd",
-          "mxn",
-          "nio",
-          "pab",
-          "pyg",
-          "pen",
-          "shp",
-          "srd",
-          "ttd",
-          "usd",
-          "uyu",
-          "vef"
-        ]
-      }
-    },
-    "money-asia": {
-      "types": {
-        "money": [
-          "azn",
-          "khr",
-          "cny",
-          "hnl",
-          "inr",
-          "idr",
-          "jpy",
-          "kzt",
-          "kpw",
-          "krw",
-          "kgs",
-          "lak",
-          "myr",
-          "mur",
-          "mnt",
-          "npr",
-          "pkr",
-          "rub",
-          "scr",
-          "sgd",
-          "lkr",
-          "syp",
-          "twd",
-          "thb",
-          "try",
-          "trl",
-          "uzs",
-          "vnd"
-        ]
-      }
-    },
-    "money-africa": {
-      "types": {
-        "money": [
-          "bwp",
-          "egp",
-          "ghc",
-          "mzn",
-          "nad",
-          "ngn",
-          "sos",
-          "zar",
-          "zwd"
-        ]
-      }
-    },
-    "money-indonesia-australia": {
-      "types": {
-        "money": [
-          "aud",
-          "nzd",
-          "php",
-          "sbd",
-          "tvd"
-        ]
-      }
-    },
-    "money-middleeast": {
-      "types": {
-        "money": [
-          "afn",
-          "bnd",
-          "egp",
-          "imp",
-          "lbp",
-          "omr",
-          "qar",
-          "sar",
-          "syp",
-          "yer"
         ]
       }
     }
