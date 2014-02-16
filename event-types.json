@@ -53,7 +53,9 @@
               "type": "string"
             }
           },
-          "required": [ "id" ]
+          "required": [
+            "id"
+          ]
         },
         "vcard": {
           "description": "A business card in vcard 2.0 - 3.x format. See: rfc2425, rfc2426 ",
@@ -81,7 +83,9 @@
               "type": "string"
             }
           },
-          "required": [ "payload" ]
+          "required": [
+            "payload"
+          ]
         }
       }
     },
@@ -142,7 +146,11 @@
               "type": "string"
             }
           },
-          "required": [ "from", "to", "body" ]
+          "required": [
+            "from",
+            "to",
+            "body"
+          ]
         },
         "facebook": {
           "description": "A Facebook post. See <a href=\"https://developers.facebook.com/docs/reference/api/post/\">Facebook's API doc</a> for reference. \n\n**map**: \n   fbPost.message -> pryvEvent.description\n   fbPost.created_time -> pryvEvent.time\n\n**optional** fields such as `link`, `source`, `privacy`.. are optional and can be saved on the object.\n\n**attached content**:  \nIf a picture is attached to this post, you may want to attach it to the \"Pryv\" Event.  \n \n - attach the picture and keep \"{filename}.png\" in the URL \n\n\n",
@@ -162,7 +170,10 @@
                   "type": "string"
                 }
               },
-              "required": [ "name", "id" ]
+              "required": [
+                "name",
+                "id"
+              ]
             },
             "to": {
               "type": "object",
@@ -179,7 +190,10 @@
                         "type": "string"
                       }
                     },
-                    "required": [ "name", "id" ]
+                    "required": [
+                      "name",
+                      "id"
+                    ]
                   }
                 }
               }
@@ -205,7 +219,10 @@
               "type": "string"
             }
           },
-          "required": [ "id", "message" ]
+          "required": [
+            "id",
+            "message"
+          ]
         },
         "twitter": {
           "description": "A Twitter post.  \n\n`Created_at` property should be used as the timestamp for the event.\n\nNot specified property that can be found in https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid\ncan be added to the event",
@@ -223,7 +240,10 @@
               "required": "true"
             }
           },
-          "required": [ "id", "screen-name" ]
+          "required": [
+            "id",
+            "screen-name"
+          ]
         }
       }
     },
@@ -784,7 +804,9 @@
               "type": "integer"
             }
           },
-          "required": [ "id" ]
+          "required": [
+            "id"
+          ]
         }
       }
     },
@@ -815,7 +837,9 @@
               "maxLength": "4194304"
             }
           },
-          "required": [ "url" ]
+          "required": [
+            "url"
+          ]
         }
       }
     },
@@ -839,7 +863,10 @@
               "type": "string"
             }
           },
-          "required": [ "payload", "format" ]
+          "required": [
+            "payload",
+            "format"
+          ]
         },
         "attached": {
           "description": "The picture is the image file attached to the event (no explicit content defined). TODO: list accepted formats.",
@@ -889,7 +916,10 @@
               "description": "Unit: degrees clockwise from north. Negative if invalid."
             }
           },
-          "required": [ "latitude", "longitude" ]
+          "required": [
+            "latitude",
+            "longitude"
+          ]
         }
       }
     },
@@ -907,7 +937,10 @@
               "type": "number"
             }
           },
-          "required": [ "value", "relativeTo" ]
+          "required": [
+            "value",
+            "relativeTo"
+          ]
         }
       }
     },
@@ -1480,7 +1513,7 @@
           "description": "Bars",
           "type": "number"
         },
-		 "mmhg": {
+        "mmhg": {
           "description": "Millimeters of Mercury",
           "type": "number"
         },
@@ -1561,6 +1594,35 @@
         },
         "f": {
           "description": "Fahrenheit",
+          "type": "number"
+        }
+      }
+    },
+    "time": {
+      "description": "Amount of time. Use with care! To store an activity or duration the \"activity/pryv\" event type is more appropriate, in most cases. ",
+      "formats": {
+        "d": {
+          "description": "Day ",
+          "type": "number"
+        },
+        "h": {
+          "description": "Hour",
+          "type": "number"
+        },
+        "min": {
+          "description": "Minute",
+          "type": "number"
+        },
+        "ms": {
+          "description": "Millisecond",
+          "type": "number"
+        },
+        "s": {
+          "description": "Second",
+          "type": "number"
+        },
+        "y": {
+          "description": "Year",
           "type": "number"
         }
       }
