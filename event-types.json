@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
@@ -816,12 +816,12 @@
         "html": {
           "description": "An HTML-formatted note.",
           "type": "string",
-          "maxLength": "4194304"
+          "maxLength": 4194304
         },
         "txt": {
           "description": "A plain-text note.",
           "type": "string",
-          "maxLength": "4194304"
+          "maxLength": 4194304
         },
         "webclip": {
           "description": "An HTML-formatted note associated to its source URL.",
@@ -834,7 +834,7 @@
             "content": {
               "description": "An HTML-formatted string.",
               "type": "string",
-              "maxLength": "4194304"
+              "maxLength": 4194304
             }
           },
           "required": [
@@ -1046,7 +1046,7 @@
           "type": "number"
         },
         "ft2": {
-          "description": "Square Feet",
+          "description": "Square feet",
           "type": "number"
         },
         "ha": {
@@ -1054,11 +1054,11 @@
           "type": "number"
         },
         "in2": {
-          "description": "Square Inches",
+          "description": "Square inches",
           "type": "number"
         },
         "km2": {
-          "description": "Square Kilometers",
+          "description": "Square kilometers",
           "type": "number"
         },
         "m2": {
@@ -1066,15 +1066,15 @@
           "type": "number"
         },
         "mm2": {
-          "description": "Square Millimeters",
+          "description": "Square millimeters",
           "type": "number"
         },
         "yd2": {
-          "description": "Square Yards",
+          "description": "Square yards",
           "type": "number"
         },
         "mi2": {
-          "description": "Square Miles",
+          "description": "Square miles",
           "type": "number"
         }
       },
@@ -1238,23 +1238,23 @@
           "type": "number"
         },
         "kcal": {
-          "description": "Kilo-Calories",
+          "description": "Kilo-calories",
           "type": "number"
         },
         "ws": {
-          "description": "Watts Second",
+          "description": "Watt-seconds",
           "type": "number"
         },
         "kwh": {
-          "description": "Kilowatt-Hours",
+          "description": "Kilowatt-hours",
           "type": "number"
         },
         "nm": {
-          "description": "Newton-Meters",
+          "description": "Newton-meters",
           "type": "number"
         },
         "wh": {
-          "description": "Watt-Hours",
+          "description": "Watt-hours",
           "type": "number"
         }
       },
@@ -1346,7 +1346,7 @@
           "type": "number"
         },
         "au": {
-          "description": "Astronomical Units",
+          "description": "Astronomical units",
           "type": "number"
         },
         "ch": {
@@ -1366,7 +1366,7 @@
           "type": "number"
         },
         "ly": {
-          "description": "Light-Years",
+          "description": "Light-years",
           "type": "number"
         },
         "mil": {
@@ -1440,7 +1440,7 @@
           "type": "number"
         },
         "l-t": {
-          "description": "Long Tons ",
+          "description": "Long tons ",
           "type": "number"
         },
         "lb": {
@@ -1448,7 +1448,7 @@
           "type": "number"
         },
         "t": {
-          "description": "Metric Tons",
+          "description": "Metric tons",
           "type": "number"
         },
         "oz": {
@@ -1456,7 +1456,7 @@
           "type": "number"
         },
         "s-t": {
-          "description": "Short Tons",
+          "description": "Short tons",
           "type": "number"
         },
         "st": {
@@ -1481,11 +1481,11 @@
     "power": {
       "formats": {
         "btu-min": {
-          "description": "BTUs/Minute",
+          "description": "BTUs/minute",
           "type": "number"
         },
         "ftlb-s": {
-          "description": "Foot-Pounds/Second",
+          "description": "Foot-pounds/second",
           "type": "number"
         },
         "hp": {
@@ -1514,19 +1514,19 @@
           "type": "number"
         },
         "mmhg": {
-          "description": "Millimeters of Mercury",
+          "description": "Millimeters of mercury",
           "type": "number"
         },
         "cmhg": {
-          "description": "Centimeters of Mercury",
+          "description": "Centimeters of mercury",
           "type": "number"
         },
         "inhg": {
-          "description": "Inches of Mercury",
+          "description": "Inches of mercury",
           "type": "number"
         },
         "kg-m2": {
-          "description": "Kilograms/Square Meter",
+          "description": "Kilograms/square meter",
           "type": "number"
         },
         "pa": {
@@ -1534,15 +1534,15 @@
           "type": "number"
         },
         "kpa": {
-          "description": "Kilo Pascals",
+          "description": "Kilo pascals",
           "type": "number"
         },
         "psf": {
-          "description": "Pounds/Square Foot",
+          "description": "Pounds/square foot",
           "type": "number"
         },
         "psi": {
-          "description": "Pounds/Square Inch",
+          "description": "Pounds/square inch",
           "type": "number"
         }
       },
@@ -1551,15 +1551,15 @@
     "speed": {
       "formats": {
         "ft-m": {
-          "description": "Feet/Minute",
+          "description": "Feet/minute",
           "type": "number"
         },
         "ft-s": {
-          "description": "Feet/Second",
+          "description": "Feet/second",
           "type": "number"
         },
         "km-h": {
-          "description": "Kilometers/Hour",
+          "description": "Kilometers/hour",
           "type": "number"
         },
         "kt": {
@@ -1567,15 +1567,15 @@
           "type": "number"
         },
         "m-min": {
-          "description": "Miles/Minute",
+          "description": "Miles/minute",
           "type": "number"
         },
         "m-s": {
-          "description": "Meters/Second",
+          "description": "Meters/second",
           "type": "number"
         },
         "mph": {
-          "description": "Miles/Hour",
+          "description": "Miles/hour",
           "type": "number"
         }
       },
@@ -1585,7 +1585,7 @@
       "description": "Temperature measurements. Format = unit.",
       "formats": {
         "c": {
-          "description": "Celcius ",
+          "description": "Celsius ",
           "type": "number"
         },
         "k": {
@@ -1635,7 +1635,7 @@
           "type": "number"
         },
         "m3": {
-          "description": "Cubic Meters",
+          "description": "Cubic meters",
           "type": "number"
         },
         "c": {
@@ -1643,19 +1643,19 @@
           "type": "number"
         },
         "cm3": {
-          "description": "Cubic Centimeters",
+          "description": "Cubic centimeters",
           "type": "number"
         },
         "floz": {
-          "description": "Fluid Ounces",
+          "description": "Fluid ounces",
           "type": "number"
         },
         "ft3": {
-          "description": "Cubic Feet",
+          "description": "Cubic feet",
           "type": "number"
         },
         "galgb": {
-          "description": "Gallons Imperial",
+          "description": "Gallons imperial",
           "type": "number"
         },
         "galus": {
@@ -1663,11 +1663,11 @@
           "type": "number"
         },
         "in3": {
-          "description": "Cubic Inches",
+          "description": "Cubic inches",
           "type": "number"
         },
         "yd3": {
-          "description": "Cubic Yard",
+          "description": "Cubic yard",
           "type": "number"
         },
         "ml": {
@@ -1683,7 +1683,7 @@
           "type": "number"
         },
         "bbloil": {
-          "description": "Barrels (Oil)",
+          "description": "Barrels (oil)",
           "type": "number"
         },
         "tbs": {
