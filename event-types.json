@@ -759,8 +759,8 @@
         "rating": {
           "description": "Rating of mood (float value) 0:worst -> 1:best ",
           "type": "number",
-          "minimum": "0",
-          "maximum": "1"
+          "minimum": 0,
+          "maximum": 1
         },
         "emoticon": {
           "description": "ASCII Art emoticon",
