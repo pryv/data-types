@@ -1,5 +1,5 @@
 {
-  "version": "0.2.1",
+  "version": "0.2.2",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
@@ -236,13 +236,13 @@
               "type": "string"
             },
             "text": {
-              "type": "string",
-              "required": "true"
+              "type": "string"
             }
           },
           "required": [
             "id",
-            "screen-name"
+            "screen-name",
+            "text"
           ]
         }
       }
