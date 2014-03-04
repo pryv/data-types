@@ -1,11 +1,11 @@
 {
-  "version": "0.2.3",
+  "version": "0.2.4",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
       "formats": {
         "pryv": {
-          "description": "Pryv activity event. No event content needed; the activity is defined by the event's stream, time and duration (and possibly tagging).",
+          "description": "Pryv activity event. No event content needed; the activity is defined by the event's stream, time and duration, and possibly description and tags.",
           "type": "null"
         }
       }
@@ -14,7 +14,7 @@
       "description": "To record audio (conversations, voice messages, etc.).",
       "formats": {
         "attached": {
-          "description": "The audio source is the file attached to the event (no explicit content defined).\nUse event.duration for the audio duration",
+          "description": "The audio source is the file attached to the event (no explicit content defined).\nYou can use the event's duration to mirror the recording's duration.",
           "type": "null",
           "attachmentRequired": true
         },
@@ -28,15 +28,16 @@
     "call": {
       "description": "To record references to phone calls (landline, mobile, Skype, etc.).",
       "formats": {
-        "undefined": {
-          "description": "A call with an unspecified media",
-          "type": "null"
+        "name": {
+          "description": "The contact's name (or a free-form identifier)",
+          "type": "string"
         },
         "skype": {
+          "description": "The Skype id",
           "type": "string"
         },
         "telephone": {
-          "description": "A phone number",
+          "description": "The phone number",
           "type": "string"
         }
       }
@@ -58,7 +59,7 @@
           ]
         },
         "vcard": {
-          "description": "A business card in vcard 2.0 - 3.x format. See: rfc2425, rfc2426 ",
+          "description": "A business card in vCard 2.0-3.x format. See: rfc2425, rfc2426.",
           "type": "string"
         }
       }
@@ -98,12 +99,12 @@
           "attachmentRequired": true
         },
         "attached-multiple": {
-          "description": "A set of file attached. Structure might be declared in the filenames.",
+          "description": "A set of file attached. Structure can be declared in the filenames.",
           "attachmentRequired": true,
           "type": "null"
         },
         "url": {
-          "description": "TODO",
+          "description": "A reference to a file hosted elsewhere",
           "type": "string",
           "pattern": "^(https?)://.+$"
         }
@@ -138,7 +139,7 @@
               "type": "string"
             },
             "x-headers": {
-              "description": "Key / Value map of X-* headers ",
+              "description": "Key/value map of `X-*` headers",
               "type": "object",
               "additionalProperties": true
             },
@@ -206,7 +207,7 @@
               "description": "Either a fully qualified \"URL\" for an external source or a \"filename\" for a Flash Movie or Video attached to this event"
             },
             "properties": {
-              "type object": "String",
+              "type": "string",
               "description": "Relative to \"source\": A list of properties for an uploaded video, for example, the length of the video",
               "additionalProperties": true
             },
