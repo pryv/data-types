@@ -652,7 +652,7 @@
           "min",
           "ms",
           "s",
-          "yr"
+          "y"
         ],
         "dynamic-viscosity": [
           "pa-s"
