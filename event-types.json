@@ -1,11 +1,11 @@
 {
-  "version": "0.2.4",
+  "version": "0.2.5",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
       "formats": {
-        "pryv": {
-          "description": "Pryv activity event. No event content needed; the activity is defined by the event's stream, time and duration, and possibly description and tags.",
+        "plain": {
+          "description": "Plain activity event with no specific content; the activity is defined by the event's stream, time and duration, and possibly description and tags.",
           "type": "null"
         }
       }
@@ -1600,7 +1600,7 @@
       }
     },
     "time": {
-      "description": "Amount of time. Use with care! To store an activity or duration the \"activity/pryv\" event type is more appropriate, in most cases. ",
+      "description": "Amount of time. Use with care! To store an activity or duration the \"activity/plain\" event type is more appropriate, in most cases. ",
       "formats": {
         "d": {
           "description": "Day ",
