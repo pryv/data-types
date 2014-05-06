@@ -1,6 +1,40 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.4",
   "sets": {
+    "basic-measurements-metric": {
+      "name": {
+        "en": "Metric measures (basics)",
+        "fr": "Mesures métriques de base"
+      },
+      "description": {
+        "en": "Kg, m, Km, ... "
+      },
+      "types": {
+        "length": [
+          "cm",
+          "km",
+          "m",
+          "mm"
+        ],
+        "mass": [
+          "kg",
+          "g",
+          "t"
+        ],
+        "temperature": [
+          "c"
+        ],
+        "speed": [
+          "km-h",
+          "m-s"
+        ],
+        "volume": [
+          "l",
+          "m3",
+          "ml"
+        ]
+      }
+    },
     "generic-measurements-metric": {
       "name": {
         "en": "Metric measures",
@@ -64,6 +98,49 @@
           "l",
           "m3",
           "ml"
+        ]
+      }
+    },
+    "basic-measurements-imperial": {
+      "name": {
+        "en": "Imperial measures (basics)",
+        "fr": "Mesures, système impérial (de base)"
+      },
+      "description": {
+        "en": "lb, in, ft, ..."
+      },
+      "types": {
+        "length": [
+          "ch",
+          "lea",
+          "ft",
+          "in",
+          "mi",
+          "fur",
+          "yd"
+        ],
+        "mass": [
+          "lb",
+          "oz",
+          "s-t",
+          "st"
+        ],
+        "temperature": [
+          "f"
+        ],
+        "speed": [
+          "ft-s",
+          "m-min",
+          "mph"
+        ],
+        "volume": [
+          "c",
+          "floz",
+          "galgb",
+          "pt",
+          "qt",
+          "tbs",
+          "tsp"
         ]
       }
     },
@@ -134,6 +211,56 @@
           "galgb",
           "pt",
           "qt",
+          "tbs",
+          "tsp"
+        ]
+      }
+    },
+    "basic-measurements-us": {
+      "name": {
+        "en": "US measures (basics)",
+        "fr": "Mesures USA (de base)"
+      },
+      "description": {
+        "en": "yd, mil, oz, ..."
+      },
+      "types": {
+        "length": [
+          "ch",
+          "ft",
+          "in",
+          "mil",
+          "mi",
+          "fur",
+          "p",
+          "pica",
+          "yd"
+        ],
+        "mass": [
+          "gr",
+          "dr",
+          "l-t",
+          "lb",
+          "oz"
+        ],
+        "temperature": [
+          "f"
+        ],
+        "speed": [
+          "ft-s",
+          "m-min",
+          "mph"
+        ],
+        "volume": [
+          "c",
+          "floz",
+          "ft3",
+          "galus",
+          "in3",
+          "yd3",
+          "pt",
+          "qt",
+          "bbloil",
           "tbs",
           "tsp"
         ]
@@ -525,7 +652,7 @@
           "min",
           "ms",
           "s",
-          "yr"
+          "y"
         ],
         "dynamic-viscosity": [
           "pa-s"
