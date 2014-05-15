@@ -567,7 +567,7 @@
       },
       "types": {
         "count": [
-          "generic"
+          "steps"
         ],
         "pressure": [
           "mmhg"
@@ -646,13 +646,13 @@
         ],
         "data-quantity": [
           "b",
-          "bit",
+          "bits",
           "gb",
-          "gbit",
+          "gbits",
           "kb",
-          "kbit",
+          "kbits",
           "mb",
-          "mbit",
+          "mbits",
           "tb"
         ],
         "density": [
@@ -796,11 +796,11 @@
   "extras": {
     "count": {
       "name": {
-        "en": "Décompte",
-        "fr": "Count"
+        "en": "Count",
+        "fr": "Compte"
       },
       "formats": {
-        "step": {
+        "steps": {
           "name": {
             "en": "Steps",
             "fr": "Nombre de pas"
@@ -808,8 +808,8 @@
         },
         "generic": {
           "name": {
-            "fr": "(Générique)",
-            "en": "(Generic)"
+            "en": "(Generic)",
+            "fr": "(Générique)"
           }
         }
       }
@@ -2009,7 +2009,7 @@
           },
           "symbol": "B"
         },
-        "bit": {
+        "bits": {
           "name": {
             "en": "Bits",
             "fr": "Bits"
@@ -2023,7 +2023,7 @@
           },
           "symbol": "Gb"
         },
-        "gbit": {
+        "gbits": {
           "name": {
             "en": "Gigabits",
             "fr": "Gigabits"
@@ -2037,7 +2037,7 @@
           },
           "symbol": "Kb"
         },
-        "kbit": {
+        "kbits": {
           "name": {
             "en": "Kilobits",
             "fr": "Kilobits"
@@ -2051,7 +2051,7 @@
           },
           "symbol": "Mb"
         },
-        "mbit": {
+        "mbits": {
           "name": {
             "en": "Megabits",
             "fr": "Megabits"
