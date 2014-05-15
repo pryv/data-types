@@ -1,5 +1,5 @@
 {
-  "version": "0.2.4",
+  "version": "0.2.6",
   "sets": {
     "basic-measurements-metric": {
       "name": {
@@ -10,6 +10,9 @@
         "en": "Kg, m, Km, ... "
       },
       "types": {
+        "count": [
+          "generic"
+        ],
         "length": [
           "cm",
           "km",
@@ -110,6 +113,9 @@
         "en": "lb, in, ft, ..."
       },
       "types": {
+        "count": [
+          "generic"
+        ],
         "length": [
           "ch",
           "lea",
@@ -225,6 +231,9 @@
         "en": "yd, mil, oz, ..."
       },
       "types": {
+        "count": [
+          "generic"
+        ],
         "length": [
           "ch",
           "ft",
@@ -550,13 +559,16 @@
     },
     "generic-medical": {
       "name": {
-        "en": "Common medical mesures",
-        "fr": "Mesures médicales courantes"
+        "en": "Common health mesures",
+        "fr": "Mesures de santé courantes"
       },
       "description": {
         "en": "mmhg, bpm, ..."
       },
       "types": {
+        "count": [
+          "generic"
+        ],
         "pressure": [
           "mmhg"
         ],
@@ -782,6 +794,26 @@
     }
   },
   "extras": {
+    "count": {
+      "name": {
+        "en": "Décompte",
+        "fr": "Count"
+      },
+      "formats": {
+        "step": {
+          "name": {
+            "en": "Steps",
+            "fr": "Nombre de pas"
+          }
+        },
+        "generic": {
+          "name": {
+            "fr": "(Générique)",
+            "en": "(Generic)"
+          }
+        }
+      }
+    },
     "money": {
       "name": {
         "en": "Money",

@@ -1,5 +1,5 @@
 {
-  "version": "0.2.5",
+  "version": "0.2.6",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
@@ -1102,6 +1102,10 @@
     "count": {
       "description": "To record the counting of objects (eggs, apples, etc.).",
       "formats": {
+        "step": {
+          "description": "Number of steps",
+          "type": "number"
+        },
         "generic": {
           "description": "For general items that demand no particular handling.",
           "type": "number"
