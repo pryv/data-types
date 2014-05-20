@@ -1,5 +1,5 @@
 {
-  "version": "0.2.4",
+  "version": "0.2.6",
   "sets": {
     "basic-measurements-metric": {
       "name": {
@@ -10,6 +10,9 @@
         "en": "Kg, m, Km, ... "
       },
       "types": {
+        "count": [
+          "generic"
+        ],
         "length": [
           "cm",
           "km",
@@ -110,6 +113,9 @@
         "en": "lb, in, ft, ..."
       },
       "types": {
+        "count": [
+          "generic"
+        ],
         "length": [
           "ch",
           "lea",
@@ -225,6 +231,9 @@
         "en": "yd, mil, oz, ..."
       },
       "types": {
+        "count": [
+          "generic"
+        ],
         "length": [
           "ch",
           "ft",
@@ -550,13 +559,16 @@
     },
     "generic-medical": {
       "name": {
-        "en": "Common medical mesures",
-        "fr": "Mesures médicales courantes"
+        "en": "Common health mesures",
+        "fr": "Mesures de santé courantes"
       },
       "description": {
         "en": "mmhg, bpm, ..."
       },
       "types": {
+        "count": [
+          "steps"
+        ],
         "pressure": [
           "mmhg"
         ],
@@ -634,13 +646,13 @@
         ],
         "data-quantity": [
           "b",
-          "bit",
+          "bits",
           "gb",
-          "gbit",
+          "gbits",
           "kb",
-          "kbit",
+          "kbits",
           "mb",
-          "mbit",
+          "mbits",
           "tb"
         ],
         "density": [
@@ -782,6 +794,26 @@
     }
   },
   "extras": {
+    "count": {
+      "name": {
+        "en": "Count",
+        "fr": "Compte"
+      },
+      "formats": {
+        "steps": {
+          "name": {
+            "en": "Steps",
+            "fr": "Nombre de pas"
+          }
+        },
+        "generic": {
+          "name": {
+            "en": "Units",
+            "fr": "Unités"
+          }
+        }
+      }
+    },
     "money": {
       "name": {
         "en": "Money",
@@ -1977,7 +2009,7 @@
           },
           "symbol": "B"
         },
-        "bit": {
+        "bits": {
           "name": {
             "en": "Bits",
             "fr": "Bits"
@@ -1991,7 +2023,7 @@
           },
           "symbol": "Gb"
         },
-        "gbit": {
+        "gbits": {
           "name": {
             "en": "Gigabits",
             "fr": "Gigabits"
@@ -2005,7 +2037,7 @@
           },
           "symbol": "Kb"
         },
-        "kbit": {
+        "kbits": {
           "name": {
             "en": "Kilobits",
             "fr": "Kilobits"
@@ -2019,7 +2051,7 @@
           },
           "symbol": "Mb"
         },
-        "mbit": {
+        "mbits": {
           "name": {
             "en": "Megabits",
             "fr": "Megabits"

@@ -1,5 +1,5 @@
 {
-  "version": "0.2.5",
+  "version": "0.2.6",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
@@ -758,7 +758,7 @@
       "description": "To record personal mood.",
       "formats": {
         "rating": {
-          "description": "Rating of mood (float value) 0:worst -> 1:best ",
+          "description": "Rating of mood (float value) 0:worst -> 1:best",
           "type": "number",
           "minimum": 0,
           "maximum": 1
@@ -773,7 +773,7 @@
       "description": "To record references to music, usualy tracks (from Soundcloud, Shazam tags, etc.).",
       "formats": {
         "basic": {
-          "description": "Inspired from id3 key/pair ",
+          "description": "Inspired from id3 key/pair",
           "type": "object",
           "properties": {
             "title": {
@@ -1102,6 +1102,10 @@
     "count": {
       "description": "To record the counting of objects (eggs, apples, etc.).",
       "formats": {
+        "steps": {
+          "description": "Number of steps",
+          "type": "number"
+        },
         "generic": {
           "description": "For general items that demand no particular handling.",
           "type": "number"
@@ -1114,7 +1118,7 @@
           "description": "Bytes",
           "type": "number"
         },
-        "bit": {
+        "bits": {
           "description": "Bits",
           "type": "number"
         },
@@ -1122,7 +1126,7 @@
           "description": "Gigabytes",
           "type": "number"
         },
-        "gbit": {
+        "gbits": {
           "description": "Gigabits",
           "type": "number"
         },
@@ -1130,7 +1134,7 @@
           "description": "Kilobytes",
           "type": "number"
         },
-        "kbit": {
+        "kbits": {
           "description": "Kilobits",
           "type": "number"
         },
@@ -1138,7 +1142,7 @@
           "description": "Megabytes",
           "type": "number"
         },
-        "mbit": {
+        "mbits": {
           "description": "Megabits",
           "type": "number"
         },
@@ -1152,7 +1156,7 @@
     "density": {
       "formats": {
         "kg-m3": {
-          "description": "Kilogram per cubic meter",
+          "description": "Kilograms per cubic meter",
           "type": "number"
         }
       },
@@ -1433,7 +1437,7 @@
           "type": "number"
         },
         "dr": {
-          "description": "Drams ",
+          "description": "Drams",
           "type": "number"
         },
         "g": {
@@ -1441,7 +1445,7 @@
           "type": "number"
         },
         "l-t": {
-          "description": "Long tons ",
+          "description": "Long tons",
           "type": "number"
         },
         "lb": {
@@ -1580,13 +1584,13 @@
           "type": "number"
         }
       },
-      "description": "The magnitude of the velocity of an object. "
+      "description": "The magnitude of the velocity of an object."
     },
     "temperature": {
       "description": "Temperature measurements. Format = unit.",
       "formats": {
         "c": {
-          "description": "Celsius ",
+          "description": "Celsius",
           "type": "number"
         },
         "k": {
@@ -1600,30 +1604,30 @@
       }
     },
     "time": {
-      "description": "Amount of time. Use with care! To store an activity or duration the \"activity/plain\" event type is more appropriate, in most cases. ",
+      "description": "Amount of time. Use with care! To store an activity or duration the \"activity/plain\" event type is more appropriate, in most cases.",
       "formats": {
         "d": {
-          "description": "Day ",
+          "description": "Days",
           "type": "number"
         },
         "h": {
-          "description": "Hour",
+          "description": "Hours",
           "type": "number"
         },
         "min": {
-          "description": "Minute",
+          "description": "Minutes",
           "type": "number"
         },
         "ms": {
-          "description": "Millisecond",
+          "description": "Milliseconds",
           "type": "number"
         },
         "s": {
-          "description": "Second",
+          "description": "Seconds",
           "type": "number"
         },
         "y": {
-          "description": "Year",
+          "description": "Years",
           "type": "number"
         }
       }
