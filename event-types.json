@@ -1155,12 +1155,24 @@
     },
     "density": {
       "formats": {
+        "g-dl": {
+          "description": "Grams per decilitre",
+          "type": "number"
+        },
         "kg-m3": {
           "description": "Kilograms per cubic meter",
           "type": "number"
+        },
+        "mmol-l": {
+          "description": "Millimoles per litre",
+          "type": "number"
+        },
+        "mg-dl": {
+          "description": "Milligrams per decilitre",
+          "type": "number"
         }
       },
-      "description": "The density of a material."
+      "description": "The density of a material. (volumetric mass density)"
     },
     "dynamic-viscosity": {
       "formats": {

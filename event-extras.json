@@ -569,6 +569,10 @@
         "count": [
           "steps"
         ],
+        "density": [
+          "mg-dl",
+          "mmol-l"
+        ],
         "pressure": [
           "mmhg"
         ],
@@ -656,7 +660,10 @@
           "tb"
         ],
         "density": [
-          "kg-m3"
+          "g-dl",
+          "kg-m3",
+          "mg-dl",
+          "mmol-l"
         ],
         "time": [
           "d",
@@ -2073,12 +2080,33 @@
     },
     "density": {
       "formats": {
+        "g-dl": {
+          "name": {
+            "en": "Grams/decilitre",
+            "fr": "Grammes/decilitre"
+          },
+          "symbol": "g/dL"
+        },
         "kg-m3": {
           "name": {
             "en": "Kilograms/cubic meter",
             "fr": "Kilogrammes/mètre cube"
           },
           "symbol": "kg/m³"
+        },
+        "mg-dl": {
+          "name": {
+            "en": "Milligrams/decilitre",
+            "fr": "Milligrammes/decilitre"
+          },
+          "symbol": "mg/dL"
+        },
+        "mmol-l": {
+          "name": {
+            "en": "Millimoles/litre",
+            "fr": "Millimoles/litre"
+          },
+          "symbol": "mmol/L"
         }
       },
       "name": {
