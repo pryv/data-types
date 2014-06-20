@@ -1,5 +1,5 @@
 {
-  "version": "0.2.6",
+  "version": "0.2.7",
   "classes": {
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
@@ -1155,12 +1155,24 @@
     },
     "density": {
       "formats": {
+        "g-dl": {
+          "description": "Grams per deciliter",
+          "type": "number"
+        },
         "kg-m3": {
           "description": "Kilograms per cubic meter",
           "type": "number"
+        },
+        "mmol-l": {
+          "description": "Millimoles per liter",
+          "type": "number"
+        },
+        "mg-dl": {
+          "description": "Milligrams per deciliter",
+          "type": "number"
         }
       },
-      "description": "The density of a material."
+      "description": "The density of a material (volumetric mass density)."
     },
     "dynamic-viscosity": {
       "formats": {

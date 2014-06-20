@@ -1,5 +1,5 @@
 {
-  "version": "0.2.6",
+  "version": "0.2.7",
   "sets": {
     "basic-measurements-metric": {
       "name": {
@@ -569,6 +569,10 @@
         "count": [
           "steps"
         ],
+        "density": [
+          "mg-dl",
+          "mmol-l"
+        ],
         "pressure": [
           "mmhg"
         ],
@@ -656,7 +660,10 @@
           "tb"
         ],
         "density": [
-          "kg-m3"
+          "g-dl",
+          "kg-m3",
+          "mg-dl",
+          "mmol-l"
         ],
         "time": [
           "d",
@@ -2073,12 +2080,33 @@
     },
     "density": {
       "formats": {
+        "g-dl": {
+          "name": {
+            "en": "Grams/deciliter",
+            "fr": "Grammes/décilitre"
+          },
+          "symbol": "g/dL"
+        },
         "kg-m3": {
           "name": {
             "en": "Kilograms/cubic meter",
             "fr": "Kilogrammes/mètre cube"
           },
           "symbol": "kg/m³"
+        },
+        "mg-dl": {
+          "name": {
+            "en": "Milligrams/deciliter",
+            "fr": "Milligrammes/décilitre"
+          },
+          "symbol": "mg/dL"
+        },
+        "mmol-l": {
+          "name": {
+            "en": "Millimoles/liter",
+            "fr": "Millimoles/litre"
+          },
+          "symbol": "mmol/L"
         }
       },
       "name": {
