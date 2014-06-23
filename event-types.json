@@ -154,7 +154,7 @@
           ]
         },
         "facebook": {
-          "description": "A Facebook post. See <a href=\"https://developers.facebook.com/docs/reference/api/post/\">Facebook's API doc</a> for reference. \n\n**map**: \n   fbPost.message -> pryvEvent.description\n   fbPost.created_time -> pryvEvent.time\n\n**optional** fields such as `link`, `source`, `privacy`.. are optional and can be saved on the object.\n\n**attached content**:  \nIf a picture is attached to this post, you may want to attach it to the \"Pryv\" Event.  \n \n - attach the picture and keep \"{filename}.png\" in the URL \n\n\n",
+          "description": "A Facebook post. See [Facebook's API docs](https://developers.facebook.com/docs/reference/api/post/) for reference. Facebook properties `message` and `created_time` map to event `description` and `time` respectively. Facebook attached pictures can be directly mapped to attachments. Other Facebook properties such as `link`, `source`, `privacy` are allowed.",
           "type": "object",
           "additionalProperties": true,
           "properties": {
@@ -204,15 +204,15 @@
             },
             "source": {
               "type": "string",
-              "description": "Either a fully qualified \"URL\" for an external source or a \"filename\" for a Flash Movie or Video attached to this event"
+              "description": "Either a fully qualified \"URL\" for an external source or a \"filename\" for a Flash Movie or Video attached to this event."
             },
             "properties": {
               "type": "string",
-              "description": "Relative to \"source\": A list of properties for an uploaded video, for example, the length of the video",
+              "description": "Relative to `source`: a list of properties for an uploaded video, for example, the length of the video.",
               "additionalProperties": true
             },
             "picture": {
-              "description": "Either a fully qualified \"URL\" for an external picture or a \"filename\" for a picture attached to this event",
+              "description": "Either a fully qualified \"URL\" for an external picture or a \"filename\" for a picture attached to this event.",
               "type": "string"
             },
             "status-type": {
@@ -226,7 +226,7 @@
           ]
         },
         "twitter": {
-          "description": "A Twitter post.  \n\n`Created_at` property should be used as the timestamp for the event.\n\nNot specified property that can be found in https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid\ncan be added to the event",
+          "description": "A Twitter post. Twitter property `created_at` maps to event `time`. Other Twitter properties (see [Twitter's API docs](https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid)) are allowed.",
           "type": "object",
           "additionalProperties": true,
           "properties": {
@@ -797,8 +797,8 @@
           }
         },
         "soundcloud": {
-          "description": "See soundcloud track properties http://developers.soundcloud.com/docs/api/reference#tracks\nOnly the \"id\" is mandatory, other property depend of sound cloud specifications",
-          "type object": "Object",
+          "description": "See [Soundcloud track properties](http://developers.soundcloud.com/docs/api/reference#tracks).",
+          "type": "object",
           "additionalProperties": true,
           "properties": {
             "id": {
@@ -857,7 +857,7 @@
           },
           "additionalProperties": "false",
           "required": [
-            
+
           ]
         }
       }
