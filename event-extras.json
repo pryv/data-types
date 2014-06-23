@@ -2082,8 +2082,8 @@
       "formats": {
         "g-dl": {
           "name": {
-            "en": "Grams/decilitre",
-            "fr": "Grammes/decilitre"
+            "en": "Grams/deciliter",
+            "fr": "Grammes/décilitre"
           },
           "symbol": "g/dL"
         },
@@ -2096,14 +2096,14 @@
         },
         "mg-dl": {
           "name": {
-            "en": "Milligrams/decilitre",
-            "fr": "Milligrammes/decilitre"
+            "en": "Milligrams/deciliter",
+            "fr": "Milligrammes/décilitre"
           },
           "symbol": "mg/dL"
         },
         "mmol-l": {
           "name": {
-            "en": "Millimoles/litre",
+            "en": "Millimoles/liter",
             "fr": "Millimoles/litre"
           },
           "symbol": "mmol/L"
