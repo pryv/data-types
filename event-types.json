@@ -845,7 +845,7 @@
       }
     },
     "numset": {
-      "description": "Custom containers for a set of numerical values",
+      "description": "A set of numerical values",
       "formats": {
         "*": {
           "description": "The format key is freely defined.\n\nFor example, a heart measurement with type `numset/heart` and content:\n```\n{ \n  \"systolic\": { \"pressure/mmhg\": 105 },\n  \"diastolic\": { \"pressure/mmhg\": 64 },\n  \"rate\": { \"frequency/bpm\": 88 }\n}\n```\n\n ",
