@@ -1,5 +1,5 @@
 {
-  "version": "0.2.7",
+  "version": "0.2.9",
   "sets": {
     "basic-measurements-metric": {
       "name": {
@@ -26,6 +26,9 @@
         ],
         "temperature": [
           "c"
+        ],
+        "ratio": [
+          "percent"
         ],
         "speed": [
           "km-h",
@@ -133,6 +136,9 @@
         ],
         "temperature": [
           "f"
+        ],
+        "ratio": [
+          "percent"
         ],
         "speed": [
           "ft-s",
@@ -254,6 +260,9 @@
         ],
         "temperature": [
           "f"
+        ],
+        "ratio": [
+          "percent"
         ],
         "speed": [
           "ft-s",
@@ -2496,6 +2505,20 @@
       "name": {
         "en": "Pressure",
         "fr": "Pression"
+      }
+    },
+    "ratio": {
+      "formats": {
+        "percent": {
+          "name": {
+            "en": "Percentage",
+            "fr": "Pourcentage"
+          }
+        }
+      },
+      "name": {
+        "en": "Ratio",
+        "fr": "Ratio"
       }
     },
     "speed": {
