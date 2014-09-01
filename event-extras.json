@@ -819,7 +819,7 @@
         "steps": {
           "name": {
             "en": "Steps",
-            "fr": "Nombre de pas"
+            "fr": "Pas"
           }
         },
         "generic": {
