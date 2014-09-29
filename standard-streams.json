@@ -1,0 +1,82 @@
+[
+  {
+    "id": "health",
+    "defaultName": "Health",
+    "description": "Should contain all user centric health data",
+    "children": [
+      {
+        "id": "weight",
+        "defaultName": "My weight",
+        "description": "The user's weight.",
+        "expectedTypes": [ "mass/kg", "mass/lb" ]
+      },
+      {
+        "id": "height",
+        "defaultName": "My Height",
+        "description": "The user's eaten calories.",
+        "expectedTypes": [ "length/m", "length/mi" ]
+      },
+      {
+        "id": "heart-rate",
+        "defaultName": "Heart rate",
+        "description": "The user's heart rate.",
+        "expectedTypes": [ "frequency/bpm" ]
+      },
+      {
+        "id": "calories",
+        "defaultName": "Calories",
+        "description": "The user's eaten calories.",
+        "expectedTypes": [ "energy/cal" ]
+      },
+      {
+        "id": "blood-spo2",
+        "defaultName": "Blood oxygen saturation",
+        "description": "The user's blood oxygen saturation.",
+        "expectedTypes": [ "ratio/percent" ]
+      },
+      {
+        "id": "steps",
+        "defaultName": "My Steps",
+        "description": "The user's stepsries.",
+        "expectedTypes": [ "count/steps" ]
+      }
+    ]
+  },
+  {
+    "id": "diary",
+    "defaultName": "Diary",
+    "description": "TBD",
+    "expectedTypes": [ "*" ]
+  },
+  {
+    "id": "places",
+    "defaultName": "My Places",
+    "description": "TBD",
+    "expectedTypes": [ "location/wgs84", "activity/plain", "note/txt" ]
+  },
+  {
+    "id": "projects",
+    "defaultName": "My Projects",
+    "description": "Time Tracking. Example substreams: Work, personal",
+    "expectedTypes": [ "activity/plain" ]
+  },
+  {
+    "id": "activity",
+    "defaultName": "Activity",
+    "description": "Transport and sports tracking",
+    "children": [
+      {
+        "id": "transport",
+        "defaultName": "Transport",
+        "description": "Sitting or standing in transportation. Use tags define the different means of transport",
+        "expectedTypes": [ "activity/plain", "length/km", "length/mi" ]
+      },
+      {
+        "id": "sport",
+        "defaultName": "Sport",
+        "description": "The time you spend doing sports. Use tags to specify the sport.",
+        "expectedTypes": [ "activity/plain", "length/km", "length/mi" ]
+      }
+    ]
+  }
+]
