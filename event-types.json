@@ -25,7 +25,7 @@
         }
       }
     },
-    "blood pressure": {
+    "blood-pressure": {
       "description": "To record a blood pressure measurement.",
       "formats": {
         "mmhg-bpm": {
@@ -33,16 +33,16 @@
           "type": "object",
           "properties": {
             "systolic": {
-              "type": "number",
-              "description": "Systolic pressure. Unit: mmHg."
+              "description": "Systolic pressure. Unit: mmHg.",
+              "type": "number"
             },
             "diastolic": {
-              "type": "number",
-              "description": "Diastolic pressure. Unit: mmHg."
+              "description": "Diastolic pressure. Unit: mmHg.",
+              "type": "number"
             },
             "rate": {
-              "type": "number",
-              "description": "Heart rate. Unit: bpm"
+              "description": "Heart rate. Unit: bpm",
+              "type": "number"
             }
           },
           "required": [
@@ -1487,13 +1487,13 @@
       }
     },
     "linear-acceleration": {
+      "description": "The rate of change of linear velocity.",
       "formats": {
         "m-s2": {
           "description": "Meters per second squared",
           "type": "number"
         }
-      },
-      "description": "The rate of change of linear velocity."
+      }
     },
     "luminous-intensity": {
       "formats": {
