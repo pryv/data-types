@@ -25,6 +25,33 @@
         }
       }
     },
+    "blood pressure": {
+      "description": "To record a blood pressure measurement.",
+      "formats": {
+        "mmhg-bpm": {
+          "description": "The blood pressure measurement. Pressures are stored in mmHg and the heart rate in bpm",
+          "type": "object",
+          "properties": {
+            "systolic": {
+              "type": "number",
+              "description": "Systolic pressure. Unit: mmHg."
+            },
+            "diastolic": {
+              "type": "number",
+              "description": "Diastolic pressure. Unit: mmHg."
+            },
+            "rate": {
+              "type": "number",
+              "description": "Heart rate. Unit: bpm"
+            }
+          },
+          "required": [
+            "systolic",
+            "diastolic"
+          ]
+        }
+      }
+    },
     "call": {
       "description": "To record references to phone calls (landline, mobile, Skype, etc.).",
       "formats": {
