@@ -25,6 +25,33 @@
         }
       }
     },
+    "blood-pressure": {
+      "description": "To record a blood pressure measurement.",
+      "formats": {
+        "mmhg-bpm": {
+          "description": "The blood pressure measurement. Pressures are stored in mmHg and the heart rate in bpm",
+          "type": "object",
+          "properties": {
+            "systolic": {
+              "description": "Systolic pressure. Unit: mmHg.",
+              "type": "number"
+            },
+            "diastolic": {
+              "description": "Diastolic pressure. Unit: mmHg.",
+              "type": "number"
+            },
+            "rate": {
+              "description": "Heart rate. Unit: bpm",
+              "type": "number"
+            }
+          },
+          "required": [
+            "systolic",
+            "diastolic"
+          ]
+        }
+      }
+    },
     "call": {
       "description": "To record references to phone calls (landline, mobile, Skype, etc.).",
       "formats": {
@@ -60,6 +87,15 @@
         },
         "vcard": {
           "description": "A business card in vCard 2.0-3.x format. See: rfc2425, rfc2426.",
+          "type": "string"
+        }
+      }
+    },
+    "date": {
+      "description": "To record a date and time.",
+      "formats": {
+        "iso-8601": {
+          "description": "The ISO 8601 format",
           "type": "string"
         }
       }
@@ -1450,6 +1486,15 @@
         }
       }
     },
+    "linear-acceleration": {
+      "description": "The rate of change of linear velocity.",
+      "formats": {
+        "m-s2": {
+          "description": "Meters per second squared",
+          "type": "number"
+        }
+      }
+    },
     "luminous-intensity": {
       "formats": {
         "cd": {
@@ -1466,16 +1511,20 @@
           "description": "Kilograms",
           "type": "number"
         },
+        "g": {
+          "description": "Grams",
+          "type": "number"
+        },
+        "mg": {
+          "description": "MilliGrams",
+          "type": "number"
+        },
         "gr": {
           "description": "Grains",
           "type": "number"
         },
         "dr": {
           "description": "Drams",
-          "type": "number"
-        },
-        "g": {
-          "description": "Grams",
           "type": "number"
         },
         "l-t": {
