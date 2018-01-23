@@ -1063,15 +1063,6 @@
       },
       "description": "The absorbed dose of ionizing radiation imparted at a given location per unit of time (second, minute, hour, or day). "
     },
-    "acceleration": {
-      "formats": {
-        "m-s2": {
-          "description": "Meters per second squared",
-          "type": "number"
-        }
-      },
-      "description": "The rate of change of linear velocity."
-    },
     "angle": {
       "formats": {
         "deg": {
@@ -1494,6 +1485,15 @@
           "type": "number"
         }
       }
+    },
+    "linear-acceleration": {
+      "formats": {
+        "m-s2": {
+          "description": "Meters per second squared",
+          "type": "number"
+        }
+      },
+      "description": "The rate of change of linear velocity."
     },
     "luminous-intensity": {
       "formats": {
