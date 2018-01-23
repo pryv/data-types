@@ -1502,16 +1502,20 @@
           "description": "Kilograms",
           "type": "number"
         },
+        "g": {
+          "description": "Grams",
+          "type": "number"
+        },
+        "mg": {
+          "description": "MilliGrams",
+          "type": "number"
+        },
         "gr": {
           "description": "Grains",
           "type": "number"
         },
         "dr": {
           "description": "Drams",
-          "type": "number"
-        },
-        "g": {
-          "description": "Grams",
           "type": "number"
         },
         "l-t": {
