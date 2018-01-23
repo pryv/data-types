@@ -91,6 +91,15 @@
         }
       }
     },
+    "date": {
+      "description": "To record a date and time.",
+      "formats": {
+        "iso-8601": {
+          "description": "The ISO 8601 format",
+          "type": "string"
+        }
+      }
+    },
     "encrypted": {
       "description": "For client-side-encrypted events. The decrypted <code>payload</code> is expected to be a JSON object with the regular <code>type</code> and <code>content</code> properties (e.g. <code>{ \"type\": \"..\", \"content\": \"..\" }</code>). If the event has attached files, they are expected to be similarly encrypted.",
       "formats": {
