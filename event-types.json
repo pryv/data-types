@@ -1,6 +1,10 @@
 {
   "version": "0.2.9",
   "classes": {
+    "object":{
+      "description":"Plain old JSON object (no specific format)",
+      "format": null
+    },
     "activity": {
       "description": "The time spent on a given activity (tasks, sports, etc.).",
       "formats": {
