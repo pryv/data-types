@@ -1,0 +1,28 @@
+{
+  "encrypted": {
+    "description": "For client-side-encrypted events. The decrypted <code>payload</code> is expected to be a JSON object with the regular <code>type</code> and <code>content</code> properties (e.g. <code>{ \"type\": \"..\", \"content\": \"..\" }</code>). If the event has attached files, they are expected to be similarly encrypted.",
+    "formats": {
+      "aes-text-base64": {
+        "description": "AES encrypted payload, with a <em>text</em> key and a <em>Base64</em> payload.",
+        "type": "object",
+        "properties": {
+          "payload": {
+            "description": "The encrypted data.",
+            "type": "string"
+          },
+          "keyRef": {
+            "description": "A reference (e.g. id, name in keychain) to the key to use for decryption.",
+            "type": "string"
+          },
+          "hint": {
+            "description": "Alternative to <code>keyRef</code>. A textual hint about which key to use for decryption.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "payload"
+        ]
+      }
+    }
+  }
+}

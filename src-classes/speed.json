@@ -1,0 +1,90 @@
+{
+  "speed": {
+    "formats": {
+      "ft-m": {
+        "description": "Feet/minute",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Feet/minute",
+            "fr": "Pieds/minute"
+          },
+          "symbol": "ft/m"
+        }
+      },
+      "ft-s": {
+        "description": "Feet/second",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Feet/second",
+            "fr": "Pieds/seconde"
+          },
+          "symbol": "ft/s"
+        }
+      },
+      "km-h": {
+        "description": "Kilometers/hour",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilometers/hour",
+            "fr": "Kilomètres/heure"
+          },
+          "symbol": "km/h"
+        }
+      },
+      "kt": {
+        "description": "Knots",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Knots",
+            "fr": "Noeuds"
+          },
+          "symbol": "kt"
+        }
+      },
+      "m-min": {
+        "description": "Miles/minute",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Miles/minute",
+            "fr": "Miles/minute"
+          },
+          "symbol": "m/min"
+        }
+      },
+      "m-s": {
+        "description": "Meters/second",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Meters/second",
+            "fr": "Mètres/seconde"
+          },
+          "symbol": "m/s"
+        }
+      },
+      "mph": {
+        "description": "Miles/hour",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Miles/hour",
+            "fr": "Miles/heure"
+          },
+          "symbol": "mph"
+        }
+      }
+    },
+    "description": "The magnitude of the velocity of an object.",
+    "extras": {
+      "name": {
+        "en": "Speed",
+        "fr": "Vitesse"
+      }
+    }
+  }
+}

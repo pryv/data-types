@@ -1,0 +1,112 @@
+{
+  "area": {
+    "formats": {
+      "ac": {
+        "description": "Acres (imperial)",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Acres (imperial)",
+            "fr": "Acres (anglo-saxon)"
+          },
+          "symbol": "ac"
+        }
+      },
+      "ft2": {
+        "description": "Square feet",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Square feet",
+            "fr": "Pieds carrés"
+          },
+          "symbol": "ft²"
+        }
+      },
+      "ha": {
+        "description": "Hectares",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Hectares",
+            "fr": "Hectares"
+          },
+          "symbol": "ha"
+        }
+      },
+      "in2": {
+        "description": "Square inches",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Square inches",
+            "fr": "Pouces carrés"
+          },
+          "symbol": "in²"
+        }
+      },
+      "km2": {
+        "description": "Square kilometers",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Square kilometers",
+            "fr": "Kilomètres carrés"
+          },
+          "symbol": "km²"
+        }
+      },
+      "m2": {
+        "description": "Square meter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Square meters",
+            "fr": "Mètres carrés"
+          },
+          "symbol": "m²"
+        }
+      },
+      "mm2": {
+        "description": "Square millimeters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Square millimeters",
+            "fr": "Millimètres carrés"
+          },
+          "symbol": "mm²"
+        }
+      },
+      "yd2": {
+        "description": "Square yards",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Square yards",
+            "fr": "Verges carrées"
+          },
+          "symbol": "yd²"
+        }
+      },
+      "mi2": {
+        "description": "Square miles",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Square miles",
+            "fr": "Milles carrés"
+          },
+          "symbol": "mi²"
+        }
+      }
+    },
+    "description": "The extent of a two-dimensional surface or shape, or planar lamina, in the plane.",
+    "extras": {
+      "name": {
+        "en": "Area",
+        "fr": "Aire"
+      }
+    }
+  }
+}

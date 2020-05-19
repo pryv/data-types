@@ -1,0 +1,811 @@
+{
+  "sets": {
+    "basic-measurements-metric": {
+      "name": {
+        "en": "Metric measures (basics)",
+        "fr": "Mesures métriques de base"
+      },
+      "description": {
+        "en": "Kg, m, Km, ... "
+      },
+      "types": {
+        "count": [
+          "generic"
+        ],
+        "length": [
+          "cm",
+          "km",
+          "m",
+          "mm"
+        ],
+        "mass": [
+          "kg",
+          "g",
+          "t"
+        ],
+        "temperature": [
+          "c"
+        ],
+        "ratio": [
+          "percent"
+        ],
+        "speed": [
+          "km-h",
+          "m-s"
+        ],
+        "volume": [
+          "l",
+          "m3",
+          "ml"
+        ]
+      }
+    },
+    "generic-measurements-metric": {
+      "name": {
+        "en": "Metric measures",
+        "fr": "Mesures métriques"
+      },
+      "description": {
+        "en": "Kg, m, Km, ... "
+      },
+      "types": {
+        "area": [
+          "ha",
+          "km2",
+          "m2"
+        ],
+        "electric-current": [
+          "a"
+        ],
+        "electromotive-force": [
+          "v"
+        ],
+        "energy": [
+          "cal",
+          "j",
+          "kcal"
+        ],
+        "frequency": [
+          "hz",
+          "bpm",
+          "rpm"
+        ],
+        "length": [
+          "cm",
+          "km",
+          "m",
+          "mm"
+        ],
+        "mass": [
+          "kg",
+          "g",
+          "t"
+        ],
+        "power": [
+          "hp",
+          "kw",
+          "w"
+        ],
+        "pressure": [
+          "bar",
+          "kg-m2",
+          "pa",
+          "kpa"
+        ],
+        "temperature": [
+          "c"
+        ],
+        "speed": [
+          "km-h",
+          "m-s"
+        ],
+        "volume": [
+          "l",
+          "m3",
+          "ml"
+        ]
+      }
+    },
+    "basic-measurements-imperial": {
+      "name": {
+        "en": "Imperial measures (basics)",
+        "fr": "Mesures, système impérial (de base)"
+      },
+      "description": {
+        "en": "lb, in, ft, ..."
+      },
+      "types": {
+        "count": [
+          "generic"
+        ],
+        "length": [
+          "ch",
+          "lea",
+          "ft",
+          "in",
+          "mi",
+          "fur",
+          "yd"
+        ],
+        "mass": [
+          "lb",
+          "oz",
+          "s-t",
+          "st"
+        ],
+        "temperature": [
+          "f"
+        ],
+        "ratio": [
+          "percent"
+        ],
+        "speed": [
+          "ft-s",
+          "m-min",
+          "mph"
+        ],
+        "volume": [
+          "c",
+          "floz",
+          "galgb",
+          "pt",
+          "qt",
+          "tbs",
+          "tsp"
+        ]
+      }
+    },
+    "generic-measurements-imperial": {
+      "name": {
+        "en": "Imperial measures",
+        "fr": "Mesures, système impérial"
+      },
+      "description": {
+        "en": "lb, in, ft, ..."
+      },
+      "types": {
+        "area": [
+          "ac",
+          "ft2",
+          "in2",
+          "yd2",
+          "mi2"
+        ],
+        "electric-current": [
+          "a"
+        ],
+        "electromotive-force": [
+          "v"
+        ],
+        "energy": [
+          "btu",
+          "erg",
+          "ftlb",
+          "kcal"
+        ],
+        "force": [
+          "pdl"
+        ],
+        "length": [
+          "ch",
+          "lea",
+          "ft",
+          "in",
+          "mi",
+          "fur",
+          "yd"
+        ],
+        "mass": [
+          "lb",
+          "oz",
+          "s-t",
+          "st"
+        ],
+        "power": [
+          "hp"
+        ],
+        "pressure": [
+          "inhg",
+          "psi"
+        ],
+        "temperature": [
+          "f"
+        ],
+        "speed": [
+          "ft-s",
+          "m-min",
+          "mph"
+        ],
+        "volume": [
+          "c",
+          "floz",
+          "galgb",
+          "pt",
+          "qt",
+          "tbs",
+          "tsp"
+        ]
+      }
+    },
+    "basic-measurements-us": {
+      "name": {
+        "en": "US measures (basics)",
+        "fr": "Mesures USA (de base)"
+      },
+      "description": {
+        "en": "yd, mil, oz, ..."
+      },
+      "types": {
+        "count": [
+          "generic"
+        ],
+        "length": [
+          "ch",
+          "ft",
+          "in",
+          "mil",
+          "mi",
+          "fur",
+          "p",
+          "pica",
+          "yd"
+        ],
+        "mass": [
+          "gr",
+          "dr",
+          "l-t",
+          "lb",
+          "oz"
+        ],
+        "temperature": [
+          "f"
+        ],
+        "ratio": [
+          "percent"
+        ],
+        "speed": [
+          "ft-s",
+          "m-min",
+          "mph"
+        ],
+        "volume": [
+          "c",
+          "floz",
+          "ft3",
+          "galus",
+          "in3",
+          "yd3",
+          "pt",
+          "qt",
+          "bbloil",
+          "tbs",
+          "tsp"
+        ]
+      }
+    },
+    "generic-measurements-us": {
+      "name": {
+        "en": "US measures",
+        "fr": "Mesures USA"
+      },
+      "description": {
+        "en": "yd, mil, oz, ..."
+      },
+      "types": {
+        "area": [
+          "ac",
+          "ft2",
+          "in2",
+          "yd2"
+        ],
+        "electric-current": [
+          "a"
+        ],
+        "electromotive-force": [
+          "v"
+        ],
+        "length": [
+          "ch",
+          "ft",
+          "in",
+          "mil",
+          "mi",
+          "fur",
+          "p",
+          "pica",
+          "yd"
+        ],
+        "mass": [
+          "gr",
+          "dr",
+          "l-t",
+          "lb",
+          "oz"
+        ],
+        "power": [
+          "hp"
+        ],
+        "pressure": [
+          "inhg",
+          "psi"
+        ],
+        "temperature": [
+          "f"
+        ],
+        "speed": [
+          "ft-s",
+          "m-min",
+          "mph"
+        ],
+        "volume": [
+          "c",
+          "floz",
+          "ft3",
+          "galus",
+          "in3",
+          "yd3",
+          "pt",
+          "qt",
+          "bbloil",
+          "tbs",
+          "tsp"
+        ]
+      }
+    },
+    "money-most-used": {
+      "name": {
+        "en": "Most used currencies",
+        "fr": "Devises les plus utilisées"
+      },
+      "description": {
+        "en": "$, €, ¥, ..."
+      },
+      "types": {
+        "money": [
+          "eur",
+          "usd",
+          "cny",
+          "gbp",
+          "jpy",
+          "chf",
+          "cad"
+        ]
+      }
+    },
+    "money-europe": {
+      "name": {
+        "en": "Currencies Europe",
+        "fr": "Devises Europe"
+      },
+      "description": {
+        "en": "€, £, CHF, ..."
+      },
+      "types": {
+        "money": [
+          "all",
+          "byr",
+          "bam",
+          "bgn",
+          "hrk",
+          "czk",
+          "dkk",
+          "eek",
+          "eur",
+          "fkp",
+          "gip",
+          "ggp",
+          "huf",
+          "isk",
+          "irr",
+          "jep",
+          "lvl",
+          "ltl",
+          "mkd",
+          "ang",
+          "nok",
+          "pln",
+          "ron",
+          "rub",
+          "shp",
+          "rsd",
+          "sek",
+          "chf",
+          "try",
+          "trl",
+          "uah",
+          "gbp"
+        ]
+      }
+    },
+    "money-america": {
+      "name": {
+        "en": "Currencies Americas",
+        "fr": "Devises Amériques"
+      },
+      "description": {
+        "en": "$US, $CAD,  BRL, ..."
+      },
+      "types": {
+        "money": [
+          "ars",
+          "bsd",
+          "bbd",
+          "bzd",
+          "bmd",
+          "bob",
+          "brl",
+          "cad",
+          "kyd",
+          "clp",
+          "cop",
+          "crc",
+          "cup",
+          "dop",
+          "xcd",
+          "svc",
+          "fjd",
+          "gtq",
+          "gyd",
+          "jmd",
+          "mxn",
+          "nio",
+          "pab",
+          "pyg",
+          "pen",
+          "shp",
+          "srd",
+          "ttd",
+          "usd",
+          "uyu",
+          "vef"
+        ]
+      }
+    },
+    "money-asia": {
+      "name": {
+        "en": "Currencies Asia",
+        "fr": "Devises Asie"
+      },
+      "description": {
+        "en": "¥, 元, INR, ..."
+      },
+      "types": {
+        "money": [
+          "azn",
+          "khr",
+          "cny",
+          "hnl",
+          "inr",
+          "idr",
+          "jpy",
+          "kzt",
+          "kpw",
+          "krw",
+          "kgs",
+          "lak",
+          "myr",
+          "mur",
+          "mnt",
+          "npr",
+          "pkr",
+          "rub",
+          "scr",
+          "sgd",
+          "lkr",
+          "syp",
+          "twd",
+          "thb",
+          "try",
+          "trl",
+          "uzs",
+          "vnd"
+        ]
+      }
+    },
+    "money-africa": {
+      "name": {
+        "en": "Currencies Africa",
+        "fr": "Devises Afrique"
+      },
+      "description": {
+        "en": "BWP, EGP, GHC, ..."
+      },
+      "types": {
+        "money": [
+          "bwp",
+          "egp",
+          "ghc",
+          "mzn",
+          "nad",
+          "ngn",
+          "sos",
+          "zar",
+          "zwd"
+        ]
+      }
+    },
+    "money-indonesia-australia": {
+      "name": {
+        "en": "Currencies Oceania & Indonesia",
+        "fr": "Devises Océanie & Indonésie"
+      },
+      "description": {
+        "en": "$AU, $NZ, PHP, ... "
+      },
+      "types": {
+        "money": [
+          "aud",
+          "nzd",
+          "php",
+          "sbd",
+          "tvd"
+        ]
+      }
+    },
+    "money-middleeast": {
+      "name": {
+        "en": "Currencies Middle East",
+        "fr": "Devises Moyen-Orient"
+      },
+      "description": {
+        "en": "AFN, BND, OMR, ...."
+      },
+      "types": {
+        "money": [
+          "afn",
+          "bnd",
+          "egp",
+          "imp",
+          "lbp",
+          "omr",
+          "qar",
+          "sar",
+          "syp",
+          "yer"
+        ]
+      }
+    },
+    "generic-medical": {
+      "name": {
+        "en": "Common health mesures",
+        "fr": "Mesures de santé courantes"
+      },
+      "description": {
+        "en": "mmhg, bpm, ..."
+      },
+      "types": {
+        "count": [
+          "steps"
+        ],
+        "density": [
+          "mg-dl",
+          "mmol-l"
+        ],
+        "pressure": [
+          "mmhg"
+        ],
+        "frequency": [
+          "bpm"
+        ]
+      }
+    },
+    "navigation": {
+      "name": {
+        "en": "Navigation",
+        "fr": "Navigation"
+      },
+      "description": {
+        "en": "nmi, °, kt, ..."
+      },
+      "types": {
+        "angle": [
+          "deg",
+          "grad",
+          "rad"
+        ],
+        "length": [
+          "nmi",
+          "ftm",
+          "cb"
+        ],
+        "speed": [
+          "kt"
+        ]
+      }
+    },
+    "all-measures": {
+      "name": {
+        "en": "All measures",
+        "fr": "Toutes les mesures"
+      },
+      "types": {
+        "absorbed-dose": [
+          "gy"
+        ],
+        "absorbed-dose-equivalent": [
+          "sv"
+        ],
+        "absorbed-dose-rate": [
+          "gy-s"
+        ],
+        "mol": [
+          "mol"
+        ],
+        "angle": [
+          "deg",
+          "grad",
+          "rad"
+        ],
+        "angular-acceleration": [
+          "rad-s2"
+        ],
+        "area": [
+          "ac",
+          "ft2",
+          "ha",
+          "in2",
+          "km2",
+          "m2",
+          "mm2",
+          "yd2",
+          "mi2"
+        ],
+        "capacitance": [
+          "f"
+        ],
+        "catalytic-activity": [
+          "kat"
+        ],
+        "data-quantity": [
+          "b",
+          "bits",
+          "gb",
+          "gbits",
+          "kb",
+          "kbits",
+          "mb",
+          "mbits",
+          "tb"
+        ],
+        "density": [
+          "g-dl",
+          "kg-m3",
+          "mg-dl",
+          "mmol-l"
+        ],
+        "time": [
+          "d",
+          "h",
+          "min",
+          "ms",
+          "s",
+          "y"
+        ],
+        "dynamic-viscosity": [
+          "pa-s"
+        ],
+        "electric-charge": [
+          "c"
+        ],
+        "electric-charge-line-density": [
+          "c-m"
+        ],
+        "electric-current": [
+          "a"
+        ],
+        "electrical-conductivity": [
+          "s"
+        ],
+        "electromotive-force": [
+          "v"
+        ],
+        "energy": [
+          "btu",
+          "cal",
+          "ev",
+          "erg",
+          "ftlb",
+          "j",
+          "kcal",
+          "ws",
+          "kwh",
+          "nm",
+          "wh"
+        ],
+        "force": [
+          "dyn",
+          "n",
+          "pdl"
+        ],
+        "length": [
+          "a",
+          "au",
+          "cm",
+          "ch",
+          "lea",
+          "ft",
+          "in",
+          "km",
+          "ly",
+          "m",
+          "mil",
+          "mi",
+          "fur",
+          "mm",
+          "nmi",
+          "p",
+          "pica",
+          "ftm",
+          "cb",
+          "um",
+          "yd"
+        ],
+        "luminous-intensity": [
+          "cd"
+        ],
+        "mass": [
+          "gr",
+          "dr",
+          "kg",
+          "g",
+          "l-t",
+          "lb",
+          "t",
+          "oz",
+          "s-t",
+          "st"
+        ],
+        "power": [
+          "btu-min",
+          "ftlb-s",
+          "hp",
+          "kw",
+          "w"
+        ],
+        "pressure": [
+          "at",
+          "bar",
+          "cmhg",
+          "inhg",
+          "kg-m2",
+          "pa",
+          "kpa",
+          "psf",
+          "psi"
+        ],
+        "temperature": [
+          "c",
+          "f",
+          "k"
+        ],
+        "speed": [
+          "ft-m",
+          "ft-s",
+          "km-h",
+          "kt",
+          "m-min",
+          "m-s",
+          "mph"
+        ],
+        "volume": [
+          "c",
+          "cm3",
+          "floz",
+          "ft3",
+          "galgb",
+          "galus",
+          "in3",
+          "yd3",
+          "l",
+          "m3",
+          "ml",
+          "pt",
+          "qt",
+          "bbloil",
+          "tbs",
+          "tsp"
+        ]
+      }
+    }
+  }
+}

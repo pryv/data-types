@@ -1,0 +1,11 @@
+{
+  "angular-speed": {
+    "formats": {
+      "rad-s": {
+        "description": "Radians per second",
+        "type": "number"
+      }
+    },
+    "description": ""
+  }
+}

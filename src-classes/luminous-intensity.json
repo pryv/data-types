@@ -1,0 +1,24 @@
+{
+  "luminous-intensity": {
+    "formats": {
+      "cd": {
+        "description": "Candela",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Candelas",
+            "fr": "Candelas"
+          },
+          "symbol": "Cd"
+        }
+      }
+    },
+    "description": "The wavelength-weighted power emitted by a light source.",
+    "extras": {
+      "name": {
+        "en": "Luminous intensity",
+        "fr": "Intensité lumineuse"
+      }
+    }
+  }
+}

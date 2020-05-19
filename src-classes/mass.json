@@ -1,0 +1,127 @@
+{
+  "mass": {
+    "description": "The heaviness of an object.",
+    "formats": {
+      "kg": {
+        "description": "Kilograms",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilograms",
+            "fr": "Kilogrammes"
+          },
+          "symbol": "Kg"
+        }
+      },
+      "g": {
+        "description": "Grams",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Grams",
+            "fr": "Grammes"
+          },
+          "symbol": "g"
+        }
+      },
+      "mg": {
+        "description": "MilliGrams",
+        "type": "number"
+      },
+      "gr": {
+        "description": "Grains",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Grains",
+            "fr": "Grains"
+          },
+          "symbol": "gr"
+        }
+      },
+      "dr": {
+        "description": "Drams",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Drams",
+            "fr": "Drams"
+          },
+          "symbol": "dr"
+        }
+      },
+      "l-t": {
+        "description": "Long tons",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Long tons",
+            "fr": "Tonnes longues"
+          },
+          "symbol": "L/T"
+        }
+      },
+      "lb": {
+        "description": "Pounds",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Pounds",
+            "fr": "Livres"
+          },
+          "symbol": "lb"
+        }
+      },
+      "t": {
+        "description": "Metric tons",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Metric tons",
+            "fr": "Tonnes métriques"
+          },
+          "symbol": "Mg"
+        }
+      },
+      "oz": {
+        "description": "Ounces",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Ounces",
+            "fr": "Onces"
+          },
+          "symbol": "oz"
+        }
+      },
+      "s-t": {
+        "description": "Short tons",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Short tons",
+            "fr": "Tonnes courtes"
+          },
+          "symbol": "S/T"
+        }
+      },
+      "st": {
+        "description": "Stone",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Stones",
+            "fr": "Stones"
+          },
+          "symbol": "st"
+        }
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Mass",
+        "fr": "Masse"
+      }
+    }
+  }
+}

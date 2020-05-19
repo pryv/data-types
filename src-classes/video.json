@@ -1,0 +1,25 @@
+{
+  "video": {
+    "description": "To record video (home snippets, Vimeo or YouTube links, etc.).",
+    "formats": {
+      "attached": {
+        "description": "The video is the file attached to the event (no explicit content defined). TODO: list accepted formats.",
+        "type": "null",
+        "attachmentRequired": true
+      },
+      "url": {
+        "description": "A reference to an video file online.",
+        "type": "string",
+        "pattern": "^(https?)://.+$"
+      },
+      "vimeo": {
+        "description": "A Vimeo video ID.",
+        "type": "string"
+      },
+      "youtube": {
+        "description": "A YouTube video ID.",
+        "type": "string"
+      }
+    }
+  }
+}

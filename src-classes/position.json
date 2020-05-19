@@ -1,0 +1,45 @@
+{
+  "position": {
+    "description": "To record a geographical position.",
+    "formats": {
+      "wgs84": {
+        "description": "The latest revision of the World Geodetic System (used by GPS).",
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number",
+            "description": "Unit: degrees north from the equator."
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Unit: degrees east from the zero meridian."
+          },
+          "altitude": {
+            "type": "number",
+            "description": "Unit: meters above sea level."
+          },
+          "horizontalAccuracy": {
+            "type": "number",
+            "description": "The radius of uncertainty for latitude and longitude. Unit: meters. Negative if latitude and longitude are invalid."
+          },
+          "verticalAccuracy": {
+            "type": "number",
+            "description": "The radius of uncertainty for altitude. Unit: meters. Negative if altitude is invalid."
+          },
+          "speed": {
+            "type": "number",
+            "description": "For informational purposes only. Unit: meters / second. Negative if invalid."
+          },
+          "bearing": {
+            "type": "number",
+            "description": "Unit: degrees clockwise from north. Negative if invalid."
+          }
+        },
+        "required": [
+          "latitude",
+          "longitude"
+        ]
+      }
+    }
+  }
+}

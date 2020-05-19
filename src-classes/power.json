@@ -1,0 +1,68 @@
+{
+  "power": {
+    "formats": {
+      "btu-min": {
+        "description": "BTUs/minute",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "BTUs/minute",
+            "fr": "BTUs/minute"
+          },
+          "symbol": "BTU/min"
+        }
+      },
+      "ftlb-s": {
+        "description": "Foot-pounds/second",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Foot-pounds/second",
+            "fr": "Pied-livres/seconde"
+          },
+          "symbol": "ft·lb/s"
+        }
+      },
+      "hp": {
+        "description": "Horsepower",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Horsepower",
+            "fr": "Chevaux"
+          },
+          "symbol": "hp"
+        }
+      },
+      "kw": {
+        "description": "Kilowatts",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilowatts",
+            "fr": "Kilowatts"
+          },
+          "symbol": "kW"
+        }
+      },
+      "w": {
+        "description": "Watts",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Watts",
+            "fr": "Watts"
+          },
+          "symbol": "W"
+        }
+      }
+    },
+    "description": "The rate at which energy is transferred, used, or transformed.",
+    "extras": {
+      "name": {
+        "en": "Power",
+        "fr": "Puissance"
+      }
+    }
+  }
+}

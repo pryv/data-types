@@ -1,0 +1,35 @@
+{
+  "note": {
+    "description": "To record different kinds of text-based notes, from simple text to more complex formatted content like social network posts.",
+    "formats": {
+      "html": {
+        "description": "An HTML-formatted note.",
+        "type": "string",
+        "maxLength": 4194304
+      },
+      "txt": {
+        "description": "A plain-text note.",
+        "type": "string",
+        "maxLength": 4194304
+      },
+      "webclip": {
+        "description": "An HTML-formatted note associated to its source URL.",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "pattern": "^(https?)://.+$"
+          },
+          "content": {
+            "description": "An HTML-formatted string.",
+            "type": "string",
+            "maxLength": 4194304
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
+  }
+}

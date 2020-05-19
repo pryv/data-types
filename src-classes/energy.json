@@ -1,0 +1,134 @@
+{
+  "energy": {
+    "formats": {
+      "btu": {
+        "description": "British Thermal Units",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "British thermal units",
+            "fr": "British thermal units"
+          },
+          "symbol": "BTU"
+        }
+      },
+      "cal": {
+        "description": "Calories",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Calories",
+            "fr": "Calories"
+          },
+          "symbol": "cal"
+        }
+      },
+      "ev": {
+        "description": "Electron-Volts",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Electron-volts",
+            "fr": "Électron-volts"
+          },
+          "symbol": "eV"
+        }
+      },
+      "erg": {
+        "description": "Ergs",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Ergs",
+            "fr": "Ergs"
+          },
+          "symbol": "Erg"
+        }
+      },
+      "ftlb": {
+        "description": "Foot-Pounds",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Foot-pounds",
+            "fr": "Pied-livres"
+          },
+          "symbol": "ft·lb"
+        }
+      },
+      "j": {
+        "description": "Joules",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Joules",
+            "fr": "Joules"
+          },
+          "symbol": "J"
+        }
+      },
+      "kcal": {
+        "description": "Kilo-calories",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilogram-calories",
+            "fr": "Kilocalories"
+          },
+          "symbol": "kg·cal"
+        }
+      },
+      "ws": {
+        "description": "Watt-seconds",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Watt-seconds",
+            "fr": "Watt-secondes"
+          },
+          "symbol": "Ws"
+        }
+      },
+      "kwh": {
+        "description": "Kilowatt-hours",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilowatt-hours",
+            "fr": "Kilowatt-heures"
+          },
+          "symbol": "kW·h"
+        }
+      },
+      "nm": {
+        "description": "Newton-meters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Newton-meters",
+            "fr": "Newton-mètres"
+          },
+          "symbol": "N·m"
+        }
+      },
+      "wh": {
+        "description": "Watt-hours",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Watt-hours",
+            "fr": "Watt-heures"
+          },
+          "symbol": "W·h"
+        }
+      }
+    },
+    "description": "The capacity of a physical system to perform work.",
+    "extras": {
+      "name": {
+        "en": "Energy",
+        "fr": "Energie"
+      }
+    }
+  }
+}

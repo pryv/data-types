@@ -1,0 +1,19 @@
+{
+  "call": {
+    "description": "To record references to phone calls (landline, mobile, Skype, etc.).",
+    "formats": {
+      "name": {
+        "description": "The contact's name (or a free-form identifier)",
+        "type": "string"
+      },
+      "skype": {
+        "description": "The Skype id",
+        "type": "string"
+      },
+      "telephone": {
+        "description": "The phone number",
+        "type": "string"
+      }
+    }
+  }
+}

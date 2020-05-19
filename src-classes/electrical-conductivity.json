@@ -1,0 +1,24 @@
+{
+  "electrical-conductivity": {
+    "formats": {
+      "s": {
+        "description": "Siemens",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Siemens",
+            "fr": "Siemens"
+          },
+          "symbol": "S"
+        }
+      }
+    },
+    "description": "A material that accommodates the transport of electric charge.",
+    "extras": {
+      "name": {
+        "en": "Electrical conductivity",
+        "fr": "Conductivité électrique"
+      }
+    }
+  }
+}

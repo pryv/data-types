@@ -1,0 +1,24 @@
+{
+  "electric-charge-line-density": {
+    "formats": {
+      "c-m": {
+        "description": "Coulomb per meter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Coulombs/meter",
+            "fr": "Coulombs/mètre"
+          },
+          "symbol": "C/m"
+        }
+      }
+    },
+    "description": "The electric charge per unit volume of space, in one, two or three dimensions.",
+    "extras": {
+      "name": {
+        "en": "Electric charge line density",
+        "fr": "Densité linéique de charge électrique"
+      }
+    }
+  }
+}

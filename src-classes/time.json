@@ -1,0 +1,79 @@
+{
+  "time": {
+    "description": "Amount of time. Use with care! To store an activity or duration the \"activity/plain\" event type is more appropriate, in most cases.",
+    "formats": {
+      "d": {
+        "description": "Days",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Days",
+            "fr": "Jours"
+          },
+          "symbol": "d"
+        }
+      },
+      "h": {
+        "description": "Hours",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Hours",
+            "fr": "Heures"
+          },
+          "symbol": "h"
+        }
+      },
+      "min": {
+        "description": "Minutes",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Minutes",
+            "fr": "Minutes"
+          },
+          "symbol": "min"
+        }
+      },
+      "ms": {
+        "description": "Milliseconds",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Milliseconds",
+            "fr": "Millisecondes"
+          },
+          "symbol": "ms"
+        }
+      },
+      "s": {
+        "description": "Seconds",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Seconds",
+            "fr": "Secondes"
+          },
+          "symbol": "s"
+        }
+      },
+      "y": {
+        "description": "Years",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Years (Julian)",
+            "fr": "Années (juliennes)"
+          },
+          "symbol": "yr"
+        }
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Time",
+        "fr": "Temps"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "electric-charge": {
+    "formats": {
+      "c": {
+        "description": "Coulomb ",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Coulombs",
+            "fr": "Coulombs"
+          },
+          "symbol": "C"
+        }
+      }
+    },
+    "description": "The electric charge of an object.",
+    "extras": {
+      "name": {
+        "en": "Electric charge",
+        "fr": "Charge électrique"
+      }
+    }
+  }
+}

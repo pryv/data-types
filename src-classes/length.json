@@ -1,0 +1,244 @@
+{
+  "length": {
+    "description": "Length measurements. Format = unit.",
+    "formats": {
+      "cm": {
+        "description": "Centimeters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Centimeters",
+            "fr": "Centimètres"
+          },
+          "symbol": "cm"
+        }
+      },
+      "m": {
+        "description": "Meters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Meters",
+            "fr": "Mètres"
+          },
+          "symbol": "m"
+        }
+      },
+      "mm": {
+        "description": "Millimeters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Millimeters",
+            "fr": "Millimètres"
+          },
+          "symbol": "mm"
+        }
+      },
+      "km": {
+        "description": "Kilometers",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilometers",
+            "fr": "Kilomètres"
+          },
+          "symbol": "km"
+        }
+      },
+      "a": {
+        "description": "Ångströms",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Ångströms",
+            "fr": "Ångströms"
+          },
+          "symbol": "Å"
+        }
+      },
+      "au": {
+        "description": "Astronomical units",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Astronomical units",
+            "fr": "Unités astronomiques"
+          },
+          "symbol": "AU"
+        }
+      },
+      "ch": {
+        "description": "Chains",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Chains",
+            "fr": "Chaînes"
+          },
+          "symbol": "ch"
+        }
+      },
+      "lea": {
+        "description": "Leagues",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Leagues",
+            "fr": "Lieues"
+          },
+          "symbol": "lea"
+        }
+      },
+      "ft": {
+        "description": "Feet",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Feet",
+            "fr": "Pieds"
+          },
+          "symbol": "ft"
+        }
+      },
+      "in": {
+        "description": "Inches",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Inches",
+            "fr": "Pouces"
+          },
+          "symbol": "In"
+        }
+      },
+      "ly": {
+        "description": "Light-years",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Light-years",
+            "fr": "Années-lumière"
+          },
+          "symbol": "ly"
+        }
+      },
+      "mil": {
+        "description": "Mil",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Mils",
+            "fr": "Mils"
+          },
+          "symbol": "mil"
+        }
+      },
+      "mi": {
+        "description": "Miles",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Miles",
+            "fr": "Miles"
+          },
+          "symbol": "mi"
+        }
+      },
+      "fur": {
+        "description": "Furlongs",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Furlongs",
+            "fr": "Furlongs"
+          },
+          "symbol": "fur"
+        }
+      },
+      "nmi": {
+        "description": "Miles (nautical)",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Miles (nautical)",
+            "fr": "Miles nautiques"
+          },
+          "symbol": "nmi"
+        }
+      },
+      "p": {
+        "description": "Points",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Points",
+            "fr": "Points"
+          },
+          "symbol": "p"
+        }
+      },
+      "pica": {
+        "description": "Picas",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Picas",
+            "fr": "Picas"
+          },
+          "symbol": "P̸"
+        }
+      },
+      "ftm": {
+        "description": "Fathoms",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Fathoms",
+            "fr": "Fathoms"
+          },
+          "symbol": "ftm"
+        }
+      },
+      "cb": {
+        "description": "Cables",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cables",
+            "fr": "Cables"
+          },
+          "symbol": "cb"
+        }
+      },
+      "um": {
+        "description": "Microns",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Microns",
+            "fr": "Microns"
+          },
+          "symbol": "µm"
+        }
+      },
+      "yd": {
+        "description": "Yards",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Yards",
+            "fr": "Verges"
+          },
+          "symbol": "yd"
+        }
+      }
+    },
+    "extras": {
+      "name": {
+        "fr": "Longueur",
+        "en": "Length"
+      }
+    }
+  }
+}

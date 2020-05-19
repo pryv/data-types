@@ -1,0 +1,24 @@
+{
+  "dynamic-viscosity": {
+    "formats": {
+      "pa-s": {
+        "description": "Pascal second",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Pascals/second",
+            "fr": "Pascals/seconde"
+          },
+          "symbol": "Pa/s"
+        }
+      }
+    },
+    "description": "The resistance to flow of a fluid under an applied force.",
+    "extras": {
+      "name": {
+        "en": "Dynamic viscosity",
+        "fr": "Viscosité dynamique"
+      }
+    }
+  }
+}

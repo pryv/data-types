@@ -1,0 +1,24 @@
+{
+  "contact": {
+    "description": "To record events related to people (meeting someone special, business encounters, etc.).",
+    "formats": {
+      "facebook": {
+        "type": "object",
+        "description": "A Facebook user as specified in the Graph API: https://developers.facebook.com/docs/reference/api/user/",
+        "additionalProperties": "true",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "vcard": {
+        "description": "A business card in vCard 2.0-3.x format. See: rfc2425, rfc2426.",
+        "type": "string"
+      }
+    }
+  }
+}

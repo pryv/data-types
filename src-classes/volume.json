@@ -1,0 +1,189 @@
+{
+  "volume": {
+    "description": "The quantity of three-dimensional space enclosed by some closed boundary.",
+    "formats": {
+      "l": {
+        "description": "Liters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Liters",
+            "fr": "Litres"
+          },
+          "symbol": "L"
+        }
+      },
+      "m3": {
+        "description": "Cubic meters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cubic meters",
+            "fr": "Mètres cube"
+          },
+          "symbol": "m³"
+        }
+      },
+      "c": {
+        "description": "Cups",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cups",
+            "fr": "Tasses"
+          },
+          "symbol": "c"
+        }
+      },
+      "cm3": {
+        "description": "Cubic centimeters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cubic centimeters",
+            "fr": "Centimètres cube"
+          },
+          "symbol": "cm³"
+        }
+      },
+      "floz": {
+        "description": "Fluid ounces",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Fluid ounces",
+            "fr": "Onces liquides"
+          },
+          "symbol": "fl oz"
+        }
+      },
+      "ft3": {
+        "description": "Cubic feet",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cubic feet",
+            "fr": "Pieds cube"
+          },
+          "symbol": "cu ft"
+        }
+      },
+      "galgb": {
+        "description": "Gallons imperial",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Gallons imperial",
+            "fr": "Gallons impériaux"
+          },
+          "symbol": "gal GB"
+        }
+      },
+      "galus": {
+        "description": "Gallons US",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Gallons US",
+            "fr": "Gallons US"
+          },
+          "symbol": "gal US"
+        }
+      },
+      "in3": {
+        "description": "Cubic inches",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cubic inches",
+            "fr": "Pouce cube"
+          },
+          "symbol": "cu in"
+        }
+      },
+      "yd3": {
+        "description": "Cubic yard",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cubic yards",
+            "fr": "Verges cube"
+          },
+          "symbol": "cu yd"
+        }
+      },
+      "ml": {
+        "description": "Milliliters",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Milliliters",
+            "fr": "Millilitres"
+          },
+          "symbol": "mL"
+        }
+      },
+      "pt": {
+        "description": "Pints",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Pints",
+            "fr": "Pintes"
+          },
+          "symbol": "pt"
+        }
+      },
+      "qt": {
+        "description": "Quarts",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Quarts",
+            "fr": "Quarts"
+          },
+          "symbol": "qt"
+        }
+      },
+      "bbloil": {
+        "description": "Barrels (oil)",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Barrels (oil)",
+            "fr": "Barils (pétrole)"
+          },
+          "symbol": "bbl (oil)"
+        }
+      },
+      "tbs": {
+        "description": "Tablespoons",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Tablespoons",
+            "fr": "Cuillères à soupe"
+          },
+          "symbol": "tbs"
+        }
+      },
+      "tsp": {
+        "description": "Teaspoons",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Teaspoons",
+            "fr": "Cuillères à café"
+          },
+          "symbol": "tsp"
+        }
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Volume",
+        "fr": "Volume"
+      }
+    }
+  }
+}

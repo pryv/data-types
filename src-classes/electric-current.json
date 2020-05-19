@@ -1,0 +1,24 @@
+{
+  "electric-current": {
+    "formats": {
+      "a": {
+        "description": "Ampere",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Amperes",
+            "fr": "Ampères"
+          },
+          "symbol": "A"
+        }
+      }
+    },
+    "description": "A flow of electric charge.",
+    "extras": {
+      "name": {
+        "en": "Electric current",
+        "fr": "Courant électrique"
+      }
+    }
+  }
+}

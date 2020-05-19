@@ -1,0 +1,11 @@
+{
+  "date": {
+    "description": "To record a date and time.",
+    "formats": {
+      "iso-8601": {
+        "description": "The ISO 8601 format",
+        "type": "string"
+      }
+    }
+  }
+}

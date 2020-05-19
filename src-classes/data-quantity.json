@@ -1,0 +1,112 @@
+{
+  "data-quantity": {
+    "formats": {
+      "b": {
+        "description": "Bytes",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Bytes",
+            "fr": "Octets"
+          },
+          "symbol": "B"
+        }
+      },
+      "bits": {
+        "description": "Bits",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Bits",
+            "fr": "Bits"
+          },
+          "symbol": "bit"
+        }
+      },
+      "gb": {
+        "description": "Gigabytes",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Gigabytes",
+            "fr": "Gigaoctets"
+          },
+          "symbol": "Gb"
+        }
+      },
+      "gbits": {
+        "description": "Gigabits",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Gigabits",
+            "fr": "Gigabits"
+          },
+          "symbol": "Gbit"
+        }
+      },
+      "kb": {
+        "description": "Kilobytes",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilobytes",
+            "fr": "Kilooctets"
+          },
+          "symbol": "Kb"
+        }
+      },
+      "kbits": {
+        "description": "Kilobits",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilobits",
+            "fr": "Kilobits"
+          },
+          "symbol": "Kbit"
+        }
+      },
+      "mb": {
+        "description": "Megabytes",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Megabytes",
+            "fr": "Megaoctets"
+          },
+          "symbol": "Mb"
+        }
+      },
+      "mbits": {
+        "description": "Megabits",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Megabits",
+            "fr": "Megabits"
+          },
+          "symbol": "Mbit"
+        }
+      },
+      "tb": {
+        "description": "Terabytes",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Terabytes",
+            "fr": "Teraoctets"
+          },
+          "symbol": "Tb"
+        }
+      }
+    },
+    "description": "Unit of information in computing and digital communications.",
+    "extras": {
+      "name": {
+        "en": "Data quantity",
+        "fr": "Quantité de données"
+      }
+    }
+  }
+}

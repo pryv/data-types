@@ -1,0 +1,74 @@
+{
+  "frequency": {
+    "description": "The number of occurrences of a repeating event per unit time.",
+    "formats": {
+      "bpm": {
+        "description": "Beats per minute",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Beats per minute",
+            "fr": "Battements par minute"
+          },
+          "symbol": "bpm"
+        }
+      },
+      "ghz": {
+        "description": "Gigahertz",
+        "type": "number"
+      },
+      "hz": {
+        "description": "Hertz (also known as cycles per second) ",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Hertz",
+            "fr": "Hertz"
+          },
+          "symbol": "Hz"
+        }
+      },
+      "khz": {
+        "description": "Kilohertz",
+        "type": "number"
+      },
+      "megahz": {
+        "description": "Megahertz",
+        "type": "number"
+      },
+      "millihz": {
+        "description": "Millihertz",
+        "type": "number"
+      },
+      "nhz": {
+        "description": "Nanohertz",
+        "type": "number"
+      },
+      "rpm": {
+        "description": "Revolutions per minute",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Revolutions per minute",
+            "fr": "Rotations par minute"
+          },
+          "symbol": "rpm"
+        }
+      },
+      "thz": {
+        "description": "Terahertz",
+        "type": "number"
+      },
+      "uhz": {
+        "description": "Microhertz",
+        "type": "number"
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Frequency",
+        "fr": "Fréquence"
+      }
+    }
+  }
+}

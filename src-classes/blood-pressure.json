@@ -1,0 +1,29 @@
+{
+  "blood-pressure": {
+    "description": "To record a blood pressure measurement.",
+    "formats": {
+      "mmhg-bpm": {
+        "description": "The blood pressure measurement. Pressures are stored in mmHg and the heart rate in bpm",
+        "type": "object",
+        "properties": {
+          "systolic": {
+            "description": "Systolic pressure. Unit: mmHg.",
+            "type": "number"
+          },
+          "diastolic": {
+            "description": "Diastolic pressure. Unit: mmHg.",
+            "type": "number"
+          },
+          "rate": {
+            "description": "Heart rate. Unit: bpm",
+            "type": "number"
+          }
+        },
+        "required": [
+          "systolic",
+          "diastolic"
+        ]
+      }
+    }
+  }
+}

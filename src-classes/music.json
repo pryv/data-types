@@ -1,0 +1,44 @@
+{
+  "music": {
+    "description": "To record references to music, usualy tracks (from Soundcloud, Shazam tags, etc.).",
+    "formats": {
+      "basic": {
+        "description": "Inspired from id3 key/pair",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "artist": {
+            "type": "string"
+          },
+          "album": {
+            "type": "string"
+          },
+          "track": {
+            "type": "integer"
+          },
+          "year": {
+            "type": "integer"
+          },
+          "genre": {
+            "type": "string"
+          }
+        }
+      },
+      "soundcloud": {
+        "description": "See [Soundcloud track properties](http://developers.soundcloud.com/docs/api/reference#tracks).",
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+}

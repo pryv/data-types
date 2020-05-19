@@ -1,0 +1,24 @@
+{
+  "absorbed-dose": {
+    "formats": {
+      "gy": {
+        "description": "Gray",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Grays",
+            "fr": "Grays"
+          },
+          "symbol": "Gy"
+        }
+      }
+    },
+    "description": "The energy deposited in a medium by ionizing radiation per unit mass.",
+    "extras": {
+      "name": {
+        "en": "Absorbed dose",
+        "fr": "Dose absorbée"
+      }
+    }
+  }
+}

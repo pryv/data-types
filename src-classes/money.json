@@ -1,0 +1,1240 @@
+{
+  "money": {
+    "description": "To record sums of money (expenses, loans, stock values, etc.). Format = currency. Based on ISO 4217.",
+    "formats": {
+      "aed": {
+        "type": "number"
+      },
+      "ang": {
+        "type": "number",
+        "description": "Netherlands Antilles Guilder",
+        "extras": {
+          "name": {
+            "en": "Netherlands Antilles Guilder",
+            "fr": "Florin des Antilles"
+          },
+          "symbol": "ƒ"
+        }
+      },
+      "ars": {
+        "type": "number",
+        "description": "Argentina Peso",
+        "extras": {
+          "name": {
+            "en": "Argentina Peso",
+            "fr": "Peso argentin"
+          },
+          "symbol": "$"
+        }
+      },
+      "aud": {
+        "type": "number",
+        "description": "Australia Dollar",
+        "extras": {
+          "name": {
+            "en": "Australia Dollar",
+            "fr": "Dollar australien"
+          },
+          "symbol": "$"
+        }
+      },
+      "bgn": {
+        "type": "number",
+        "description": "Bulgaria Lev",
+        "extras": {
+          "name": {
+            "en": "Bulgaria Lev",
+            "fr": "Bulgarian Lev"
+          },
+          "symbol": "лв"
+        }
+      },
+      "bhd": {
+        "type": "number"
+      },
+      "bnd": {
+        "type": "number",
+        "description": "Brunei Darussalam Dollar",
+        "extras": {
+          "name": {
+            "en": "Brunei Darussalam Dollar",
+            "fr": "Dollar de Brunei"
+          },
+          "symbol": "$"
+        }
+      },
+      "bob": {
+        "type": "number",
+        "description": "Bolivia Boliviano",
+        "extras": {
+          "name": {
+            "en": "Bolivia Boliviano",
+            "fr": "Boliviano"
+          },
+          "symbol": "$b"
+        }
+      },
+      "brl": {
+        "type": "number",
+        "description": "Brazil Real",
+        "extras": {
+          "name": {
+            "en": "Brazil Real",
+            "fr": "Real"
+          },
+          "symbol": "R$"
+        }
+      },
+      "bwp": {
+        "type": "number",
+        "description": "Botswana Pula",
+        "extras": {
+          "name": {
+            "en": "Botswana Pula"
+          },
+          "symbol": "P"
+        }
+      },
+      "cad": {
+        "type": "number",
+        "description": "Canada Dollar",
+        "extras": {
+          "name": {
+            "en": "Canada Dollar",
+            "fr": "Dollar canadien"
+          },
+          "symbol": "$"
+        }
+      },
+      "chf": {
+        "type": "number",
+        "description": "Switzerland Franc",
+        "extras": {
+          "name": {
+            "en": "Switzerland Franc",
+            "fr": "Franc Suisse"
+          },
+          "symbol": "CHF"
+        }
+      },
+      "clp": {
+        "type": "number",
+        "description": "Chile Peso",
+        "extras": {
+          "name": {
+            "en": "Chile Peso",
+            "fr": "Peso chilien"
+          },
+          "symbol": "$"
+        }
+      },
+      "cny": {
+        "type": "number",
+        "description": "China Yuan Renminbi",
+        "extras": {
+          "name": {
+            "en": "China Yuan Renminbi",
+            "fr": "Yuan Ren-Min-Bi"
+          },
+          "symbol": "¥"
+        }
+      },
+      "cop": {
+        "type": "number",
+        "description": "Colombia Peso",
+        "extras": {
+          "name": {
+            "en": "Colombia Peso",
+            "fr": "Peso colombien"
+          },
+          "symbol": "$"
+        }
+      },
+      "crc": {
+        "type": "number",
+        "description": "Costa Rica Colon",
+        "extras": {
+          "name": {
+            "en": "Costa Rica Colon",
+            "fr": "Colon de Costa Rica"
+          },
+          "symbol": "₡"
+        }
+      },
+      "czk": {
+        "type": "number",
+        "description": "Czech Republic Koruna",
+        "extras": {
+          "name": {
+            "en": "Czech Republic Koruna"
+          },
+          "symbol": "Kč"
+        }
+      },
+      "dkk": {
+        "type": "number",
+        "description": "Denmark Krone",
+        "extras": {
+          "name": {
+            "en": "Denmark Krone",
+            "fr": "Couronne danoise"
+          },
+          "symbol": "kr"
+        }
+      },
+      "dop": {
+        "type": "number",
+        "description": "Dominican Republic Peso",
+        "extras": {
+          "name": {
+            "en": "Dominican Republic Peso",
+            "fr": "Peso dominicain"
+          },
+          "symbol": "RD$"
+        }
+      },
+      "dzd": {
+        "type": "number"
+      },
+      "eek": {
+        "type": "number",
+        "description": "Estonia Kroon",
+        "extras": {
+          "name": {
+            "en": "Estonia Kroon",
+            "fr": "Couronne estonienne"
+          },
+          "symbol": "kr"
+        }
+      },
+      "egp": {
+        "type": "number",
+        "description": "Egypt Pound",
+        "extras": {
+          "name": {
+            "en": "Egypt Pound",
+            "fr": "Livre égyptienne"
+          },
+          "symbol": "£"
+        }
+      },
+      "eur": {
+        "type": "number",
+        "description": "Euro",
+        "extras": {
+          "symbol": "€",
+          "name": {
+            "en": "Euro",
+            "fr": "Euro"
+          }
+        }
+      },
+      "fjd": {
+        "type": "number",
+        "description": "Fiji Dollar",
+        "extras": {
+          "name": {
+            "en": "Fiji Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "gbp": {
+        "type": "number",
+        "description": "United Kingdom Pound",
+        "extras": {
+          "name": {
+            "en": "United Kingdom Pound",
+            "fr": "Livre"
+          },
+          "symbol": "£"
+        }
+      },
+      "hkd": {
+        "type": "number",
+        "description": "Hong Kong Dollar",
+        "extras": {
+          "name": {
+            "en": "Hong Kong Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "hnl": {
+        "type": "number",
+        "description": "Honduras Lempira",
+        "extras": {
+          "name": {
+            "en": "Honduras Lempira"
+          },
+          "symbol": "L"
+        }
+      },
+      "hrk": {
+        "type": "number",
+        "description": "Croatia Kuna",
+        "extras": {
+          "name": {
+            "en": "Croatia Kuna",
+            "fr": "Kuna"
+          },
+          "symbol": "kn"
+        }
+      },
+      "huf": {
+        "type": "number",
+        "description": "Hungary Forint",
+        "extras": {
+          "name": {
+            "en": "Hungary Forint"
+          },
+          "symbol": "Ft"
+        }
+      },
+      "idr": {
+        "type": "number",
+        "description": "Indonesia Rupiah",
+        "extras": {
+          "name": {
+            "en": "Indonesia Rupiah"
+          },
+          "symbol": "Rp"
+        }
+      },
+      "ils": {
+        "type": "number",
+        "description": "Israel Shekel",
+        "extras": {
+          "name": {
+            "en": "Israel Shekel"
+          },
+          "symbol": "₪"
+        }
+      },
+      "inr": {
+        "type": "number",
+        "description": "India Rupee",
+        "extras": {
+          "name": {
+            "en": "India Rupee",
+            "fr": "Rhoupie indienne"
+          }
+        }
+      },
+      "jmd": {
+        "type": "number",
+        "description": "Jamaica Dollar",
+        "extras": {
+          "name": {
+            "en": "Jamaica Dollar"
+          },
+          "symbol": "J$"
+        }
+      },
+      "jod": {
+        "type": "number"
+      },
+      "jpy": {
+        "type": "number",
+        "description": "Japan Yen",
+        "extras": {
+          "name": {
+            "en": "Japan Yen",
+            "fr": "Yen japonais"
+          },
+          "symbol": "¥"
+        }
+      },
+      "kes": {
+        "type": "number"
+      },
+      "krw": {
+        "type": "number",
+        "description": "Korea (South) Won",
+        "extras": {
+          "name": {
+            "en": "Korea (South) Won",
+            "fr": "Won"
+          },
+          "symbol": "₩"
+        }
+      },
+      "kwd": {
+        "type": "number"
+      },
+      "kyd": {
+        "type": "number",
+        "description": "Cayman Islands Dollar",
+        "extras": {
+          "name": {
+            "en": "Cayman Islands Dollar",
+            "fr": "Dollar des Iles Caïmans"
+          },
+          "symbol": "$"
+        }
+      },
+      "kzt": {
+        "type": "number",
+        "description": "Kazakhstan Tenge",
+        "extras": {
+          "name": {
+            "en": "Kazakhstan Tenge"
+          },
+          "symbol": "лв"
+        }
+      },
+      "lbp": {
+        "type": "number",
+        "description": "Lebanon Pound",
+        "extras": {
+          "name": {
+            "en": "Lebanon Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "lkr": {
+        "type": "number",
+        "description": "Sri Lanka Rupee",
+        "extras": {
+          "name": {
+            "en": "Sri Lanka Rupee"
+          },
+          "symbol": "₨"
+        }
+      },
+      "ltl": {
+        "type": "number",
+        "description": "Lithuania Litas",
+        "extras": {
+          "name": {
+            "en": "Lithuania Litas"
+          },
+          "symbol": "Lt"
+        }
+      },
+      "lvl": {
+        "type": "number",
+        "description": "Latvia Lat",
+        "extras": {
+          "name": {
+            "en": "Latvia Lat",
+            "fr": "Lat letton"
+          },
+          "symbol": "Ls"
+        }
+      },
+      "mad": {
+        "type": "number"
+      },
+      "mdl": {
+        "type": "number"
+      },
+      "mkd": {
+        "type": "number",
+        "description": "Macedonia Denar",
+        "extras": {
+          "name": {
+            "en": "Macedonia Denar"
+          },
+          "symbol": "ден"
+        }
+      },
+      "mur": {
+        "type": "number",
+        "description": "Mauritius Rupee",
+        "extras": {
+          "name": {
+            "en": "Mauritius Rupee"
+          },
+          "symbol": "₨"
+        }
+      },
+      "mxn": {
+        "type": "number",
+        "description": "Mexico Peso",
+        "extras": {
+          "name": {
+            "en": "Mexico Peso"
+          },
+          "symbol": "$"
+        }
+      },
+      "myr": {
+        "type": "number",
+        "description": "Malaysia Ringgit",
+        "extras": {
+          "name": {
+            "en": "Malaysia Ringgit"
+          },
+          "symbol": "RM"
+        }
+      },
+      "nad": {
+        "type": "number",
+        "description": "Namibia Dollar",
+        "extras": {
+          "name": {
+            "en": "Namibia Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "ngn": {
+        "type": "number",
+        "description": "Nigeria Naira",
+        "extras": {
+          "name": {
+            "en": "Nigeria Naira"
+          },
+          "symbol": "₦"
+        }
+      },
+      "nio": {
+        "type": "number",
+        "description": "Nicaragua Cordoba",
+        "extras": {
+          "name": {
+            "en": "Nicaragua Cordoba"
+          },
+          "symbol": "C$"
+        }
+      },
+      "nok": {
+        "type": "number",
+        "description": "Norway Krone",
+        "extras": {
+          "name": {
+            "en": "Norway Krone",
+            "fr": "Couronne norvégienne"
+          },
+          "symbol": "kr"
+        }
+      },
+      "npr": {
+        "type": "number",
+        "description": "Nepal Rupee",
+        "extras": {
+          "name": {
+            "en": "Nepal Rupee"
+          },
+          "symbol": "₨"
+        }
+      },
+      "nzd": {
+        "type": "number",
+        "description": "New Zealand Dollar",
+        "extras": {
+          "name": {
+            "en": "New Zealand Dollar",
+            "fr": "Dollar néo-zélandais"
+          },
+          "symbol": "$"
+        }
+      },
+      "omr": {
+        "type": "number",
+        "description": "Oman Rial",
+        "extras": {
+          "name": {
+            "en": "Oman Rial"
+          },
+          "symbol": "﷼"
+        }
+      },
+      "pen": {
+        "type": "number",
+        "description": "Peru Nuevo Sol",
+        "extras": {
+          "name": {
+            "en": "Peru Nuevo Sol"
+          },
+          "symbol": "S/."
+        }
+      },
+      "pgk": {
+        "type": "number"
+      },
+      "php": {
+        "type": "number",
+        "description": "Philippines Peso",
+        "extras": {
+          "name": {
+            "en": "Philippines Peso"
+          },
+          "symbol": "₱"
+        }
+      },
+      "pkr": {
+        "type": "number",
+        "description": "Pakistan Rupee",
+        "extras": {
+          "name": {
+            "en": "Pakistan Rupee"
+          },
+          "symbol": "₨"
+        }
+      },
+      "pln": {
+        "type": "number",
+        "description": "Poland Zloty",
+        "extras": {
+          "name": {
+            "en": "Poland Zloty"
+          },
+          "symbol": "zł"
+        }
+      },
+      "pyg": {
+        "type": "number",
+        "description": "Paraguay Guarani",
+        "extras": {
+          "name": {
+            "en": "Paraguay Guarani"
+          },
+          "symbol": "Gs"
+        }
+      },
+      "qar": {
+        "type": "number",
+        "description": "Qatar Riyal",
+        "extras": {
+          "name": {
+            "en": "Qatar Riyal"
+          },
+          "symbol": "﷼"
+        }
+      },
+      "ron": {
+        "type": "number",
+        "description": "Romania New Leu",
+        "extras": {
+          "name": {
+            "en": "Romania New Leu"
+          },
+          "symbol": "lei"
+        }
+      },
+      "rsd": {
+        "type": "number",
+        "description": "Serbia Dinar",
+        "extras": {
+          "name": {
+            "en": "Serbia Dinar"
+          },
+          "symbol": "Дин."
+        }
+      },
+      "rub": {
+        "type": "number",
+        "description": "Russia Ruble",
+        "extras": {
+          "name": {
+            "en": "Russia Ruble"
+          },
+          "symbol": "руб"
+        }
+      },
+      "sar": {
+        "type": "number",
+        "description": "Saudi Arabia Riyal",
+        "extras": {
+          "name": {
+            "en": "Saudi Arabia Riyal",
+            "fr": "Riyal saoudien"
+          },
+          "symbol": "﷼"
+        }
+      },
+      "scr": {
+        "type": "number",
+        "description": "Seychelles Rupee",
+        "extras": {
+          "name": {
+            "en": "Seychelles Rupee"
+          },
+          "symbol": "₨"
+        }
+      },
+      "sek": {
+        "type": "number",
+        "description": "Sweden Krona",
+        "extras": {
+          "name": {
+            "en": "Sweden Krona"
+          },
+          "symbol": "kr"
+        }
+      },
+      "sgd": {
+        "type": "number",
+        "description": "Singapore Dollar",
+        "extras": {
+          "name": {
+            "en": "Singapore Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "skk": {
+        "type": "number"
+      },
+      "sll": {
+        "type": "number"
+      },
+      "svc": {
+        "type": "number",
+        "description": "El Salvador Colon",
+        "extras": {
+          "name": {
+            "en": "El Salvador Colon",
+            "fr": "Colon du El Salvador"
+          },
+          "symbol": "$"
+        }
+      },
+      "thb": {
+        "type": "number",
+        "description": "Thailand Baht",
+        "extras": {
+          "name": {
+            "en": "Thailand Baht"
+          },
+          "symbol": "฿"
+        }
+      },
+      "tnd": {
+        "type": "number"
+      },
+      "try": {
+        "type": "number",
+        "description": "Turkey Lira",
+        "extras": {
+          "name": {
+            "en": "Turkey Lira"
+          }
+        }
+      },
+      "ttd": {
+        "type": "number",
+        "description": "Trinidad and Tobago Dollar",
+        "extras": {
+          "name": {
+            "en": "Trinidad and Tobago Dollar"
+          },
+          "symbol": "TT$"
+        }
+      },
+      "twd": {
+        "type": "number",
+        "description": "Taiwan New Dollar",
+        "extras": {
+          "name": {
+            "en": "Taiwan New Dollar"
+          },
+          "symbol": "NT$"
+        }
+      },
+      "tzs": {
+        "type": "number"
+      },
+      "uah": {
+        "type": "number",
+        "description": "Ukraine Hryvna",
+        "extras": {
+          "name": {
+            "en": "Ukraine Hryvna"
+          },
+          "symbol": "₴"
+        }
+      },
+      "ugx": {
+        "type": "number"
+      },
+      "usd": {
+        "type": "number",
+        "description": "United States Dollar",
+        "extras": {
+          "name": {
+            "en": "United States Dollar",
+            "fr": "Dollar des États-Unis"
+          },
+          "symbol": "$"
+        }
+      },
+      "uyu": {
+        "type": "number",
+        "description": "Uruguay Peso",
+        "extras": {
+          "name": {
+            "en": "Uruguay Peso"
+          },
+          "symbol": "$U"
+        }
+      },
+      "uzs": {
+        "type": "number",
+        "description": "Uzbekistan Som",
+        "extras": {
+          "name": {
+            "en": "Uzbekistan Som"
+          },
+          "symbol": "лв"
+        }
+      },
+      "vnd": {
+        "type": "number",
+        "description": "Viet Nam Dong",
+        "extras": {
+          "name": {
+            "en": "Viet Nam Dong"
+          },
+          "symbol": "₫"
+        }
+      },
+      "yer": {
+        "type": "number",
+        "description": "Yemen Rial",
+        "extras": {
+          "name": {
+            "en": "Yemen Rial"
+          },
+          "symbol": "﷼"
+        }
+      },
+      "zar": {
+        "type": "number",
+        "description": "South Africa Rand",
+        "extras": {
+          "name": {
+            "en": "South Africa Rand",
+            "fr": "Rand"
+          },
+          "symbol": "R"
+        }
+      },
+      "zmk": {
+        "type": "number"
+      },
+      "btc": {
+        "description": "Bitcoin",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Bitcoin"
+          },
+          "symbol": "฿"
+        }
+      },
+      "all": {
+        "description": "Albania Lek",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Albania Lek",
+            "fr": "Lek Albanai"
+          },
+          "symbol": "Lek"
+        }
+      },
+      "afn": {
+        "description": "Afghanistan Afghani",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Afghanistan Afghani",
+            "fr": "Afghani"
+          },
+          "symbol": "؋"
+        }
+      },
+      "awg": {
+        "description": "Aruba Guilder",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Aruba Guilder",
+            "fr": "Florin d'Aruba"
+          },
+          "symbol": "ƒ"
+        }
+      },
+      "azn": {
+        "description": "Azerbaijan New Manat",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Azerbaijan New Manat",
+            "fr": "Manat"
+          },
+          "symbol": "ман"
+        }
+      },
+      "bsd": {
+        "description": "Bahamas Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Bahamas Dollar",
+            "fr": "Dollar des Bahamas"
+          },
+          "symbol": "$"
+        }
+      },
+      "bbd": {
+        "description": "Barbados Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Barbados Dollar",
+            "fr": "Dollar de Barbade"
+          },
+          "symbol": "$"
+        }
+      },
+      "byr": {
+        "description": "Belarus Ruble",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Belarus Ruble",
+            "fr": "Rouble bélorusse"
+          },
+          "symbol": "p."
+        }
+      },
+      "bzd": {
+        "description": "Belize Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Belize Dollar",
+            "fr": "Dollar de Belize"
+          },
+          "symbol": "BZ$"
+        }
+      },
+      "bmd": {
+        "description": "Bermuda Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Bermuda Dollar",
+            "fr": "Dollar des Bermudes"
+          },
+          "symbol": "$"
+        }
+      },
+      "bam": {
+        "description": "Bosnia and Herzegovina Convertible Marka",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Bosnia and Herzegovina Convertible Marka"
+          },
+          "symbol": "KM"
+        }
+      },
+      "khr": {
+        "description": "Cambodia Riel",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cambodia Riel",
+            "fr": "Riel"
+          },
+          "symbol": "៛"
+        }
+      },
+      "cup": {
+        "description": "Cuba Peso",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Cuba Peso",
+            "fr": "Peso cubain"
+          },
+          "symbol": "₱"
+        }
+      },
+      "xcd": {
+        "description": "East Caribbean Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "East Caribbean Dollar",
+            "fr": "Dollar des Caraïbes orientales"
+          },
+          "symbol": "$"
+        }
+      },
+      "fkp": {
+        "description": "Falkland Islands (Malvinas) Pound",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Falkland Islands (Malvinas) Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "ghc": {
+        "description": "Ghana Cedis",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Ghana Cedis"
+          },
+          "symbol": "¢"
+        }
+      },
+      "gip": {
+        "description": "Gibraltar Pound",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Gibraltar Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "gtq": {
+        "description": "Guatemala Quetzal",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Guatemala Quetzal"
+          },
+          "symbol": "Q"
+        }
+      },
+      "ggp": {
+        "description": "Guernsey Pound",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Guernsey Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "gyd": {
+        "description": "Guyana Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Guyana Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "isk": {
+        "description": "Iceland Krona",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Iceland Krona"
+          },
+          "symbol": "kr"
+        }
+      },
+      "irr": {
+        "description": "Iran Rial",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Iran Rial"
+          },
+          "symbol": "﷼"
+        }
+      },
+      "imp": {
+        "description": "Isle of Man Pound",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Isle of Man Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "jep": {
+        "description": "Jersey Pound",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Jersey Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "kpw": {
+        "description": "Korea (North) Won",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Korea (North) Won",
+            "fr": "Won de la Corée du Nord"
+          },
+          "symbol": "₩"
+        }
+      },
+      "kgs": {
+        "description": "Kyrgyzstan Som",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kyrgyzstan Som"
+          },
+          "symbol": "лв"
+        }
+      },
+      "lak": {
+        "description": "Laos Kip",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Laos Kip"
+          },
+          "symbol": "₭"
+        }
+      },
+      "lrd": {
+        "description": "Liberia Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Liberia Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "mnt": {
+        "description": "Mongolia Tughrik",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Mongolia Tughrik"
+          },
+          "symbol": "₮"
+        }
+      },
+      "mzn": {
+        "description": "Mozambique Metical",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Mozambique Metical"
+          },
+          "symbol": "MT"
+        }
+      },
+      "pab": {
+        "description": "Panama Balboa",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Panama Balboa"
+          },
+          "symbol": "B/."
+        }
+      },
+      "shp": {
+        "description": "Saint Helena Pound",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Saint Helena Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "sbd": {
+        "description": "Solomon Islands Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Solomon Islands Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "sos": {
+        "description": "Somalia Shilling",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Somalia Shilling"
+          },
+          "symbol": "S"
+        }
+      },
+      "srd": {
+        "description": "Suriname Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Suriname Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "syp": {
+        "description": "Syria Pound",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Syria Pound"
+          },
+          "symbol": "£"
+        }
+      },
+      "trl": {
+        "description": "Turkey Lira",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Turkey Lira"
+          },
+          "symbol": "₤"
+        }
+      },
+      "tvd": {
+        "description": "Tuvalu Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Tuvalu Dollar"
+          },
+          "symbol": "$"
+        }
+      },
+      "vef": {
+        "description": "Venezuela Bolivar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Venezuela Bolivar"
+          },
+          "symbol": "Bs"
+        }
+      },
+      "zwd": {
+        "description": "Zimbabwe Dollar",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Zimbabwe Dollar"
+          },
+          "symbol": "Z$"
+        }
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Money",
+        "fr": "Argent"
+      }
+    }
+  }
+}

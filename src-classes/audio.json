@@ -1,0 +1,17 @@
+{
+  "audio": {
+    "description": "To record audio (conversations, voice messages, etc.).",
+    "formats": {
+      "attached": {
+        "description": "The audio source is the file attached to the event (no explicit content defined).\nYou can use the event's duration to mirror the recording's duration.",
+        "type": "null",
+        "attachmentRequired": true
+      },
+      "url": {
+        "description": "A reference to an audio file online.",
+        "type": "string",
+        "pattern": "^(https?)://.+$"
+      }
+    }
+  }
+}

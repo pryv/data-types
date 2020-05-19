@@ -1,0 +1,24 @@
+{
+  "absorbed-dose-equivalent": {
+    "formats": {
+      "sv": {
+        "description": "Sievert",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Sieverts",
+            "fr": "Sieverts"
+          },
+          "symbol": "Sv"
+        }
+      }
+    },
+    "description": "The radiation absorbed by a fixed mass of biological tissue.",
+    "extras": {
+      "name": {
+        "en": "Dose equivalent",
+        "fr": "Dose équivalente"
+      }
+    }
+  }
+}

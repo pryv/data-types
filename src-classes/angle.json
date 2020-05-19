@@ -1,0 +1,46 @@
+{
+  "angle": {
+    "formats": {
+      "deg": {
+        "description": "Degrees",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Degrees",
+            "fr": "Degrés"
+          },
+          "symbol": "°"
+        }
+      },
+      "grad": {
+        "description": "Grade",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Gradians",
+            "fr": "Grades"
+          },
+          "symbol": "grad"
+        }
+      },
+      "rad": {
+        "description": "Radians",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Radians",
+            "fr": "Radians"
+          },
+          "symbol": "rad"
+        }
+      }
+    },
+    "description": "The figure formed by two rays.",
+    "extras": {
+      "name": {
+        "en": "Angle",
+        "fr": "Angle"
+      }
+    }
+  }
+}

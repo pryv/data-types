@@ -1,0 +1,28 @@
+{
+  "mol": {
+    "description": "The size of an ensemble of elementary entities, such as atoms, molecules, electrons, and other particles.",
+    "formats": {
+      "mol": {
+        "description": "Mole ",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Moles",
+            "fr": "Moles"
+          },
+          "symbol": "Mol"
+        }
+      },
+      "lb-mol": {
+        "description": "Pound-mole.",
+        "type": "number"
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Amount of substance",
+        "fr": "Quantité de matière"
+      }
+    }
+  }
+}

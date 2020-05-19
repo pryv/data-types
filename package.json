@@ -1,0 +1,27 @@
+{
+  "name": "pryv-data-types",
+  "version": "0.3.0",
+  "description": "Pryv event type references",
+  "main": "src/build.js",
+  "scripts": {
+    "build": "node src/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pryv/data-types.git"
+  },
+  "keywords": [
+    "pryv",
+    "event",
+    "types"
+  ],
+  "author": "Pryv S.A.",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/pryv/data-types/issues"
+  },
+  "homepage": "https://github.com/pryv/data-types#readme",
+  "devDependencies": {
+    "lodash": "^4.17.15"
+  }
+}

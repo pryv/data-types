@@ -1,0 +1,24 @@
+{
+  "catalytic-activity": {
+    "formats": {
+      "kat": {
+        "description": "Katal",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Katals",
+            "fr": "Katals"
+          },
+          "symbol": "kat"
+        }
+      }
+    },
+    "description": "The  increase in rate of a chemical reaction due to the participation of a substance called a catalyst.",
+    "extras": {
+      "name": {
+        "en": "Catalytic activity",
+        "fr": "Activité catalytique"
+      }
+    }
+  }
+}

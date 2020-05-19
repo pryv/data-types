@@ -1,0 +1,123 @@
+{
+  "pressure": {
+    "formats": {
+      "at": {
+        "description": "Atmospheres",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Atmospheres",
+            "fr": "Atmosphères"
+          },
+          "symbol": "at"
+        }
+      },
+      "bar": {
+        "description": "Bars",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Bars",
+            "fr": "Bars"
+          },
+          "symbol": "bar"
+        }
+      },
+      "mmhg": {
+        "description": "Millimeters of mercury",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Millimeters of mercury",
+            "fr": "Millimètres de mercure"
+          },
+          "symbol": "mmHg"
+        }
+      },
+      "cmhg": {
+        "description": "Centimeters of mercury",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Centimeters of mercury",
+            "fr": "Centimètres de mercure"
+          },
+          "symbol": "cmHg"
+        }
+      },
+      "inhg": {
+        "description": "Inches of mercury",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Inches of mercury",
+            "fr": "Pouces de mercure"
+          },
+          "symbol": "inHg"
+        }
+      },
+      "kg-m2": {
+        "description": "Kilograms/square meter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilograms/square meter",
+            "fr": "Kilogrammes/mètre cube"
+          },
+          "symbol": "kg/m²"
+        }
+      },
+      "pa": {
+        "description": "Pascals",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Pascals",
+            "fr": "Pascals"
+          },
+          "symbol": "Pa"
+        }
+      },
+      "kpa": {
+        "description": "Kilo pascals",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilo Pascals",
+            "fr": "Kilo Pascals"
+          },
+          "symbol": "kPa"
+        }
+      },
+      "psf": {
+        "description": "Pounds/square foot",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Pounds/square foot",
+            "fr": "Livres/pied carré"
+          },
+          "symbol": "psf"
+        }
+      },
+      "psi": {
+        "description": "Pounds/square inch",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Pounds/square inch",
+            "fr": "Livres/pouce carré"
+          },
+          "symbol": "psi"
+        }
+      }
+    },
+    "description": "The ratio of force to the area over which that force is distributed.",
+    "extras": {
+      "name": {
+        "en": "Pressure",
+        "fr": "Pression"
+      }
+    }
+  }
+}

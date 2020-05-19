@@ -1,0 +1,24 @@
+{
+  "absorbed-dose-rate": {
+    "formats": {
+      "gy-s": {
+        "description": "Gray per second",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Grays/second",
+            "fr": "Grays/seconde"
+          },
+          "symbol": "Gy/s"
+        }
+      }
+    },
+    "description": "The absorbed dose of ionizing radiation imparted at a given location per unit of time (second, minute, hour, or day). ",
+    "extras": {
+      "name": {
+        "en": "Absorbed dose rate",
+        "fr": "Débit de dose absorbée"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "angular-acceleration": {
+    "formats": {
+      "rad-s2": {
+        "description": "Radians per second squared",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Radians/second squared",
+            "fr": "Radians/seconde carrée"
+          },
+          "symbol": "rad/s²"
+        }
+      }
+    },
+    "description": "The rate of change of angular velocity.",
+    "extras": {
+      "name": {
+        "en": "Angular acceleration",
+        "fr": "Accélération angulaire"
+      }
+    }
+  }
+}

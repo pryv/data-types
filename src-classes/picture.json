@@ -1,0 +1,39 @@
+{
+  "picture": {
+    "description": "To record any kind of image (photos, designs, screenshots, etc.)",
+    "formats": {
+      "base64": {
+        "description": "The picture is caried in base64 (utf-8) encoded in string",
+        "type": "string",
+        "properties": {
+          "payload": {
+            "type": "string",
+            "description": "base64 encoded content"
+          },
+          "format": {
+            "type": "string",
+            "description": "The data format \"gif\", \"jpeg\", \"png\", \"tiff\", \"vnd.microsoft.com\", \"svg+xml\""
+          },
+          "filename": {
+            "description": "A filename",
+            "type": "string"
+          }
+        },
+        "required": [
+          "payload",
+          "format"
+        ]
+      },
+      "attached": {
+        "description": "The picture is the image file attached to the event (no explicit content defined). TODO: list accepted formats.",
+        "type": "null",
+        "attachmentRequired": true
+      },
+      "url": {
+        "description": "A reference to a picture file online.",
+        "type": "string",
+        "pattern": "^(https?)://.+$"
+      }
+    }
+  }
+}

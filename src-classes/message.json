@@ -1,0 +1,140 @@
+{
+  "message": {
+    "description": "To record messages, such as e-mails or posts on social networks.",
+    "formats": {
+      "email": {
+        "description": "An e-mail message.",
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "cc": {
+            "type": "string"
+          },
+          "bcc": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "message-id": {
+            "type": "string"
+          },
+          "reply-to": {
+            "type": "string"
+          },
+          "x-headers": {
+            "description": "Key/value map of `X-*` headers",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "body"
+        ]
+      },
+      "facebook": {
+        "description": "A Facebook post. See [Facebook's API docs](https://developers.facebook.com/docs/reference/api/post/) for reference. Facebook properties `message` and `created_time` map to event `description` and `time` respectively. Facebook attached pictures can be directly mapped to attachments. Other Facebook properties such as `link`, `source`, `privacy` are allowed.",
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "from": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "id"
+            ]
+          },
+          "to": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ]
+                }
+              }
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "description": "Either a fully qualified \"URL\" for an external source or a \"filename\" for a Flash Movie or Video attached to this event."
+          },
+          "properties": {
+            "type": "string",
+            "description": "Relative to `source`: a list of properties for an uploaded video, for example, the length of the video.",
+            "additionalProperties": true
+          },
+          "picture": {
+            "description": "Either a fully qualified \"URL\" for an external picture or a \"filename\" for a picture attached to this event.",
+            "type": "string"
+          },
+          "status-type": {
+            "description": "One of mobile_status_update, created_note, added_photos, added_video, shared_story, created_group, created_event, wall_post, app_created_story, published_story, tagged_in_photo, approved_friend",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "message"
+        ]
+      },
+      "twitter": {
+        "description": "A Twitter post. Twitter property `created_at` maps to event `time`. Other Twitter properties (see [Twitter's API docs](https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid)) are allowed.",
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "screen-name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "screen-name",
+          "text"
+        ]
+      }
+    }
+  }
+}

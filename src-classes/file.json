@@ -1,0 +1,22 @@
+{
+  "file": {
+    "description": "To record a file, or a group of files. A fallback type for data with no specific handling in Pryv.",
+    "formats": {
+      "attached": {
+        "description": "The file is attached to the event",
+        "type": "null",
+        "attachmentRequired": true
+      },
+      "attached-multiple": {
+        "description": "A set of file attached. Structure can be declared in the filenames.",
+        "attachmentRequired": true,
+        "type": "null"
+      },
+      "url": {
+        "description": "A reference to a file hosted elsewhere",
+        "type": "string",
+        "pattern": "^(https?)://.+$"
+      }
+    }
+  }
+}

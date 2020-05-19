@@ -1,0 +1,24 @@
+{
+  "capacitance": {
+    "formats": {
+      "f": {
+        "description": "Farad",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Farads",
+            "fr": "Farads"
+          },
+          "symbol": "F"
+        }
+      }
+    },
+    "description": "The ability of a body to store an electrical charge.",
+    "extras": {
+      "name": {
+        "en": "Capacitance",
+        "fr": "Capacitance"
+      }
+    }
+  }
+}

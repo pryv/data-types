@@ -1,0 +1,46 @@
+{
+  "temperature": {
+    "description": "Temperature measurements. Format = unit.",
+    "formats": {
+      "c": {
+        "description": "Celsius",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Degrees Celsius",
+            "fr": "Degrés Celsius"
+          },
+          "symbol": "°C"
+        }
+      },
+      "k": {
+        "description": "Kelvin",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Degrees Kelvin",
+            "fr": "Degrés Kelvin"
+          },
+          "symbol": "°K"
+        }
+      },
+      "f": {
+        "description": "Fahrenheit",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Degrees Fahrenheit",
+            "fr": "Degrés Fahrenheit"
+          },
+          "symbol": "°F"
+        }
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Temperature",
+        "fr": "Température"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "force": {
+    "formats": {
+      "dyn": {
+        "description": "Dynes",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Dynes",
+            "fr": "Dynes"
+          },
+          "symbol": "dyn"
+        }
+      },
+      "n": {
+        "description": "Newtons",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Newtons",
+            "fr": "Newtons"
+          },
+          "symbol": "N"
+        }
+      },
+      "pdl": {
+        "description": "Poundals",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Poundals",
+            "fr": "Poundals"
+          },
+          "symbol": "Pdl"
+        }
+      }
+    },
+    "description": "A push or pull upon an object resulting from the object's interaction with another object.",
+    "extras": {
+      "name": {
+        "en": "Force",
+        "fr": "Force"
+      }
+    }
+  }
+}

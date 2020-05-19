@@ -1,0 +1,12 @@
+{
+  "url": {
+    "description": "To record references to online resources. Format ~= protocol.",
+    "formats": {
+      "http": {
+        "description": "An HTTP or HTTPS resource.",
+        "type": "string",
+        "pattern": "^(https?)://.+$"
+      }
+    }
+  }
+}

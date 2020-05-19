@@ -1,0 +1,57 @@
+{
+  "density": {
+    "formats": {
+      "g-dl": {
+        "description": "Grams per deciliter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Grams/deciliter",
+            "fr": "Grammes/décilitre"
+          },
+          "symbol": "g/dL"
+        }
+      },
+      "kg-m3": {
+        "description": "Kilograms per cubic meter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Kilograms/cubic meter",
+            "fr": "Kilogrammes/mètre cube"
+          },
+          "symbol": "kg/m³"
+        }
+      },
+      "mmol-l": {
+        "description": "Millimoles per liter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Millimoles/liter",
+            "fr": "Millimoles/litre"
+          },
+          "symbol": "mmol/L"
+        }
+      },
+      "mg-dl": {
+        "description": "Milligrams per deciliter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Milligrams/deciliter",
+            "fr": "Milligrammes/décilitre"
+          },
+          "symbol": "mg/dL"
+        }
+      }
+    },
+    "description": "The density of a material (volumetric mass density).",
+    "extras": {
+      "name": {
+        "en": "Density",
+        "fr": "Densité"
+      }
+    }
+  }
+}
