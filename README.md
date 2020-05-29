@@ -134,7 +134,7 @@ Things currently stand at the proposal level, with some types reasonably stable,
 
 You can either [add issues](https://github.com/pryv/data-types/issues) or [fork and propose pull requests](https://github.com/pryv/data-types/fork). Please always include example use cases with your issues/pull requests.
 
-The format validation follows  [JSON SCHEMA](https://json-schema.org) specification and Pryv.io uses [z-scheam](https://github.com/zaggino/z-schema) for validation.
+The format validation follows  [JSON SCHEMA](https://json-schema.org) specification and Pryv.io uses [z-schema](https://github.com/zaggino/z-schema) for validation.
 
 #### 1- Clone this repository 
 
@@ -159,7 +159,7 @@ A json formated document as an `Object`with the following properties
       - **{languageCode}** Name of this class in a specific language 
   - **fromats** `Object` each property key beign a format of this class. 
     -  **{fromatKey}** they key of the format examples: `"deg"` for degrees. 
-      The content of this properties should follow [https://json-schema.org/](JSON Schema) format.
+      The content of this properties should follow [JSON Schema](https://json-schema.org/) format.
       - **description** (optional) `string`
       - **type** `Mixed` as per JSON schema
       - **extras** (optional) they will be stripped out in a separete "extra" place at build.
@@ -236,7 +236,7 @@ Three new versions of files in `/dist`
 
 `flat.json` or `flat.min.json` should be exposed by **Pryv.io** from `service/info`
 
-More info: on [https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation](Pryv.io Setup Guide) 
+More info: on [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation) 
 
 ##  License
 
