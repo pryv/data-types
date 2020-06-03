@@ -4,15 +4,17 @@ Events are the primary units of content in the Pryv.io data model. Depending on 
 
 We provide you with a list of **standard event types** used in Pryv that you can customize to suit your needs as explained below.
 
-## Effective versions
+## Effective version
 
 The event types effectively in use by default are published on [our API site](https://api.pryv.com/event-types/).
 
 ## How to customize your data types
 
-You must [fork](https://github.com/pryv/data-types/fork)) this repository, add the data types that you want to validate and host it on a URL where it will be loaded by Pryv.io on boot.
+*Prerequisites:* Node v12
 
-The format validation follows [JSON SCHEMA](https://json-schema.org) specification and Pryv.io uses [z-schema](https://github.com/zaggino/z-schema) for validation.
+You must [fork](https://github.com/pryv/data-types/fork) this repository, add the data types that you want to validate and host it on a URL where it will be loaded by Pryv.io on boot.
+
+The format validation follows the [JSON Schema](https://json-schema.org) specification and Pryv.io uses the [z-schema](https://github.com/zaggino/z-schema) library for validation.
 
 To add and modify your own data types, you can follow these steps:
 
@@ -20,9 +22,9 @@ To add and modify your own data types, you can follow these steps:
 
 run `npm install`
 
-#### 2- Modify or add files in the directory `/src-classes`
+#### 2- Add files in the directory `/src-classes`
 
-Filenames are not important as long as they end with `.json`. 
+Filenames are not important as long as they end with `.json`.
 
 The type of an event indicates how to handle its content and is specified as `{class}/{format}`. We recommend to separate classes in independent files with their corresponding filename for the sake of readability.
 
@@ -30,17 +32,17 @@ The type of an event indicates how to handle its content and is specified as `{c
 
 Your custom data type should be specified in a JSON formated document as an `Object` with the following properties:
 
-- **{class}** the class of the event type (specified as `{class}/{format}`). For example, an angle measurement will have the class `"angle"`.
-  - **description** (optional) a `string` describing the class.
-  - **extras** (optional) can contain anything that would be relevant for your apps.
-    - **name** (optional)
-      - **{languageCode}** the name of this class in a specific language.
-  - **formats** `Object` each property key will be a possible format of this class. 
-    -  **{format}** the format of the event type (specified as `{class}/{format}`). For example, the format `"deg"` for degrees. 
-      The content of these properties should follow [JSON Schema](https://json-schema.org/) format.
-      - **description** (optional) a `string` describing the format.
-      - **type** `Mixed` as per JSON schema.
-      - **extras** (optional) they will be stripped out in a separate "extra" place at build.
+- **{class}** the class of the event type (specified as `{class}/{format}`). For example, an angle measurement will have the class `"angle"`.  
+  - **formats** `Object` each property key will be a possible format of this class.  
+    -  **{format}** the format of the event type (specified as `{class}/{format}`). For example, the format `"deg"` for degrees.  
+      The content of these properties should follow [JSON Schema](https://json-schema.org/) format.  
+      - **description** (optional) a `string` describing the format.  
+      - **type** `Mixed` as per JSON schema.  
+      - **extras** (optional) they will be stripped out in a separate "extra" place at build.  
+  - **description** (optional) a `string` describing the class.  
+  - **extras** (optional) can contain anything that would be relevant for your apps.  
+    - **name** (optional)  
+      - **{languageCode}** the name of this class in a specific language.  
 
 Examples:
 
@@ -104,140 +106,143 @@ Examples:
 
 run `npm run build`
 
-Three new versions of files in `/dist` will be created:
+Three new versions of files will be created in `/dist`:
 
-- **event-types.json**
-- **flat.json**
-- **flat.min.json** 
+- **event-types.json**  
+- **flat.json**  
+- **flat.min.json**  
 
-#### 4- Publish these files on a web sever and expose flat.json or flat.min.json.
+#### 4- Publish these files on a web sever and expose flat.json or flat.min.json
 
-The files `flat.json` or `flat.min.json` should be exposed by **Pryv.io** from the [service information](https://api.pryv.com/reference/#service-info).
+The URL to the file `flat.json` or `flat.min.json` should be exposed by the [service information](https://api.pryv.com/reference/#service-info).
 
-More information on the content validation for your custom data types can be found in the [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation). 
+More information on the content validation for your custom data types can be found in the [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation).  
 
 ## Contents
 
 We present below the content of the three files generated in `/dist`:
+  
+### events-types.json
 
-- **dist/** contains the processed files ready to be used and consumed by applications and services, in particular: 
+Event types represented in a hierarchical structure. It is mainly used for documentation generation purposes.  
 
-  - **events-types.json** Event types represented in a hierarchical structure. It is mainly used for documentation generation purposes.
-    Extract of the structure: 
+Extract of the structure:  
 
-    ```json
-    {
-      "version": "0.x.0",
-      "classes": {
-      	 "angle": {
-          "description": "The figure formed by two rays.",
-          "formats": {
-            "deg": {
-              "description": "Degrees",
-              "type": "number"
-            },
-            "grad": {
-              "description": "Grade",
-              "type": "number"
-            }
-          }
-        },
-        "note": {
-          "description": "To record different kinds of text-based notes, from simple text to more complex formatted content like social network posts.",
-          "formats": {
-            "html": {
-              "description": "An HTML-formatted note.",
-              "type": "string",
-              "maxLength": 4194304
-            },
-            "txt": {
-              "description": "A plain-text note.",
-              "type": "string",
-              "maxLength": 4194304
-            }
-          }
-        }
-      },
-     "extras": {
-      	"angle": {
-          "name": {
-            "en": "Angle",
-            "fr": "Angle"
-          },
-          "formats": {
-            "deg": {
-              "name": {
-                "en": "Degrees",
-                "fr": "Degrés"
-              },
-              "symbol": "°"
-            },
-            "grad": {
-              "name": {
-                "en": "Gradians",
-                "fr": "Grades"
-              },
-              "symbol": "grad"
-            }
-          }
-        }
-     	}
-    }
-    ```
-
-    
-
-  - **flat.json** Event types in a key / value structure. It is mainly used for applications that require data format validation.
-
-    This file is the one that is exposed by Pryv.io `service/info/` route with the `eventTypes` property. Example: [https://reg.pryv.me/service/info](https://reg.pryv.me/service/info)
-    *Note: Only the properties `version` and `types` are mandatory.*
-
-    ```json
-    {
-      "version": "0.3.0",
-      "types": {
-        "angle/deg": {
+```json
+{
+  "version": "0.x.0",
+  "classes": {
+      "angle": {
+      "description": "The figure formed by two rays.",
+      "formats": {
+        "deg": {
           "description": "Degrees",
           "type": "number"
         },
-        "angle/grad": {
+        "grad": {
           "description": "Grade",
           "type": "number"
         }
+      }
+    },
+    "note": {
+      "description": "To record different kinds of text-based notes, from simple text to more complex formatted content like social network posts.",
+      "formats": {
+        "html": {
+          "description": "An HTML-formatted note.",
+          "type": "string",
+          "maxLength": 4194304
+        },
+        "txt": {
+          "description": "A plain-text note.",
+          "type": "string",
+          "maxLength": 4194304
+        }
+      }
+    }
+  },
+  "extras": {
+    "angle": {
+      "name": {
+        "en": "Angle",
+        "fr": "Angle"
       },
-      "extras": {
-        "angle/deg": {
+      "formats": {
+        "deg": {
           "name": {
             "en": "Degrees",
             "fr": "Degrés"
           },
           "symbol": "°"
         },
-        "angle/grad": {
+        "grad": {
           "name": {
             "en": "Gradians",
             "fr": "Grades"
           },
           "symbol": "grad"
         }
+      }
+    }
+  }
+}
+```
+
+### flat.json
+
+Event types in a key / value structure. It is mainly used for applications that require data format validation.  
+
+This file is the one that is exposed by the [service information](https://api.pryv.com/reference/#service-info) in the `eventTypes` property. Example: [https://reg.pryv.me/service/info](https://reg.pryv.me/service/info)
+*Note: Only the properties `version` and `types` are mandatory.*
+
+```json
+{
+  "version": "0.3.0",
+  "types": {
+    "angle/deg": {
+      "description": "Degrees",
+      "type": "number"
+    },
+    "angle/grad": {
+      "description": "Grade",
+      "type": "number"
+    }
+  },
+  "extras": {
+    "angle/deg": {
+      "name": {
+        "en": "Degrees",
+        "fr": "Degrés"
       },
-      "classes": {
-         "angle": {
-          "description": "The figure formed by two rays.",
-          "extras": {
-            "name": {
-              "en": "Angle",
-              "fr": "Angle"
-            }
-          }
+      "symbol": "°"
+    },
+    "angle/grad": {
+      "name": {
+        "en": "Gradians",
+        "fr": "Grades"
+      },
+      "symbol": "grad"
+    }
+  },
+  "classes": {
+      "angle": {
+      "description": "The figure formed by two rays.",
+      "extras": {
+        "name": {
+          "en": "Angle",
+          "fr": "Angle"
         }
       }
     }
-    ```
+  }
+}
+```
 
-  - **flat.min.json** Identical to **flat.json** file with only the mandatory fields (version and types).
+### flat.min.json
 
-  ##  License
+Identical to **flat.json** file with only the mandatory fields (version and types).
+
+## License
 
 (Revised BSD license, adapted.)
 
