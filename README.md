@@ -20,11 +20,7 @@ To add and modify your own data types, you can follow these steps:
 
 run `npm install`
 
-#### 2- Edit package.json `version` value
-
-This will be used as the version for the files generated in `/dist`.
-
-#### 3- Modify or add files in the directory `/src-classes`
+#### 2- Modify or add files in the directory `/src-classes`
 
 Filenames are not important as long as they end with `.json`. 
 
@@ -104,7 +100,7 @@ Examples:
 }
 ```
 
-#### 4- Build the document to `/dist`
+#### 3- Build the document to `/dist`
 
 run `npm run build`
 
@@ -114,7 +110,7 @@ Three new versions of files in `/dist` will be created:
 - **flat.json**
 - **flat.min.json** 
 
-#### 5- Publish these files on a web sever and expose flat.json or flat.min.json.
+#### 4- Publish these files on a web sever and expose flat.json or flat.min.json.
 
 The files `flat.json` or `flat.min.json` should be exposed by **Pryv.io** from the [service information](https://api.pryv.com/reference/#service-info).
 
