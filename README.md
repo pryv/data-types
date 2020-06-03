@@ -1,22 +1,22 @@
 # Pryv data types
 
-Events are the primary units of content in Pryv.io data model. Depending on its type, an event can represent anything related to a particular time (picture, note, data measurement, etc).
+Events are the primary units of content in the Pryv.io data model. Depending on its type, an event can represent anything related to a particular time (picture, note, data measurement, etc).
 
 We provide you with a list of **standard event types** used in Pryv that you can customize to suit your needs as explained below.
 
 ## Effective versions
 
-The event types effectively in use are published on [our API site](https://api.pryv.com/event-types/).
+The event types effectively in use by default are published on [our API site](https://api.pryv.com/event-types/).
 
 ## How to customize your data types
 
-You can either [add issues](https://github.com/pryv/data-types/issues) or [fork and propose pull requests](https://github.com/pryv/data-types/fork). Please always include example use cases with your issues/pull requests.
+You must [fork](https://github.com/pryv/data-types/fork)) this repository, add the data types that you want to validate and host it on a URL where it will be loaded by Pryv.io on boot.
 
 The format validation follows [JSON SCHEMA](https://json-schema.org) specification and Pryv.io uses [z-schema](https://github.com/zaggino/z-schema) for validation.
 
 To add and modify your own data types, you can follow these steps:
 
-#### 1- Clone this repository 
+#### 1- Fetch dependencies
 
 run `npm install`
 
@@ -26,19 +26,21 @@ This will be used as the version for the files generated in `/dist`.
 
 #### 3- Modify or add files in the directory `/src-classes`
 
-Filenames are not important as long as they end with `.json`. We recommend to separate classes in independent files with their corresponding filename for the sake of readability.
+Filenames are not important as long as they end with `.json`. 
 
-##### Content of a `{classKey}.json` file
+The type of an event indicates how to handle its content and is specified as `{class}/{format}`. We recommend to separate classes in independent files with their corresponding filename for the sake of readability.
 
-Your custom data type should be specified in a json formated document as an `Object` with the following properties:
+##### Content of a `{class}.json` file
 
-- **{classKey}** the key of the class. For example, an angle measurement will have the key `"angle"`.
+Your custom data type should be specified in a JSON formated document as an `Object` with the following properties:
+
+- **{class}** the class of the event type (specified as `{class}/{format}`). For example, an angle measurement will have the class `"angle"`.
   - **description** (optional) a `string` describing the class.
   - **extras** (optional) can contain anything that would be relevant for your apps.
     - **name** (optional)
       - **{languageCode}** the name of this class in a specific language.
   - **formats** `Object` each property key will be a possible format of this class. 
-    -  **{formatKey}** the key of the format. For example, the format key `"deg"` for degrees. 
+    -  **{format}** the format of the event type (specified as `{class}/{format}`). For example, the format `"deg"` for degrees. 
       The content of these properties should follow [JSON Schema](https://json-schema.org/) format.
       - **description** (optional) a `string` describing the format.
       - **type** `Mixed` as per JSON schema.
@@ -114,7 +116,7 @@ Three new versions of files in `/dist` will be created:
 
 #### 5- Publish these files on a web sever and expose flat.json or flat.min.json.
 
-The files `flat.json` or `flat.min.json` should be exposed by **Pryv.io** from `service/info`.
+The files `flat.json` or `flat.min.json` should be exposed by **Pryv.io** from the [service information](https://api.pryv.com/reference/#service-info).
 
 More information on the content validation for your custom data types can be found in the [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation). 
 
