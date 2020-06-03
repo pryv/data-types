@@ -192,8 +192,7 @@ Extract of the structure:
 
 Event types in a key / value structure. It is mainly used for applications that require data format validation.  
 
-This file is the one that is exposed by the [service information](https://api.pryv.com/reference/#service-info) in the `eventTypes` property. Example: [https://reg.pryv.me/service/info](https://reg.pryv.me/service/info)
-*Note: Only the properties `version` and `types` are mandatory.*
+This file is the one that is exposed by the [service information](https://api.pryv.com/reference/#service-info) in the `eventTypes` property. Example: [https://reg.pryv.me/service/info](https://reg.pryv.me/service/info).
 
 ```json
 {
