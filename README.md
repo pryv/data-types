@@ -1,17 +1,130 @@
 # Pryv data types
 
-Standard event types used in Pryv.
+Events are the primary units of content in Pryv.io data model. Depending on its type, an event can represent anything related to a particular time (picture, note, data measurement, etc).
 
+We provide you with a list of **standard event types** used in Pryv that you can customize to suit your needs as explained below.
 
 ## Effective versions
 
-The types effectively in use are published on [our API site](http://api.pryv.com).
+The event types effectively in use are published on [our API site](https://api.pryv.com/event-types/).
+
+## How to customize your data types
+
+You can either [add issues](https://github.com/pryv/data-types/issues) or [fork and propose pull requests](https://github.com/pryv/data-types/fork). Please always include example use cases with your issues/pull requests.
+
+The format validation follows [JSON SCHEMA](https://json-schema.org) specification and Pryv.io uses [z-schema](https://github.com/zaggino/z-schema) for validation.
+
+To add and modify your own data types, you can follow these steps:
+
+#### 1- Clone this repository 
+
+run `npm install`
+
+#### 2- Edit package.json `version` value
+
+This will be used as the version for the files generated in `/dist`.
+
+#### 3- Modify or add files in the directory `/src-classes`
+
+Filenames are not important as long as they end with `.json`. We recommend to separate classes in independent files with their corresponding filename for the sake of readability.
+
+##### Content of a `{classKey}.json` file
+
+Your custom data type should be specified in a json formated document as an `Object` with the following properties:
+
+- **{classKey}** the key of the class. For example, an angle measurement will have the key `"angle"`.
+  - **description** (optional) a `string` describing the class.
+  - **extras** (optional) can contain anything that would be relevant for your apps.
+    - **name** (optional)
+      - **{languageCode}** the name of this class in a specific language.
+  - **formats** `Object` each property key will be a possible format of this class. 
+    -  **{formatKey}** the key of the format. For example, the format key `"deg"` for degrees. 
+      The content of these properties should follow [JSON Schema](https://json-schema.org/) format.
+      - **description** (optional) a `string` describing the format.
+      - **type** `Mixed` as per JSON schema.
+      - **extras** (optional) they will be stripped out in a separate "extra" place at build.
+
+Examples:
+
+- Minimalist **angle.json** file
+
+```json
+{
+  "angle": {
+  "formats": {
+    "deg": {
+      "type": "number"
+    },
+    "grad": {
+      "type": "number"
+    }
+  }
+}
+```
+
+- Extended **angle.json** file
+
+```json
+{
+  "angle": {
+    "formats": {
+      "deg": {
+        "description": "Degrees",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Degrees",
+            "fr": "Degrés"
+          },
+          "symbol": "°"
+        }
+      },
+      "grad": {
+        "description": "Grade",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Gradians",
+            "fr": "Grades"
+          },
+          "symbol": "grad"
+        }
+      }
+    },
+    "description": "The figure formed by two rays.",
+    "extras": {
+      "name": {
+        "en": "Angle",
+        "fr": "Angle"
+      }
+    }
+  }
+}
+```
+
+#### 4- Build the document to `/dist`
+
+run `npm run build`
+
+Three new versions of files in `/dist` will be created:
+
+- **event-types.json**
+- **flat.json**
+- **flat.min.json** 
+
+#### 5- Publish these files on a web sever and expose flat.json or flat.min.json.
+
+The files `flat.json` or `flat.min.json` should be exposed by **Pryv.io** from `service/info`.
+
+More information on the content validation for your custom data types can be found in the [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation). 
 
 ## Contents
 
-- **dist/** Proccessed files ready to be used and consumed by applications and services 
+We present below the content of the three files generated in `/dist`:
 
-  - **events-types.json** Event types represented in a hierarchical structure. It's mainly used for documentation generation purposes.
+- **dist/** contains the processed files ready to be used and consumed by applications and services, in particular: 
+
+  - **events-types.json** Event types represented in a hierarchical structure. It is mainly used for documentation generation purposes.
     Extract of the structure: 
 
     ```json
@@ -76,10 +189,10 @@ The types effectively in use are published on [our API site](http://api.pryv.com
 
     
 
-  - **flat.json** Event types in a key / value structure. Is main usage being for applications that require data format validations.
+  - **flat.json** Event types in a key / value structure. It is mainly used for applications that require data format validation.
 
-    This file is the one that is exposed by Pryv.io `service/info/` route with the `eventTypes` property. Exemple: [https://reg.pryv.me/service/info](https://reg.pryv.me/service/info)
-    Note: Only the properties `version` and `types` are mandatory.
+    This file is the one that is exposed by Pryv.io `service/info/` route with the `eventTypes` property. Example: [https://reg.pryv.me/service/info](https://reg.pryv.me/service/info)
+    *Note: Only the properties `version` and `types` are mandatory.*
 
     ```json
     {
@@ -124,121 +237,9 @@ The types effectively in use are published on [our API site](http://api.pryv.com
     }
     ```
 
-  - **flat.min.json** Indentical to flat.json with only the mandatory fields (version and types)
+  - **flat.min.json** Identical to **flat.json** file with only the mandatory fields (version and types).
 
-  
-
-## How to contribute
-
-Things currently stand at the proposal level, with some types reasonably stable, others more likely to change, and many others missing. At this stage, **we definitely need your feedback and contributions**. 
-
-You can either [add issues](https://github.com/pryv/data-types/issues) or [fork and propose pull requests](https://github.com/pryv/data-types/fork). Please always include example use cases with your issues/pull requests.
-
-The format validation follows  [JSON SCHEMA](https://json-schema.org) specification and Pryv.io uses [z-schema](https://github.com/zaggino/z-schema) for validation.
-
-#### 1- Clone this repository 
-
-run `npm install`
-
-#### 2- Edit package.json  `version` value
-
-This will be used as the version for the files generated in `/dist`
-
-#### 3- Modifiy or add files in the directory `/src-classes`
-
-Filenames are not important as long as they end with `.json` for readability we recommend separating classes in independent files with their corresponding filename.
-
-##### Content of a `{classKey}.json` file
-
-A json formated document as an `Object`with the following properties
-
-- **{classKey}** they key of the class for example `"angle"` for angles measures
-  - **description** (optional) `string` 
-  - **extras** (optional) can contain anything that would be relevant for your Apps.
-    - **name** (optional)
-      - **{languageCode}** Name of this class in a specific language 
-  - **fromats** `Object` each property key beign a format of this class. 
-    -  **{fromatKey}** they key of the format examples: `"deg"` for degrees. 
-      The content of this properties should follow [JSON Schema](https://json-schema.org/) format.
-      - **description** (optional) `string`
-      - **type** `Mixed` as per JSON schema
-      - **extras** (optional) they will be stripped out in a separete "extra" place at build.
-
-Examples:
-
-- Minimalist **angle.json** file
-
-```json
-{
-  "angle": {
-  "formats": {
-    "deg": {
-      "type": "number"
-    },
-    "grad": {
-      "type": "number"
-    }
-  }
-}
-```
-
-- Extended **angle.json** file
-
-```json
-{
-  "angle": {
-    "formats": {
-      "deg": {
-        "description": "Degrees",
-        "type": "number",
-        "extras": {
-          "name": {
-            "en": "Degrees",
-            "fr": "Degrés"
-          },
-          "symbol": "°"
-        }
-      },
-      "grad": {
-        "description": "Grade",
-        "type": "number",
-        "extras": {
-          "name": {
-            "en": "Gradians",
-            "fr": "Grades"
-          },
-          "symbol": "grad"
-        }
-      }
-    },
-    "description": "The figure formed by two rays.",
-    "extras": {
-      "name": {
-        "en": "Angle",
-        "fr": "Angle"
-      }
-    }
-  }
-}
-```
-
-#### 4- Build the document to `/dist`
-
-run `npm run build`
-
-Three new versions of files in `/dist`
-
-- **event-types.json**
-- **flat.json**
-- **flat.min.json** 
-
-#### 5- Publish these files on a web sever and expose flat.json or flat.min.json.
-
-`flat.json` or `flat.min.json` should be exposed by **Pryv.io** from `service/info`
-
-More info: on [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation) 
-
-##  License
+  ##  License
 
 (Revised BSD license, adapted.)
 
