@@ -3312,6 +3312,16 @@
         }
       }
     },
+    "credential": {
+      "description": "To record credentials, such as secret keys, password or access rights.",
+      "pryvApiEndpoint": {
+        "name": {
+          "description": "Necessary information to access a Pryv.io account. Url in the format of http(s)://{token}@{apiEndpoint}",
+          "type": "string",
+          "pattern": "^(https?)://.+@.+$"
+        }
+      }
+    },
     "data-quantity": {
       "description": "Unit of information in computing and digital communications.",
       "extras": {
