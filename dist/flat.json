@@ -150,6 +150,11 @@
       "description": "For general items that demand no particular handling.",
       "type": "number"
     },
+    "credentials/pryvApiEndpoint": {
+      "description": "Necessary information to access a Pryv.io account. Url in the format of http(s)://{token}@{apiEndpoint}",
+      "type": "string",
+      "pattern": "^(https?)://.+@.+$"
+    },
     "data-quantity/b": {
       "description": "Bytes",
       "type": "number"
@@ -3312,15 +3317,8 @@
         }
       }
     },
-    "credential": {
-      "description": "To record credentials, such as secret keys, password or access rights.",
-      "pryvApiEndpoint": {
-        "name": {
-          "description": "Necessary information to access a Pryv.io account. Url in the format of http(s)://{token}@{apiEndpoint}",
-          "type": "string",
-          "pattern": "^(https?)://.+@.+$"
-        }
-      }
+    "credentials": {
+      "description": "To record credentials, such as secret keys, passwords or access rights."
     },
     "data-quantity": {
       "description": "Unit of information in computing and digital communications.",
