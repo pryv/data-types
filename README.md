@@ -112,11 +112,21 @@ Three new versions of files will be created in `/dist`:
 - **flat.json**  
 - **flat.min.json**  
 
+Furthermore, the file `flat.json` will be validated.
+
 #### 4- Publish these files on a web sever and expose flat.json or flat.min.json
 
 The URL to the file `flat.json` or `flat.min.json` should be exposed by the [service information](https://api.pryv.com/reference/#service-info).
 
 More information on the content validation for your custom data types can be found in the [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation).  
+
+## Data types validation
+
+To validate that the files you have provided have proper json structure, you may execute below script:
+
+`npm run validate-schema <shema_path>`
+
+where `schema_path` is a full path to the data type json file to validate.
 
 ## Contents
 

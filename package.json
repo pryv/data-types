@@ -4,8 +4,8 @@
   "description": "Pryv event type references",
   "main": "src/build.js",
   "scripts": {
-    "build": "node src/build.js && z-schema ../dist/flat.json",
-    "validate-schema": "z-schema $SCHEMA_PATH"
+    "build": "node src/build.js && z-schema ./dist/flat.json",
+    "validate-schema": "z-schema $1"
   },
   "repository": {
     "type": "git",
