@@ -4,7 +4,8 @@
   "description": "Pryv event type references",
   "main": "src/build.js",
   "scripts": {
-    "build": "node src/build.js"
+    "build": "node src/build.js && z-schema ../dist/flat.json",
+    "validate-schema": "z-schema $SCHEMA_PATH"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "homepage": "https://github.com/pryv/data-types#readme",
   "devDependencies": {
     "lodash": "^4.17.15"
+  },
+  "dependencies": {
+    "z-schema": "^4.2.3"
   }
 }
