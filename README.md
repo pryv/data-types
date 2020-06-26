@@ -148,7 +148,6 @@ where:
 
 - `schema_path` is a full path to the data type json file to validate. Optional - if not provided, generated `flat.json` will be used.
 
-
 ## Contents
 
 We present below the content of the three files generated in `/dist`:
