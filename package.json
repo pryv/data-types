@@ -5,7 +5,8 @@
   "main": "src/build.js",
   "scripts": {
     "build": "node src/build.js && z-schema ./dist/flat.json",
-    "validate-schema": "z-schema $1"
+    "validate-schema": "z-schema",
+    "validate-content": "node src/validate.js"
   },
   "repository": {
     "type": "git",
