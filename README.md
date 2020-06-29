@@ -102,11 +102,11 @@ Examples:
 }
 ```
 
-#### 3- Build the document to `/dist`
+#### 3- Build the document to `dist/`
 
 run `npm run build`
 
-Three new versions of files will be created in `/dist`:
+Three new versions of files will be created in `dist/`:
 
 - **event-types.json**  
 - **flat.json**  
@@ -153,10 +153,9 @@ where:
 
 - `schema_path` is a full path to the data type JSON file to validate. Optional - if not provided, generated `flat.json` will be used.
 
-
 ## Contents
 
-We present below the content of the three files generated in `/dist`:
+We present below the content of the three files generated in `dist/`:
   
 ### events-types.json
 
