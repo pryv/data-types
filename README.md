@@ -102,11 +102,11 @@ Examples:
 }
 ```
 
-#### 3- Build the document to `/dist`
+#### 3- Build the document to `dist/`
 
 run `npm run build`
 
-Three new versions of files will be created in `/dist`:
+Three new versions of files will be created in `dist/`:
 
 - **event-types.json**  
 - **flat.json**  
