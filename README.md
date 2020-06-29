@@ -102,11 +102,11 @@ Examples:
 }
 ```
 
-#### 3- Build the document to `/dist`
+#### 3- Build the document to `dist/`
 
 run `npm run build`
 
-Three new versions of files will be created in `/dist`:
+Three new versions of files will be created in `dist/`:
 
 - **event-types.json**  
 - **flat.json**  
@@ -122,15 +122,40 @@ More information on the content validation for your custom data types can be fou
 
 ## Data types validation
 
-To validate that the files you have provided have proper json structure, you may execute below script:
+To validate that the schemas you have provided have proper JSON structure, you may execute below script:
 
 `npm run validate-schema <shema_path>`
 
 where `schema_path` is a full path to the data type json file to validate.
 
+Furthermore, to validate data type values against generated `flat.json` file (or any file with the same structure), following script may be used:
+
+`npm run validate-content <content_validation_cases_path> <schema_path>`
+
+where:
+
+- `content_validation_cases_path` is a full path to a JSON file with validation cases having following structure:
+
+```json
+  [
+    {
+        "type": "absorbed-dose/gy",
+        "content": 45,
+        "expected": "success"
+    },
+    {
+        "type": "absorbed-dose/gy",
+        "content": "some_v",
+        "expected": "failure"
+    }
+  ]
+```
+
+- `schema_path` is a full path to the data type JSON file to validate. Optional - if not provided, generated `flat.json` will be used.
+
 ## Contents
 
-We present below the content of the three files generated in `/dist`:
+We present below the content of the three files generated in `dist/`:
   
 ### events-types.json
 
