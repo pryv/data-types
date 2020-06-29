@@ -122,7 +122,7 @@ More information on the content validation for your custom data types can be fou
 
 ## Data types validation
 
-To validate that the schemas you have provided have proper json structure, you may execute below script:
+To validate that the schemas you have provided have proper JSON structure, you may execute below script:
 
 `npm run validate-schema <shema_path>`
 
@@ -134,7 +134,7 @@ Furthermore, to validate data type values against generated `flat.json` file (or
 
 where:
 
-- `content_validation_cases_path` is a full path to json file with validation cases having following structure:
+- `content_validation_cases_path` is a full path to a JSON file with validation cases having following structure:
 
 ```json
   [
@@ -142,11 +142,16 @@ where:
         "type": "absorbed-dose/gy",
         "content": 45,
         "expected": "success"
+    },
+    {
+        "type": "absorbed-dose/gy",
+        "content": "some_v",
+        "expected": "failure"
     }
   ]
 ```
 
-- `schema_path` is a full path to the data type json file to validate. Optional - if not provided, generated `flat.json` will be used.
+- `schema_path` is a full path to the data type JSON file to validate. Optional - if not provided, generated `flat.json` will be used.
 
 
 ## Contents
