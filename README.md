@@ -150,7 +150,7 @@ where:
 
 ## Contents
 
-We present below the content of the three files generated in `/dist`:
+We present below the content of the three files generated in `dist/`:
   
 ### events-types.json
 
