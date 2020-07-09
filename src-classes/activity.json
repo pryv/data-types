@@ -11,11 +11,11 @@
         "type": "object",
         "properties": {
           "activeEnergyBurned": {
-            "description": "Amount of active energy that the user has burned during the day. Unit: kcal.",
+            "description": "Amount of active energy that the user has burned during the day. Unit: kcal",
             "type": "number"
           },
           "activeEnergyBurnedGoal": {
-            "description": "The user’s daily goal for active energy burned.. Unit: kcal.",
+            "description": "The user’s daily goal for active energy burned. Unit: kcal",
             "type": "number"
           },
           "appleExerciseTime": {
@@ -49,6 +49,88 @@
           "appleStandHour"
         ]
       }
+    },
+    "workout": {
+      "description": "To record information about workout",
+      "type": "object",
+      "properties": {
+        "duration": {
+          "description": "The workout’s duration. Unit: min",
+          "type": "number"
+        },
+        "totalDistance": {
+          "description": "The total distance traveled during the workout. Unit: m",
+          "type": "number"
+        },
+        "totalEnergyBurned": {
+          "description": "The total active energy burned during the workout. Unit: kcal",
+          "type": "number"
+        },
+        "activityType": {
+          "description": "The type of activity performed during the workout: .",
+          "type": "string", 
+          "enum": ["archery", "bowling", "fencing", "gymnastics", "trackAndField", "americanFootball", 
+            "australianFootball", "baseball", "basketball", "cricket", "discSports", "handball", "hocket", 
+            "lacrosse", "rugby", "soccer", "softball", "volleyball", "preparationAndRecovery", "flexibility", 
+            "walking", "running", "wheelchairWalkPace", "wheelchairRunPace", "cycling", "handCycling", "coreTraining", 
+            "elliptical", "functionalStrengthTraining", "traditionalStrengthTraining", "crossTraining", "mixedCardio", 
+            "highIntensityIntervalTraining", "jumpRope", "stairClimbing", "stairs", "stepTraining", "fitnessGaming", 
+            "barre", "yoga", "mindAndBody", "pilates", "badminton", "racquetball", "squash", "tableTennis", "tennis", 
+            "climbing", "equestrianSports", "fishing", "golf", "hiking", "hunting", "play", "crossCountrySkiing", 
+            "curling", "downhillSkiing", "snowSports", "snowboarding", "skatingSports", "paddleSports", "rowing", "sailing", 
+            "surfingSports", "swimming", "waterFitness", "waterPolo", "waterSports", "boxing", "kickboxing", "martialArts", 
+            "taiChi", "wrestling", "other"
+          ]
+        },
+        "events": {
+          "description": "Array of workout event objects",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dateInterval": {
+                "type": "object", 
+                "properties": {
+                  "start": {
+                    "type": "string"
+                  },
+                  "end": {
+                    "type": "string"
+                  },
+                  "duration": {
+                    "type": "number"
+                  }
+                }
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "pause", "resume", "motionPaused", "motionResumed", "pauseOrResumeRequest", "lap", "segment", "marker"
+                ]
+              }, 
+              "metadata": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "dateInterval",
+              "type"
+            ]
+          }
+        },
+        "totalFlightsClimbed": {
+          "description": "The total number of flights of stairs climbed during the workout. Unit: count",
+          "type": "number"
+        },
+        "totalSwimmingStokeCount": {
+          "description": "The total stroke count for the workout. Unit: count",
+          "type": "number"
+        }
+      },
+      "required": [
+        "duration", 
+        "activityType"
+      ]
     }
   }
 }
