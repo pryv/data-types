@@ -1,0 +1,27 @@
+{
+    "reproductive-health": {
+      "description": "To record reproductive health data, such as menstrual flow or ovulation test results.",
+      "formats": {
+        "sexualActivity": {
+            "description": "A type to record sexual activity",
+            "type": "string",
+            "enum": ["notSet", "protectionUsed", "protectionNotUsed"]
+        }, 
+        "menstrualFlow": {
+            "description": "A type to record the menstrual cycles",
+            "type": "string",
+            "enum": ["unspecified", "none", "light", "medium", "heavy"]
+        }, 
+        "mucusQuality": {
+            "description": "A type to record the quality of the user's mucus",
+            "type": "string",
+            "enum": ["dry", "sticky", "creamy", "watery", "eggWhite"]
+        }, 
+        "ovulation": {
+            "description": "A type to record the result of an ovulation test",
+            "type": "string",
+            "enum": ["negative", "luteinizingHormoneSurge", "indeterminate", "estrogenSurge"]
+        }
+      }
+    }
+}

@@ -1423,6 +1423,47 @@
       "description": "A percentage value.",
       "type": "number"
     },
+    "reproductive-health/sexualActivity": {
+      "description": "A type to record sexual activity",
+      "type": "string",
+      "enum": [
+        "notSet",
+        "protectionUsed",
+        "protectionNotUsed"
+      ]
+    },
+    "reproductive-health/menstrualFlow": {
+      "description": "A type to record the menstrual cycles",
+      "type": "string",
+      "enum": [
+        "unspecified",
+        "none",
+        "light",
+        "medium",
+        "heavy"
+      ]
+    },
+    "reproductive-health/mucusQuality": {
+      "description": "A type to record the quality of the user's mucus",
+      "type": "string",
+      "enum": [
+        "dry",
+        "sticky",
+        "creamy",
+        "watery",
+        "eggWhite"
+      ]
+    },
+    "reproductive-health/ovulation": {
+      "description": "A type to record the result of an ovulation test",
+      "type": "string",
+      "enum": [
+        "negative",
+        "luteinizingHormoneSurge",
+        "indeterminate",
+        "estrogenSurge"
+      ]
+    },
     "speed/ft-m": {
       "description": "Feet/minute",
       "type": "number"
@@ -3571,6 +3612,9 @@
           "fr": "Ratio"
         }
       }
+    },
+    "reproductive-health": {
+      "description": "To record reproductive health data, such as menstrual flow or ovulation test results."
     },
     "speed": {
       "description": "The magnitude of the velocity of an object.",
