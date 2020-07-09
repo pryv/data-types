@@ -5,6 +5,49 @@
       "plain": {
         "description": "Plain activity event with no specific content; the activity is defined by the event's stream, time and duration, and possibly description and tags.",
         "type": "null"
+      }, 
+      "summary": {
+        "description": "To record the summary of a given activity.",
+        "type": "object",
+        "properties": {
+          "activeEnergyBurned": {
+            "description": "Amount of active energy that the user has burned during the day. Unit: kcal.",
+            "type": "number"
+          },
+          "activeEnergyBurnedGoal": {
+            "description": "The user’s daily goal for active energy burned.. Unit: kcal.",
+            "type": "number"
+          },
+          "appleExerciseTime": {
+            "description": "Amount of time that the user has spent exercising during the day. Unit: min",
+            "type": "number"
+          },
+          "appleExerciseTimeGoal": {
+            "description": "The user’s daily exercise goal. Unit: min",
+            "type": "number"
+          },
+          "appleStandHours": {
+            "description": "Number of stand hours that the user has earned during the day. Unit: count",
+            "type": "number"
+          },
+          "appleStandHoursGoal": {
+            "description": "The user’s daily goal for stand hours. Unit: count",
+            "type": "number"
+          },
+          "appleStandHour": {
+            "description": "Indicate whether the user stood during the sample’s duration",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "activeEnergyBurned",
+          "activeEnergyBurnedGoal", 
+          "appleExerciseTime", 
+          "appleExerciseTimeGoal",
+          "appleStandHours",
+          "appleStandHoursGoal",
+          "appleStandHour"
+        ]
       }
     }
   }
