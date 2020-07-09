@@ -1403,6 +1403,11 @@
       "description": "Pounds/square inch",
       "type": "number"
     },
+    "pressure/db": {
+      "description": "Decibels",
+      "type": "number",
+      "symbol": "dB"
+    },
     "ratio/generic": {
       "description": "Generic ratio.",
       "type": "object",

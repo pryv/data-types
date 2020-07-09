@@ -110,6 +110,11 @@
           },
           "symbol": "psi"
         }
+      }, 
+      "db": {
+        "description": "Decibels",
+        "type": "number",
+        "symbol": "dB"
       }
     },
     "description": "The ratio of force to the area over which that force is distributed.",
