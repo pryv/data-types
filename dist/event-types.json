@@ -399,6 +399,10 @@
         "s": {
           "description": "Siemens",
           "type": "number"
+        },
+        "us": {
+          "description": "Micro Siemens",
+          "type": "number"
         }
       },
       "description": "A material that accommodates the transport of electric charge."
@@ -1757,6 +1761,10 @@
         "mph": {
           "description": "Miles/hour",
           "type": "number"
+        },
+        "lpm": {
+          "description": "Liters/minute",
+          "type": "number"
         }
       },
       "description": "The magnitude of the velocity of an object."
@@ -1905,6 +1913,10 @@
         },
         "tsp": {
           "description": "Teaspoons",
+          "type": "number"
+        },
+        "uin": {
+          "description": "Units of insulin",
           "type": "number"
         }
       }
@@ -2300,6 +2312,13 @@
             "fr": "Siemens"
           },
           "symbol": "S"
+        },
+        "us": {
+          "name": {
+            "en": "Micro Siemens",
+            "fr": "Micro Siemens"
+          },
+          "symbol": "uS"
         }
       }
     },
@@ -3653,6 +3672,13 @@
             "fr": "Miles/heure"
           },
           "symbol": "mph"
+        },
+        "lpm": {
+          "name": {
+            "en": "Liters/minute",
+            "fr": "Litres/minute"
+          },
+          "symbol": "L/min"
         }
       }
     },
