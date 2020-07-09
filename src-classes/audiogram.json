@@ -1,0 +1,50 @@
+{
+    "audiogram": {
+      "description": "To record audiogram data.",
+      "formats": {
+        "data": {
+          "type": "object", 
+
+          "properties": {
+            "sensitivityPoints": {
+              "description": "Array of sensitivity points",
+              "type": "array", 
+              "items": {
+                  "frequency": {
+                    "description": "The frequency tested in the hearing test. Unit: hz",
+                    "type": "number"
+                  }, 
+                  "leftEarSensitivity": {
+                    "description": "The sensitivity of the left ear. Unit: dB",
+                    "type": "number"
+                  }, 
+                  "rightEarSensitivity": {
+                    "description": "The sensitivity of the right ear. Unit: dB",
+                    "type": "number"
+                  }
+              }, 
+              "required": [
+                "frequency"
+              ] 
+            }, 
+            "start": {
+              "description": "The start date for the sample. Unit: date in ISO 8601 format",
+              "type": "string"
+            }, 
+            "end": {
+              "description": "The end date for the sample. Unit: date in ISO 8601 format",
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "sensitivityPoints", 
+            "start",
+            "end"
+          ]
+        }
+      }
+    }
+  }

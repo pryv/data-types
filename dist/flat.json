@@ -164,6 +164,48 @@
       "type": "string",
       "pattern": "^(https?)://.+$"
     },
+    "audiogram/data": {
+      "type": "object",
+      "properties": {
+        "sensitivityPoints": {
+          "description": "Array of sensitivity points",
+          "type": "array",
+          "items": {
+            "frequency": {
+              "description": "The frequency tested in the hearing test. Unit: hz",
+              "type": "number"
+            },
+            "leftEarSensitivity": {
+              "description": "The sensitivity of the left ear. Unit: dB",
+              "type": "number"
+            },
+            "rightEarSensitivity": {
+              "description": "The sensitivity of the right ear. Unit: dB",
+              "type": "number"
+            }
+          },
+          "required": [
+            "frequency"
+          ]
+        },
+        "start": {
+          "description": "The start date for the sample. Unit: date in ISO 8601 format",
+          "type": "string"
+        },
+        "end": {
+          "description": "The end date for the sample. Unit: date in ISO 8601 format",
+          "type": "string"
+        },
+        "metadata": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "sensitivityPoints",
+        "start",
+        "end"
+      ]
+    },
     "blood-pressure/mmhg-bpm": {
       "description": "The blood pressure measurement. Pressures are stored in mmHg and the heart rate in bpm",
       "type": "object",
@@ -3608,6 +3650,9 @@
     },
     "audio": {
       "description": "To record audio (conversations, voice messages, etc.)."
+    },
+    "audiogram": {
+      "description": "To record audiogram data."
     },
     "blood-pressure": {
       "description": "To record a blood pressure measurement."
