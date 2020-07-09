@@ -73,6 +73,44 @@
       "description": "Square miles",
       "type": "number"
     },
+    "attributes/biologicalSex": {
+      "description": "An attribute type for the user’s sex",
+      "type": "string",
+      "enum": [
+        "notSet",
+        "female",
+        "male",
+        "other"
+      ]
+    },
+    "attributes/bloodType": {
+      "description": "An attribute type for the user’s blood type",
+      "type": "string",
+      "enum": [
+        "notSet",
+        "aPositive",
+        "bPositive",
+        "oPositive",
+        "abPositive",
+        "aNegative",
+        "bNegative",
+        "abNegative",
+        "oNegative"
+      ]
+    },
+    "attributes/skinType": {
+      "description": "An attribute type for the user’s skin type",
+      "type": "string",
+      "enum": [
+        "notSet",
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI"
+      ]
+    },
     "audio/attached": {
       "description": "The audio source is the file attached to the event (no explicit content defined).\nYou can use the event's duration to mirror the recording's duration.",
       "type": "null",
@@ -104,6 +142,10 @@
         "systolic",
         "diastolic"
       ]
+    },
+    "boolean/bool": {
+      "description": "An attribute type for true or false",
+      "type": "boolean"
     },
     "call/name": {
       "description": "The contact's name (or a free-form identifier)",
@@ -3278,11 +3320,17 @@
         }
       }
     },
+    "attributes": {
+      "description": "To record attributes, such as blood type, date of birth or skin type."
+    },
     "audio": {
       "description": "To record audio (conversations, voice messages, etc.)."
     },
     "blood-pressure": {
       "description": "To record a blood pressure measurement."
+    },
+    "boolean": {
+      "description": "To record whether an attribute is true, e.g. if the user has a wheelchair."
     },
     "call": {
       "description": "To record references to phone calls (landline, mobile, Skype, etc.)."
