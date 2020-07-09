@@ -531,6 +531,10 @@
           "description": "Beats per minute",
           "type": "number"
         },
+        "brpm": {
+          "description": "Breaths per minute",
+          "type": "number"
+        },
         "ghz": {
           "description": "Gigahertz",
           "type": "number"
@@ -566,6 +570,16 @@
         "uhz": {
           "description": "Microhertz",
           "type": "number"
+        }
+      }
+    },
+    "gas-consumption": {
+      "description": "The quantity of gas consumed.",
+      "formats": {
+        "mlpkgmin": {
+          "description": "Mili liters per kilograms times minutes",
+          "type": "number",
+          "symbol": "ml/(kg * min)"
         }
       }
     },
@@ -2430,6 +2444,12 @@
             "fr": "Battements par minute"
           },
           "symbol": "bpm"
+        },
+        "brpm": {
+          "name": {
+            "en": "Breaths per minute",
+            "fr": "Respiration par minute"
+          }
         },
         "hz": {
           "name": {

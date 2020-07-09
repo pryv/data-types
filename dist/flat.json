@@ -373,6 +373,10 @@
       "description": "Beats per minute",
       "type": "number"
     },
+    "frequency/brpm": {
+      "description": "Breaths per minute",
+      "type": "number"
+    },
     "frequency/ghz": {
       "description": "Gigahertz",
       "type": "number"
@@ -408,6 +412,11 @@
     "frequency/uhz": {
       "description": "Microhertz",
       "type": "number"
+    },
+    "gas-consumption/mlpkgmin": {
+      "description": "Mili liters per kilograms times minutes",
+      "type": "number",
+      "symbol": "ml/(kg * min)"
     },
     "length/cm": {
       "description": "Centimeters",
@@ -1998,6 +2007,12 @@
       },
       "symbol": "bpm"
     },
+    "frequency/brpm": {
+      "name": {
+        "en": "Breaths per minute",
+        "fr": "Respiration par minute"
+      }
+    },
     "frequency/hz": {
       "name": {
         "en": "Hertz",
@@ -3521,6 +3536,9 @@
           "fr": "Fréquence"
         }
       }
+    },
+    "gas-consumption": {
+      "description": "The quantity of gas consumed."
     },
     "length": {
       "description": "Length measurements. Format = unit.",

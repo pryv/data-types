@@ -13,6 +13,16 @@
           "symbol": "bpm"
         }
       },
+      "brpm": {
+        "description": "Breaths per minute",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Breaths per minute",
+            "fr": "Respiration par minute"
+          }
+        }
+      },
       "ghz": {
         "description": "Gigahertz",
         "type": "number"
