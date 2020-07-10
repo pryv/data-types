@@ -1,5 +1,5 @@
 {
-    "fhir": {
+    "clinical": {
       "description": "The clinical record stores information about a single condition, procedure, or result, along with a fhir resource underlying data from the user’s healthcare institution.",
       "formats": {
         "fhir": {

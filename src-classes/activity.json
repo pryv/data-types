@@ -33,10 +33,6 @@
           "appleStandHoursGoal": {
             "description": "The user’s daily goal for stand hours. Unit: count",
             "type": "number"
-          },
-          "appleStandHour": {
-            "description": "Indicate whether the user stood during the sample’s duration",
-            "type": "boolean"
           }
         },
         "required": [
@@ -45,8 +41,7 @@
           "appleExerciseTime", 
           "appleExerciseTimeGoal",
           "appleStandHours",
-          "appleStandHoursGoal",
-          "appleStandHour"
+          "appleStandHoursGoal"
         ]
       }
     },
@@ -105,7 +100,7 @@
               "type": {
                 "type": "string",
                 "enum": [
-                  "pause", "resume", "motionPaused", "motionResumed", "pauseOrResumeRequest", "lap", "segment", "marker"
+                  "pause", "resume", "motionPaused", "motionResumed", "pauseOrResumeRequest", "lap", "segment", "marker", "other"
                 ]
               }, 
               "metadata": {

@@ -178,9 +178,10 @@
           "symbol": "tsp"
         }
       }, 
-      "uin": {
+      "iu": {
         "description": "Units of insulin", 
-        "type": "number"
+        "type": "number",
+        "symbol": "IU"
       }
     },
     "extras": {

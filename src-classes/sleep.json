@@ -1,0 +1,16 @@
+{
+    "sleep": {
+        "description": "To record sleep information.",
+        "formats": {
+            "analysis": {
+                "type": "object",
+                "properties": {
+                    "analysis": {
+                        "type": "string", 
+                        "enum": ["inBed", "asleep", "awake"]
+                    }
+                }
+            }
+        }
+    }
+}

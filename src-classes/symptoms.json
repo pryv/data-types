@@ -11,16 +11,6 @@
             "description": "A type to represent change in appetite.",
             "type": "string",
             "enum": ["decreased", "increased", "noChange", "unspecified"]
-        }, 
-        "mucusQuality": {
-            "description": "A type to record the quality of the user's mucus",
-            "type": "string",
-            "enum": ["dry", "sticky", "creamy", "watery", "eggWhite"]
-        }, 
-        "ovulation": {
-            "description": "A type to record the result of an ovulation test",
-            "type": "string",
-            "enum": ["negative", "luteinizingHormoneSurge", "indeterminate", "estrogenSurge"]
         }
       }
     }

@@ -15,7 +15,7 @@
         "skinType": {
             "description": "An attribute type for the user’s skin type",
             "type": "string",
-            "enum": ["notSet", "I", "II", "III", "IV", "V", "VI"]
+            "enum": ["notSet", "Pale white skin", "White skin", "White to light brown skin", "Beige-olive skin", "Brown skin", "Dark brown to black skin"]
         }
       }
     }
