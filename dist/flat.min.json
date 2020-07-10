@@ -253,15 +253,28 @@
     "clinical/fhir": {
       "description": "Type to record the clinical information, including an attachment, corresponding to the data of the fhir resource.",
       "type": "object",
-      "attachmentRequired": true,
       "properties": {
         "displayName": {
           "type": "string",
           "description": "The primary display name of the clinical record."
         },
+        "clinicalType": {
+          "description": "An identifier that indicates the type of record, such as allergy or condition record.",
+          "type": "string",
+          "enum": [
+            "allergyRecord",
+            "immunizationRecord",
+            "conditionRecord",
+            "labResultRecord",
+            "medicationRecord",
+            "procedureRecord",
+            "vitalSignRecord"
+          ]
+        },
         "fhir": {
           "description": "The Fast Healthcare Interoperability Resources (FHIR) data for this record.",
           "type": "object",
+          "attachmentRequired": true,
           "properties": {
             "identifier": {
               "type": "string",
@@ -287,7 +300,8 @@
           ]
         },
         "required": [
-          "displayName"
+          "displayName",
+          "clinicalType"
         ]
       }
     },
