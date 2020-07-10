@@ -13,7 +13,7 @@
             "enum": ["unspecified", "none", "light", "medium", "heavy"]
         }, 
         "mucusQuality": {
-            "description": "A type to record the quality of the user's mucus",
+            "description": "A type to record the quality of the mucus",
             "type": "string",
             "enum": ["dry", "sticky", "creamy", "watery", "eggWhite"]
         }, 

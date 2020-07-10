@@ -3,9 +3,15 @@
       "description": "The quantity of gas consumed.",
       "formats": {
         "mlpkgmin": {
-          "description": "Mili liters per kilograms times minutes",
+          "description": "Mili liters per kilogram and minute",
           "type": "number",
-          "symbol": "ml/(kg * min)"  
+          "extras": {
+            "name": {
+              "en": "Mili liters per kilogram and minute",
+              "fr": "Mili litres par kilogramme et minute"
+            }
+          },
+          "symbol": "ml/(kg * min)"
         }
       }
     }

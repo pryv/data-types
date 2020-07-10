@@ -24,8 +24,15 @@
                             "enum": ["allergyIntolerance", "condition", "immunization", "medicationOrder", "medicationDispense", 
                                 "medicationStatement", "observation", "procedure"]
                         }
-                    }
-                }
+                    },
+                    "required": [
+                      "identifier", 
+                      "resourceType"
+                    ]
+                },
+                "required": [
+                  "displayName"
+                ]
             }
         }
       }

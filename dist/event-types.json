@@ -377,40 +377,43 @@
               "description": "Array of sensitivity points",
               "type": "array",
               "items": {
-                "frequency": {
-                  "description": "The frequency tested in the hearing test. Unit: hz",
-                  "type": "number"
+                "type": "object",
+                "properties": {
+                  "frequency": {
+                    "description": "The frequency tested in the hearing test. Unit: hz",
+                    "type": "number"
+                  },
+                  "leftEarSensitivity": {
+                    "description": "The sensitivity of the left ear. Unit: dB",
+                    "type": "number"
+                  },
+                  "rightEarSensitivity": {
+                    "description": "The sensitivity of the right ear. Unit: dB",
+                    "type": "number"
+                  }
                 },
-                "leftEarSensitivity": {
-                  "description": "The sensitivity of the left ear. Unit: dB",
-                  "type": "number"
-                },
-                "rightEarSensitivity": {
-                  "description": "The sensitivity of the right ear. Unit: dB",
-                  "type": "number"
-                }
+                "required": [
+                  "frequency"
+                ]
               },
-              "required": [
-                "frequency"
-              ]
+              "start": {
+                "description": "The start date for the sample. Unit: date in ISO 8601 format",
+                "type": "string"
+              },
+              "end": {
+                "description": "The end date for the sample. Unit: date in ISO 8601 format",
+                "type": "string"
+              },
+              "metadata": {
+                "type": "object"
+              }
             },
-            "start": {
-              "description": "The start date for the sample. Unit: date in ISO 8601 format",
-              "type": "string"
-            },
-            "end": {
-              "description": "The end date for the sample. Unit: date in ISO 8601 format",
-              "type": "string"
-            },
-            "metadata": {
-              "type": "object"
-            }
-          },
-          "required": [
-            "sensitivityPoints",
-            "start",
-            "end"
-          ]
+            "required": [
+              "sensitivityPoints",
+              "start",
+              "end"
+            ]
+          }
         }
       }
     },
@@ -767,8 +770,15 @@
                     "procedure"
                   ]
                 }
-              }
-            }
+              },
+              "required": [
+                "identifier",
+                "resourceType"
+              ]
+            },
+            "required": [
+              "displayName"
+            ]
           }
         }
       }
@@ -863,7 +873,7 @@
       "description": "The quantity of gas consumed.",
       "formats": {
         "mlpkgmin": {
-          "description": "Mili liters per kilograms times minutes",
+          "description": "Mili liters per kilogram and minute",
           "type": "number",
           "symbol": "ml/(kg * min)"
         }
@@ -1992,7 +2002,7 @@
           ]
         },
         "mucusQuality": {
-          "description": "A type to record the quality of the user's mucus",
+          "description": "A type to record the quality of the mucus",
           "type": "string",
           "enum": [
             "dry",
@@ -2796,7 +2806,7 @@
         "brpm": {
           "name": {
             "en": "Breaths per minute",
-            "fr": "Respiration par minute"
+            "fr": "Respirations par minute"
           }
         },
         "hz": {
@@ -2812,6 +2822,16 @@
             "fr": "Rotations par minute"
           },
           "symbol": "rpm"
+        }
+      }
+    },
+    "gas-consumption": {
+      "formats": {
+        "mlpkgmin": {
+          "name": {
+            "en": "Mili liters per kilogram and minute",
+            "fr": "Mili litres par kilogramme et minute"
+          }
         }
       }
     },
