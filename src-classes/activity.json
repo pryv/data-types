@@ -117,7 +117,7 @@
           "description": "The total number of flights of stairs climbed during the workout. Unit: count",
           "type": "number"
         },
-        "totalSwimmingStokeCount": {
+        "totalSwimmingStrokeCount": {
           "description": "The total stroke count for the workout. Unit: count",
           "type": "number"
         }

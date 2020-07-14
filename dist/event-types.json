@@ -218,7 +218,7 @@
             "description": "The total number of flights of stairs climbed during the workout. Unit: count",
             "type": "number"
           },
-          "totalSwimmingStokeCount": {
+          "totalSwimmingStrokeCount": {
             "description": "The total stroke count for the workout. Unit: count",
             "type": "number"
           }
@@ -883,7 +883,7 @@
       "description": "The quantity of gas consumed.",
       "formats": {
         "mlpkgmin": {
-          "description": "Mili liters per kilogram and minute",
+          "description": "Milliliters per kilogram and minute",
           "type": "number",
           "symbol": "ml/(kg * min)"
         }
@@ -2837,8 +2837,8 @@
       "formats": {
         "mlpkgmin": {
           "name": {
-            "en": "Mili liters per kilogram and minute",
-            "fr": "Mili litres par kilogramme et minute"
+            "en": "Milliliters per kilogram and minute",
+            "fr": "Millilitres par kilogramme et minute"
           }
         }
       }
