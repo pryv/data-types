@@ -77,6 +77,17 @@
           },
           "symbol": "mph"
         }
+      }, 
+      "lpm": {
+        "description": "Liters/minute", 
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Liters/minute",
+            "fr": "Litres/minute"
+          },
+          "symbol": "L/min"
+        }
       }
     },
     "description": "The magnitude of the velocity of an object.",

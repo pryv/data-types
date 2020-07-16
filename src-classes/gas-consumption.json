@@ -1,0 +1,18 @@
+{
+    "gas-consumption": {
+      "description": "The quantity of gas consumed.",
+      "formats": {
+        "mlpkgmin": {
+          "description": "Milliliters per kilogram and minute",
+          "type": "number",
+          "extras": {
+            "name": {
+              "en": "Milliliters per kilogram and minute",
+              "fr": "Millilitres par kilogramme et minute"
+            }
+          },
+          "symbol": "ml/(kg * min)"
+        }
+      }
+    }
+}

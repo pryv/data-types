@@ -34,7 +34,199 @@
         "plain": {
           "description": "Plain activity event with no specific content; the activity is defined by the event's stream, time and duration, and possibly description and tags.",
           "type": "null"
+        },
+        "summary": {
+          "description": "To record the summary of a given activity.",
+          "type": "object",
+          "properties": {
+            "activeEnergyBurned": {
+              "description": "Amount of active energy that the user has burned during the day. Unit: kcal",
+              "type": "number"
+            },
+            "activeEnergyBurnedGoal": {
+              "description": "The user’s daily goal for active energy burned. Unit: kcal",
+              "type": "number"
+            },
+            "appleExerciseTime": {
+              "description": "Amount of time that the user has spent exercising during the day. Unit: min",
+              "type": "number"
+            },
+            "appleExerciseTimeGoal": {
+              "description": "The user’s daily exercise goal. Unit: min",
+              "type": "number"
+            },
+            "appleStandHours": {
+              "description": "Number of stand hours that the user has earned during the day. Unit: count",
+              "type": "number"
+            },
+            "appleStandHoursGoal": {
+              "description": "The user’s daily goal for stand hours. Unit: count",
+              "type": "number"
+            }
+          },
+          "required": [
+            "activeEnergyBurned",
+            "activeEnergyBurnedGoal",
+            "appleExerciseTime",
+            "appleExerciseTimeGoal",
+            "appleStandHours",
+            "appleStandHoursGoal"
+          ]
         }
+      },
+      "workout": {
+        "description": "To record information about workout",
+        "type": "object",
+        "properties": {
+          "duration": {
+            "description": "The workout’s duration. Unit: min",
+            "type": "number"
+          },
+          "totalDistance": {
+            "description": "The total distance traveled during the workout. Unit: m",
+            "type": "number"
+          },
+          "totalEnergyBurned": {
+            "description": "The total active energy burned during the workout. Unit: kcal",
+            "type": "number"
+          },
+          "activityType": {
+            "description": "The type of activity performed during the workout: .",
+            "type": "string",
+            "enum": [
+              "archery",
+              "bowling",
+              "fencing",
+              "gymnastics",
+              "trackAndField",
+              "americanFootball",
+              "australianFootball",
+              "baseball",
+              "basketball",
+              "cricket",
+              "discSports",
+              "handball",
+              "hocket",
+              "lacrosse",
+              "rugby",
+              "soccer",
+              "softball",
+              "volleyball",
+              "preparationAndRecovery",
+              "flexibility",
+              "walking",
+              "running",
+              "wheelchairWalkPace",
+              "wheelchairRunPace",
+              "cycling",
+              "handCycling",
+              "coreTraining",
+              "elliptical",
+              "functionalStrengthTraining",
+              "traditionalStrengthTraining",
+              "crossTraining",
+              "mixedCardio",
+              "highIntensityIntervalTraining",
+              "jumpRope",
+              "stairClimbing",
+              "stairs",
+              "stepTraining",
+              "fitnessGaming",
+              "barre",
+              "yoga",
+              "mindAndBody",
+              "pilates",
+              "badminton",
+              "racquetball",
+              "squash",
+              "tableTennis",
+              "tennis",
+              "climbing",
+              "equestrianSports",
+              "fishing",
+              "golf",
+              "hiking",
+              "hunting",
+              "play",
+              "crossCountrySkiing",
+              "curling",
+              "downhillSkiing",
+              "snowSports",
+              "snowboarding",
+              "skatingSports",
+              "paddleSports",
+              "rowing",
+              "sailing",
+              "surfingSports",
+              "swimming",
+              "waterFitness",
+              "waterPolo",
+              "waterSports",
+              "boxing",
+              "kickboxing",
+              "martialArts",
+              "taiChi",
+              "wrestling",
+              "other"
+            ]
+          },
+          "events": {
+            "description": "Array of workout event objects",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dateInterval": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "string"
+                    },
+                    "end": {
+                      "type": "string"
+                    },
+                    "duration": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "pause",
+                    "resume",
+                    "motionPaused",
+                    "motionResumed",
+                    "pauseOrResumeRequest",
+                    "lap",
+                    "segment",
+                    "marker",
+                    "other"
+                  ]
+                },
+                "metadata": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "dateInterval",
+                "type"
+              ]
+            }
+          },
+          "totalFlightsClimbed": {
+            "description": "The total number of flights of stairs climbed during the workout. Unit: count",
+            "type": "number"
+          },
+          "totalSwimmingStrokeCount": {
+            "description": "The total stroke count for the workout. Unit: count",
+            "type": "number"
+          }
+        },
+        "required": [
+          "duration",
+          "activityType"
+        ]
       }
     },
     "angle": {
@@ -113,6 +305,49 @@
       },
       "description": "The extent of a two-dimensional surface or shape, or planar lamina, in the plane."
     },
+    "attributes": {
+      "description": "To record attributes, such as blood type, date of birth or skin type.",
+      "formats": {
+        "biologicalSex": {
+          "description": "An attribute type for the user’s sex",
+          "type": "string",
+          "enum": [
+            "notSet",
+            "female",
+            "male",
+            "other"
+          ]
+        },
+        "bloodType": {
+          "description": "An attribute type for the user’s blood type",
+          "type": "string",
+          "enum": [
+            "notSet",
+            "aPositive",
+            "bPositive",
+            "oPositive",
+            "abPositive",
+            "aNegative",
+            "bNegative",
+            "abNegative",
+            "oNegative"
+          ]
+        },
+        "skinType": {
+          "description": "An attribute type for the user’s skin type",
+          "type": "string",
+          "enum": [
+            "notSet",
+            "Pale white skin",
+            "White skin",
+            "White to light brown skin",
+            "Beige-olive skin",
+            "Brown skin",
+            "Dark brown to black skin"
+          ]
+        }
+      }
+    },
     "audio": {
       "description": "To record audio (conversations, voice messages, etc.).",
       "formats": {
@@ -125,6 +360,56 @@
           "description": "A reference to an audio file online.",
           "type": "string",
           "pattern": "^(https?)://.+$"
+        }
+      }
+    },
+    "audiogram": {
+      "description": "To record audiogram data.",
+      "formats": {
+        "data": {
+          "type": "object",
+          "properties": {
+            "sensitivityPoints": {
+              "description": "Array of sensitivity points",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "frequency": {
+                    "description": "The frequency tested in the hearing test. Unit: hz",
+                    "type": "number"
+                  },
+                  "leftEarSensitivity": {
+                    "description": "The sensitivity of the left ear. Unit: dB",
+                    "type": "number"
+                  },
+                  "rightEarSensitivity": {
+                    "description": "The sensitivity of the right ear. Unit: dB",
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "frequency"
+                ]
+              },
+              "start": {
+                "description": "The start date for the sample. Unit: date in ISO 8601 format",
+                "type": "string"
+              },
+              "end": {
+                "description": "The end date for the sample. Unit: date in ISO 8601 format",
+                "type": "string"
+              },
+              "metadata": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "sensitivityPoints",
+              "start",
+              "end"
+            ]
+          }
         }
       }
     },
@@ -152,6 +437,15 @@
             "systolic",
             "diastolic"
           ]
+        }
+      }
+    },
+    "boolean": {
+      "description": "To record whether an attribute is true, e.g. if the user has a wheelchair.",
+      "formats": {
+        "bool": {
+          "description": "An attribute type for true or false",
+          "type": "boolean"
         }
       }
     },
@@ -189,6 +483,66 @@
         }
       },
       "description": "The  increase in rate of a chemical reaction due to the participation of a substance called a catalyst."
+    },
+    "clinical": {
+      "description": "The clinical record stores information about a single condition, procedure, or result, along with a fhir resource underlying data from the user’s healthcare institution.",
+      "formats": {
+        "fhir": {
+          "description": "Type to record the clinical information, including an attachment, corresponding to the data of the fhir resource.",
+          "type": "object",
+          "properties": {
+            "displayName": {
+              "type": "string",
+              "description": "The primary display name of the clinical record."
+            },
+            "clinicalType": {
+              "description": "An identifier that indicates the type of record, such as allergy or condition record.",
+              "type": "string",
+              "enum": [
+                "allergyRecord",
+                "immunizationRecord",
+                "conditionRecord",
+                "labResultRecord",
+                "medicationRecord",
+                "procedureRecord",
+                "vitalSignRecord"
+              ]
+            },
+            "fhir": {
+              "description": "The Fast Healthcare Interoperability Resources (FHIR) data for this record.",
+              "type": "object",
+              "attachmentRequired": true,
+              "properties": {
+                "identifier": {
+                  "type": "string",
+                  "description": "The value from the FHIR resource’s id field."
+                },
+                "resourceType": {
+                  "type": "string",
+                  "enum": [
+                    "allergyIntolerance",
+                    "condition",
+                    "immunization",
+                    "medicationOrder",
+                    "medicationDispense",
+                    "medicationStatement",
+                    "observation",
+                    "procedure"
+                  ]
+                }
+              },
+              "required": [
+                "identifier",
+                "resourceType"
+              ]
+            },
+            "required": [
+              "displayName",
+              "clinicalType"
+            ]
+          }
+        }
+      }
     },
     "contact": {
       "description": "To record events related to people (meeting someone special, business encounters, etc.).",
@@ -347,6 +701,10 @@
         "s": {
           "description": "Siemens",
           "type": "number"
+        },
+        "us": {
+          "description": "Micro Siemens",
+          "type": "number"
         }
       },
       "description": "A material that accommodates the transport of electric charge."
@@ -479,6 +837,10 @@
           "description": "Beats per minute",
           "type": "number"
         },
+        "brpm": {
+          "description": "Breaths per minute",
+          "type": "number"
+        },
         "ghz": {
           "description": "Gigahertz",
           "type": "number"
@@ -514,6 +876,16 @@
         "uhz": {
           "description": "Microhertz",
           "type": "number"
+        }
+      }
+    },
+    "gas-consumption": {
+      "description": "The quantity of gas consumed.",
+      "formats": {
+        "mlpkgmin": {
+          "description": "Milliliters per kilogram and minute",
+          "type": "number",
+          "symbol": "ml/(kg * min)"
         }
       }
     },
@@ -1582,6 +1954,11 @@
         "psi": {
           "description": "Pounds/square inch",
           "type": "number"
+        },
+        "db": {
+          "description": "Decibels",
+          "type": "number",
+          "symbol": "dB"
         }
       },
       "description": "The ratio of force to the area over which that force is distributed."
@@ -1608,6 +1985,70 @@
         "percent": {
           "description": "A percentage value.",
           "type": "number"
+        }
+      }
+    },
+    "reproductive-health": {
+      "description": "To record reproductive health data, such as menstrual flow or ovulation test results.",
+      "formats": {
+        "sexualActivity": {
+          "description": "A type to record sexual activity",
+          "type": "string",
+          "enum": [
+            "notSet",
+            "protectionUsed",
+            "protectionNotUsed"
+          ]
+        },
+        "menstrualFlow": {
+          "description": "A type to record the menstrual cycles",
+          "type": "string",
+          "enum": [
+            "unspecified",
+            "none",
+            "light",
+            "medium",
+            "heavy"
+          ]
+        },
+        "mucusQuality": {
+          "description": "A type to record the quality of the mucus",
+          "type": "string",
+          "enum": [
+            "dry",
+            "sticky",
+            "creamy",
+            "watery",
+            "eggWhite"
+          ]
+        },
+        "ovulation": {
+          "description": "A type to record the result of an ovulation test",
+          "type": "string",
+          "enum": [
+            "negative",
+            "luteinizingHormoneSurge",
+            "indeterminate",
+            "estrogenSurge"
+          ]
+        }
+      }
+    },
+    "sleep": {
+      "description": "To record sleep information.",
+      "formats": {
+        "analysis": {
+          "type": "object",
+          "properties": {
+            "analysis": {
+              "type": "string",
+              "enum": [
+                "inBed",
+                "asleep",
+                "awake"
+              ]
+            }
+          }
         }
       }
     },
@@ -1640,9 +2081,39 @@
         "mph": {
           "description": "Miles/hour",
           "type": "number"
+        },
+        "lpm": {
+          "description": "Liters/minute",
+          "type": "number"
         }
       },
       "description": "The magnitude of the velocity of an object."
+    },
+    "symptoms": {
+      "description": "To record medical symptoms, such as abdominal cramps or chest pain.",
+      "formats": {
+        "severity": {
+          "description": "A type to record severity of a symptom such as bloating or abdominal cramps.",
+          "type": "string",
+          "enum": [
+            "notPresent",
+            "mild",
+            "moderate",
+            "severe",
+            "unspecified"
+          ]
+        },
+        "appetiteChanges": {
+          "description": "A type to represent change in appetite.",
+          "type": "string",
+          "enum": [
+            "decreased",
+            "increased",
+            "noChange",
+            "unspecified"
+          ]
+        }
+      }
     },
     "temperature": {
       "description": "Temperature measurements. Format = unit.",
@@ -1789,6 +2260,11 @@
         "tsp": {
           "description": "Teaspoons",
           "type": "number"
+        },
+        "iu": {
+          "description": "Units of insulin",
+          "type": "number",
+          "symbol": "IU"
         }
       }
     }
@@ -2183,6 +2659,13 @@
             "fr": "Siemens"
           },
           "symbol": "S"
+        },
+        "us": {
+          "name": {
+            "en": "Micro Siemens",
+            "fr": "Micro Siemens"
+          },
+          "symbol": "uS"
         }
       }
     },
@@ -2328,6 +2811,12 @@
           },
           "symbol": "bpm"
         },
+        "brpm": {
+          "name": {
+            "en": "Breaths per minute",
+            "fr": "Respirations par minute"
+          }
+        },
         "hz": {
           "name": {
             "en": "Hertz",
@@ -2341,6 +2830,16 @@
             "fr": "Rotations par minute"
           },
           "symbol": "rpm"
+        }
+      }
+    },
+    "gas-consumption": {
+      "formats": {
+        "mlpkgmin": {
+          "name": {
+            "en": "Milliliters per kilogram and minute",
+            "fr": "Millilitres par kilogramme et minute"
+          }
         }
       }
     },
@@ -3530,6 +4029,13 @@
             "fr": "Miles/heure"
           },
           "symbol": "mph"
+        },
+        "lpm": {
+          "name": {
+            "en": "Liters/minute",
+            "fr": "Litres/minute"
+          },
+          "symbol": "L/min"
         }
       }
     },

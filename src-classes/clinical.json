@@ -1,0 +1,46 @@
+{
+    "clinical": {
+      "description": "The clinical record stores information about a single condition, procedure, or result, along with a fhir resource underlying data from the user’s healthcare institution.",
+      "formats": {
+        "fhir": {
+            "description": "Type to record the clinical information, including an attachment, corresponding to the data of the fhir resource.", 
+            "type": "object",
+            "properties": {
+                "displayName": {
+                    "type": "string",
+                    "description": "The primary display name of the clinical record."
+                },
+                "clinicalType": {
+                    "description": "An identifier that indicates the type of record, such as allergy or condition record.",
+                    "type": "string", 
+                    "enum": ["allergyRecord", "immunizationRecord", "conditionRecord", "labResultRecord", "medicationRecord", "procedureRecord", "vitalSignRecord"]
+                },
+                "fhir": {
+                    "description": "The Fast Healthcare Interoperability Resources (FHIR) data for this record.",
+                    "type": "object", 
+                    "attachmentRequired": true, 
+                    "properties": {
+                        "identifier": {
+                            "type": "string", 
+                            "description": "The value from the FHIR resource’s id field."
+                        }, 
+                        "resourceType": {
+                            "type": "string", 
+                            "enum": ["allergyIntolerance", "condition", "immunization", "medicationOrder", "medicationDispense", 
+                                "medicationStatement", "observation", "procedure"]
+                        }
+                    },
+                    "required": [
+                      "identifier", 
+                      "resourceType"
+                    ]
+                },
+                "required": [
+                  "displayName", 
+                  "clinicalType"
+                ]
+            }
+        }
+      }
+    }
+}

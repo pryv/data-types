@@ -1,0 +1,17 @@
+{
+    "symptoms": {
+      "description": "To record medical symptoms, such as abdominal cramps or chest pain.",
+      "formats": {
+        "severity": {
+            "description": "A type to record severity of a symptom such as bloating or abdominal cramps.",
+            "type": "string",
+            "enum": ["notPresent", "mild", "moderate", "severe", "unspecified"]
+        }, 
+        "appetiteChanges": {
+            "description": "A type to represent change in appetite.",
+            "type": "string",
+            "enum": ["decreased", "increased", "noChange", "unspecified"]
+        }
+      }
+    }
+}

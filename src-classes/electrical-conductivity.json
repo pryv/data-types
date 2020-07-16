@@ -11,6 +11,17 @@
           },
           "symbol": "S"
         }
+      }, 
+      "us": {
+        "description": "Micro Siemens",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Micro Siemens",
+            "fr": "Micro Siemens"
+          },
+          "symbol": "uS"
+        }
       }
     },
     "description": "A material that accommodates the transport of electric charge.",
