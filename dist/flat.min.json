@@ -73,7 +73,7 @@
       "description": "Square miles",
       "type": "number"
     },
-    "attributes/biologicalSex": {
+    "attributes/biological-sex": {
       "description": "An attribute type for the user’s sex",
       "type": "string",
       "enum": [
@@ -83,7 +83,7 @@
         "other"
       ]
     },
-    "attributes/bloodType": {
+    "attributes/blood-type": {
       "description": "An attribute type for the user’s blood type",
       "type": "string",
       "enum": [
@@ -98,7 +98,7 @@
         "oNegative"
       ]
     },
-    "attributes/skinType": {
+    "attributes/skin-type": {
       "description": "An attribute type for the user’s skin type",
       "type": "string",
       "enum": [
@@ -292,7 +292,7 @@
       "description": "For general items that demand no particular handling.",
       "type": "number"
     },
-    "credentials/pryvApiEndpoint": {
+    "credentials/pryv-api-endpoint": {
       "description": "Necessary information to access a Pryv.io account. Url in the format of http(s)://{token}@{apiEndpoint}",
       "type": "string",
       "pattern": "^(https?)://.+@.+$"
@@ -1541,7 +1541,7 @@
       "description": "A percentage value.",
       "type": "number"
     },
-    "reproductive-health/sexualActivity": {
+    "reproductive-health/sexual-activity": {
       "description": "A type to record sexual activity",
       "type": "string",
       "enum": [
@@ -1550,7 +1550,7 @@
         "protectionNotUsed"
       ]
     },
-    "reproductive-health/menstrualFlow": {
+    "reproductive-health/menstrual-flow": {
       "description": "A type to record the menstrual cycles",
       "type": "string",
       "enum": [
@@ -1561,7 +1561,7 @@
         "heavy"
       ]
     },
-    "reproductive-health/mucusQuality": {
+    "reproductive-health/mucus-quality": {
       "description": "A type to record the quality of the mucus",
       "type": "string",
       "enum": [
@@ -1638,7 +1638,7 @@
         "unspecified"
       ]
     },
-    "symptoms/appetiteChanges": {
+    "symptoms/appetite-changes": {
       "description": "A type to represent change in appetite.",
       "type": "string",
       "enum": [

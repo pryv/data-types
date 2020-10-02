@@ -116,7 +116,7 @@
     "attributes": {
       "description": "To record attributes, such as blood type, date of birth or skin type.",
       "formats": {
-        "biologicalSex": {
+        "biological-sex": {
           "description": "An attribute type for the user’s sex",
           "type": "string",
           "enum": [
@@ -126,7 +126,7 @@
             "other"
           ]
         },
-        "bloodType": {
+        "blood-type": {
           "description": "An attribute type for the user’s blood type",
           "type": "string",
           "enum": [
@@ -141,7 +141,7 @@
             "oNegative"
           ]
         },
-        "skinType": {
+        "skin-type": {
           "description": "An attribute type for the user’s skin type",
           "type": "string",
           "enum": [
@@ -390,7 +390,7 @@
     "credentials": {
       "description": "To record credentials, such as secret keys, passwords or access rights.",
       "formats": {
-        "pryvApiEndpoint": {
+        "pryv-api-endpoint": {
           "description": "Necessary information to access a Pryv.io account. Url in the format of http(s)://{token}@{apiEndpoint}",
           "type": "string",
           "pattern": "^(https?)://.+@.+$"
@@ -1799,7 +1799,7 @@
     "reproductive-health": {
       "description": "To record reproductive health data, such as menstrual flow or ovulation test results.",
       "formats": {
-        "sexualActivity": {
+        "sexual-activity": {
           "description": "A type to record sexual activity",
           "type": "string",
           "enum": [
@@ -1808,7 +1808,7 @@
             "protectionNotUsed"
           ]
         },
-        "menstrualFlow": {
+        "menstrual-flow": {
           "description": "A type to record the menstrual cycles",
           "type": "string",
           "enum": [
@@ -1819,7 +1819,7 @@
             "heavy"
           ]
         },
-        "mucusQuality": {
+        "mucus-quality": {
           "description": "A type to record the quality of the mucus",
           "type": "string",
           "enum": [
@@ -1911,7 +1911,7 @@
             "unspecified"
           ]
         },
-        "appetiteChanges": {
+        "appetite-changes": {
           "description": "A type to represent change in appetite.",
           "type": "string",
           "enum": [
