@@ -2,17 +2,17 @@
     "attributes": {
       "description": "To record attributes, such as blood type, date of birth or skin type.",
       "formats": {
-        "biologicalSex": {
+        "biological-sex": {
             "description": "An attribute type for the user’s sex",
             "type": "string",
             "enum": ["notSet", "female", "male", "other"]
         }, 
-        "bloodType": {
+        "blood-type": {
             "description": "An attribute type for the user’s blood type",
             "type": "string",
             "enum": ["notSet", "aPositive", "bPositive", "oPositive", "abPositive", "aNegative", "bNegative", "abNegative", "oNegative"]
         }, 
-        "skinType": {
+        "skin-type": {
             "description": "An attribute type for the user’s skin type",
             "type": "string",
             "enum": ["notSet", "Pale white skin", "White skin", "White to light brown skin", "Beige-olive skin", "Brown skin", "Dark brown to black skin"]

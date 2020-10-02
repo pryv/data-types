@@ -7,7 +7,7 @@
             "type": "string",
             "enum": ["notPresent", "mild", "moderate", "severe", "unspecified"]
         }, 
-        "appetiteChanges": {
+        "appetite-changes": {
             "description": "A type to represent change in appetite.",
             "type": "string",
             "enum": ["decreased", "increased", "noChange", "unspecified"]
