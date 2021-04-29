@@ -153,6 +153,12 @@ where:
 
 - `schema_path` is a full path to the data type JSON file to validate. Optional - if not provided, generated `flat.json` will be used.
 
+### Troubleshoot
+
+If you are having issues creating events with custom data types, here is a small tool to convert a batch call to its events creation validation cases:
+
+`npm run batch-to-validate`
+
 ## Contents
 
 We present below the content of the three files generated in `dist/`:

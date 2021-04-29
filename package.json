@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node src/build.js && z-schema ./dist/flat.json",
     "validate-schema": "z-schema",
-    "validate-content": "node src/validate.js"
+    "validate-content": "node src/validate.js",
+    "batch-to-validate": "node src/batch-to-validation-cases.js"
   },
   "repository": {
     "type": "git",
