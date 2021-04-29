@@ -155,7 +155,7 @@ where:
 
 ### Troubleshoot
 
-If you are having issues creating events with custom data types, here is a small tool to convert a batch call to its events creation validation cases:
+If you are having issues creating events with custom data types, here is a small tool to convert the request body of a [batch call](https://api.pryv.com/reference/#call-batch) to its events creation validation cases:
 
 `npm run batch-to-validate`
 
