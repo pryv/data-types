@@ -3,11 +3,14 @@ if(!process.argv[2]) {
     process.exit(1);
 }
 
+const path = require('path');
 const fs = require('fs');
 
-const schemaPath = process.argv[3] || './../dist/flat.json';
+const validationCasesPath = path.resolve(__dirname, '..', process.argv[2]);
+const schemaPath = process.argv[3] ? path.resolve(__dirname, '..', process.argv[3]) : path.resolve(__dirname, '..', 'dist/flat.json');
+
 const typesSchema = require(schemaPath);
-const validationCases = require(process.argv[2]);
+const validationCases = require(validationCasesPath);
 
 const ZSchema = require("z-schema");
 const validator = new ZSchema();
