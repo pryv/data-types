@@ -221,6 +221,93 @@
         }
       }
     },
+    "audit-log": {
+      "description": "Audit log",
+      "formats": {
+        "pryv-api": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "description": "the source ",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "The source of the call",
+                  "type": "string"
+                },
+                "ip": {
+                  "description": "The IP address of the source, if any",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "action": {
+              "description": "The action id",
+              "type": "string"
+            },
+            "query": {
+              "description": "The API call query parameters",
+              "type": "object"
+            }
+          },
+          "required": [
+            "source",
+            "action"
+          ]
+        },
+        "pryv-api-error": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "description": "the source ",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "The source of the call",
+                  "type": "string"
+                },
+                "ip": {
+                  "description": "The IP address of the source, if any",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "action": {
+              "description": "The action id",
+              "type": "string"
+            },
+            "query": {
+              "description": "The API call query parameters",
+              "type": "object"
+            },
+            "id": {
+              "description": "The error id",
+              "type": "string"
+            },
+            "message": {
+              "description": "The error message",
+              "type": "string"
+            },
+            "data": {
+              "description": "",
+              "type": "object"
+            }
+          },
+          "required": [
+            "source",
+            "action",
+            "id",
+            "message"
+          ]
+        }
+      }
+    },
     "blood-pressure": {
       "description": "To record a blood pressure measurement.",
       "formats": {
