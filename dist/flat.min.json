@@ -235,10 +235,6 @@
         "message": {
           "description": "The error message",
           "type": "string"
-        },
-        "data": {
-          "description": "",
-          "type": "object"
         }
       },
       "required": [
