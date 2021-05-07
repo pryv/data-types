@@ -228,7 +228,7 @@
           "type": "object",
           "properties": {
             "source": {
-              "description": "the source ",
+              "description": "The origin of the action",
               "type": "object",
               "properties": {
                 "name": {
@@ -262,7 +262,7 @@
           "type": "object",
           "properties": {
             "source": {
-              "description": "the source ",
+              "description": "The origin of the action",
               "type": "object",
               "properties": {
                 "name": {
