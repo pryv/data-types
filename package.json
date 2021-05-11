@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/pryv/data-types#readme",
   "devDependencies": {
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.21"
   },
   "dependencies": {
     "z-schema": "^4.2.3"
