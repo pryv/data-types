@@ -32,7 +32,7 @@
       "description": "The time spent on a given activity (tasks, sports, etc.).",
       "formats": {
         "plain": {
-          "description": "Plain activity event with no specific content; the activity is defined by the event's stream, time and duration, and possibly description and tags.",
+          "description": "Plain activity event with no specific content; the activity is defined by the event's stream, time and duration, and possibly description.",
           "type": "null"
         }
       }
