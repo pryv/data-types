@@ -2,15 +2,17 @@
 
 Events are the primary units of content in the Pryv.io data model. Depending on its type, an event can represent anything related to a particular time (picture, note, data measurement, etc).
 
-We provide you with a list of **standard event types** used in Pryv that you can customize to suit your needs as explained below.
+We provide a list of **standard event types** used in Pryv that you can customize to suit your needs as explained below.
+
 
 ## Effective version
 
 The event types effectively in use by default are published on [our API site](https://api.pryv.com/event-types/).
 
+
 ## How to customize your data types
 
-*Prerequisites:* Node v12
+*Prerequisites:* Node v12+
 
 You must [fork](https://github.com/pryv/data-types/fork) this repository, add the data types that you want to validate and host it on a URL where it will be loaded by Pryv.io on boot.
 
@@ -18,11 +20,11 @@ The format validation follows the [JSON Schema](https://json-schema.org) specifi
 
 To add and modify your own data types, you can follow these steps:
 
-#### 1- Fetch dependencies
+#### 1. Fetch dependencies
 
 run `npm install`
 
-#### 2- Add files in the directory `/src-classes`
+#### 2. Add files in the directory `/src-classes`
 
 Filenames are not important as long as they end with `.json`.
 
@@ -32,21 +34,21 @@ The type of an event indicates how to handle its content and is specified as `{c
 
 Your custom data type should be specified in a JSON formated document as an `Object` with the following properties:
 
-- **{class}** the class of the event type (specified as `{class}/{format}`). For example, an angle measurement will have the class `"angle"`.  
-  - **formats** `Object` each property key will be a possible format of this class.  
-    -  **{format}** the format of the event type (specified as `{class}/{format}`). For example, the format `"deg"` for degrees.  
-      The content of these properties should follow [JSON Schema](https://json-schema.org/) format.  
-      - **description** (optional) a `string` describing the format.  
-      - **type** `Mixed` as per JSON schema.  
-      - **extras** (optional) they will be stripped out in a separate "extra" place at build.  
-  - **description** (optional) a `string` describing the class.  
-  - **extras** (optional) can contain anything that would be relevant for your apps.  
-    - **name** (optional)  
-      - **{languageCode}** the name of this class in a specific language.  
+- **{class}** the class of the event type (specified as `{class}/{format}`). For example, an angle measurement will have the class `"angle"`.
+  - **formats** `Object` each property key will be a possible format of this class.
+    -  **{format}** the format of the event type (specified as `{class}/{format}`). For example, the format `"deg"` for degrees.
+      The content of these properties should follow [JSON Schema](https://json-schema.org/) format.
+      - **description** (optional) a `string` describing the format.
+      - **type** `Mixed` as per JSON schema.
+      - **extras** (optional) they will be stripped out in a separate "extra" place at build.
+  - **description** (optional) a `string` describing the class.
+  - **extras** (optional) can contain anything that would be relevant for your apps.
+    - **name** (optional)
+      - **{languageCode}** the name of this class in a specific language.
 
 Examples:
 
-- Minimalist **angle.json** file
+- Minimalist `angle.json` file
 
 ```json
 {
@@ -62,7 +64,7 @@ Examples:
 }
 ```
 
-- Extended **angle.json** file
+- Extended `angle.json` file
 
 ```json
 {
@@ -102,23 +104,24 @@ Examples:
 }
 ```
 
-#### 3- Build the document to `dist/`
+#### 3. Build the document to `dist/`
 
 run `npm run build`
 
 Three new versions of files will be created in `dist/`:
 
-- **event-types.json**  
-- **flat.json**  
-- **flat.min.json**  
+- `event-types.json`
+- `flat.json`
+- `flat.min.json`
 
 Furthermore, the file `flat.json` will be validated.
 
-#### 4- Publish these files on a web sever and expose flat.json or flat.min.json
+#### 4. Publish these files on a web sever and expose `flat.json` or `flat.min.json`
 
 The URL to the file `flat.json` or `flat.min.json` should be exposed by the [service information](https://api.pryv.com/reference/#service-info).
 
-More information on the content validation for your custom data types can be found in the [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation).  
+More information on the content validation for your custom data types can be found in the [Pryv.io Setup Guide](https://api.pryv.com/customer-resources/pryv.io-setup/#customize-event-types-validation).
+
 
 ## Data types validation
 
@@ -126,7 +129,7 @@ To validate that the schemas you have provided have proper JSON structure, you m
 
 `npm run validate-schema <shema_path>`
 
-where `schema_path` is a full path to the data type json file to validate.
+where `schema_path` is a full path to the data type JSON file to validate.
 
 Furthermore, to validate data type values against generated `flat.json` file (or any file with the same structure), following script may be used:
 
@@ -159,15 +162,16 @@ If you are having issues creating events with custom data types, here is a small
 
 `npm run batch-to-validate`
 
+
 ## Contents
 
 We present below the content of the three files generated in `dist/`:
-  
-### events-types.json
 
-Event types represented in a hierarchical structure. It is mainly used for documentation generation purposes.  
+### `events-types.json`
 
-Extract of the structure:  
+Event types represented in a hierarchical structure. It is mainly used for documentation generation purposes.
+
+Extract of the structure:
 
 ```json
 {
@@ -229,9 +233,9 @@ Extract of the structure:
 }
 ```
 
-### flat.json
+### `flat.json`
 
-Event types in a key / value structure. It is mainly used for applications that require data format validation.  
+Event types in a key / value structure. It is mainly used for applications that require data format validation.
 
 This file is the one that is exposed by the [service information](https://api.pryv.com/reference/#service-info) in the `eventTypes` property. Example: [https://reg.pryv.me/service/info](https://reg.pryv.me/service/info).
 
@@ -278,9 +282,10 @@ This file is the one that is exposed by the [service information](https://api.pr
 }
 ```
 
-### flat.min.json
+### `flat.min.json`
 
-Identical to **flat.json** file with only the mandatory fields (version and types).
+Identical to `flat.json` file with only the mandatory fields (version and types).
+
 
 ## License
 
