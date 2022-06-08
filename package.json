@@ -2,32 +2,32 @@
   "name": "pryv-data-types",
   "version": "0.3.0",
   "description": "Pryv event type references",
-  "main": "src/build.js",
-  "scripts": {
-    "build": "node src/build.js && z-schema ./dist/flat.json",
-    "validate-schema": "z-schema",
-    "validate-content": "node src/validate.js",
-    "batch-to-validate": "node src/batch-to-validation-cases.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pryv/data-types.git"
-  },
   "keywords": [
     "pryv",
     "event",
     "types"
   ],
-  "author": "Pryv S.A.",
-  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/pryv/data-types#readme",
   "bugs": {
     "url": "https://github.com/pryv/data-types/issues"
   },
-  "homepage": "https://github.com/pryv/data-types#readme",
-  "devDependencies": {
-    "lodash": "^4.17.21"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pryv/data-types.git"
+  },
+  "license": "BSD-3-Clause",
+  "author": "Pryv S.A.",
+  "main": "src/build.js",
+  "scripts": {
+    "batch-to-validate": "node src/batch-to-validation-cases.js",
+    "build": "node src/build.js && z-schema ./dist/flat.json",
+    "validate-content": "node src/validate.js",
+    "validate-schema": "z-schema"
   },
   "dependencies": {
-    "z-schema": "^4.2.3"
+    "z-schema": "^5.0.3"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21"
   }
 }
