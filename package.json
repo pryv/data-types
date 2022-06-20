@@ -22,6 +22,7 @@
   "scripts": {
     "batch-to-validate": "node src/batch-to-validation-cases.js",
     "build": "node src/build.js && z-schema ./dist/flat.json",
+    "lint": "semistandard",
     "validate-content": "node src/validate.js",
     "validate-schema": "z-schema"
   },
@@ -29,6 +30,7 @@
     "z-schema": "^5.0.3"
   },
   "devDependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "semistandard": "^16.0.1"
   }
 }

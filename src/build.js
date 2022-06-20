@@ -35,7 +35,6 @@ classesFiles.forEach((classFile) => {
 });
 
 // -- load optionals
-const optionals = {};
 const optionalFiles = fs.readdirSync(OPTIONALS).filter((e) => e.endsWith('.json'));
 
 optionalFiles.forEach((optionalFile) => {
@@ -45,26 +44,22 @@ optionalFiles.forEach((optionalFile) => {
   Object.assign(hierchical, optionalContent);
 });
 
-
-
-
 // -- Loop thru classes
 Object.keys(classes).sort().forEach((classKey) => {
   const classContent = classes[classKey];
 
   // -- fill flat with classes and extra-classes
-  flat.classes[classKey] = _.cloneDeep(classContent); 
+  flat.classes[classKey] = _.cloneDeep(classContent);
   delete flat.classes[classKey].formats;
-  if (flat.classes[classKey].extras) 
-    delete flat.classes[classKey].extras.formats;
-  
+  if (flat.classes[classKey].extras) { delete flat.classes[classKey].extras.formats; }
+
   // -- Handle Classe's own extras
   if (classContent.extras) {
     hierchical.extras[classKey] = classContent.extras;
     delete classContent.extras;
   }
 
-  // -- Loop thru formats 
+  // -- Loop thru formats
   if (classContent.formats) {
     Object.keys(classContent.formats).forEach((formatKey) => {
       const formatContent = classContent.formats[formatKey];
@@ -89,7 +84,6 @@ hierchical.classes = classes;
 fs.writeFileSync(path.resolve(DEST, 'event-types.json'), JSON.stringify(hierchical, null, 2));
 fs.writeFileSync(path.resolve(DEST, 'flat.json'), JSON.stringify(flat, null, 2));
 
-const flatMin = {version: flat.version, types: flat.types};
+const flatMin = { version: flat.version, types: flat.types };
 
 fs.writeFileSync(path.resolve(DEST, 'flat.min.json'), JSON.stringify(flatMin, null, 2));
-

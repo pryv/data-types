@@ -9,14 +9,15 @@ const batch = require(batchPath);
 const validationCases = [];
 
 batch.forEach(c => {
-  if (c.method === 'events.create') validationCases.push({
-    type: c.params.type,
-    content: c.params.content,
-    expected: 'success',
-  });
+  if (c.method === 'events.create') {
+    validationCases.push({
+      type: c.params.type,
+      content: c.params.content,
+      expected: 'success'
+    });
+  }
 });
 
-console.log(validationCases)
+console.log(validationCases);
 
 fs.writeFileSync(VALIDATION_CASES_FILENAME, JSON.stringify(validationCases, null, 2));
-
