@@ -1,3 +1,7 @@
+/**
+ * @license
+ * [BSD-3-Clause](https://github.com/pryv/data-types/blob/master/LICENSE)
+ */
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');

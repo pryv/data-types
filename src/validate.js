@@ -1,3 +1,7 @@
+/**
+ * @license
+ * [BSD-3-Clause](https://github.com/pryv/data-types/blob/master/LICENSE)
+ */
 if (!process.argv[2]) {
   console.error('Json file with validation cases not provided');
   process.exit(1);
