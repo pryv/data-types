@@ -8,83 +8,90 @@ if (!process.argv[2]) {
 }
 
 const path = require('path');
+const ZSchema = require('z-schema');
+const util = require('util');
 
-const validationCasesPath = path.resolve(__dirname, '..', process.argv[2]);
-const schemaPath = process.argv[3] ? path.resolve(__dirname, '..', process.argv[3]) : path.resolve(__dirname, '..', 'dist/flat.json');
+const rootPath = path.resolve(__dirname, '..');
+const validationCasesPath = path.resolve(rootPath, process.argv[2]);
+const schemaPath = process.argv[3] ? path.resolve(rootPath, process.argv[3]) : path.resolve(rootPath, 'dist/flat.json');
 
-const typesSchema = require(schemaPath);
+const schema = require(schemaPath);
 const validationCases = require(validationCasesPath);
 
-const ZSchema = require('z-schema');
 const validator = new ZSchema();
 
-const report = [];
-let passed = 0;
-let failed = 0;
-let expectedResultNotSpecified = 0;
+console.log('Validation results:');
+
+let caseIndex = 0;
+let passedCount = 0;
+let failedCount = 0;
 for (const validationCase of validationCases) {
-  if (!Object.prototype.hasOwnProperty.call(validationCase, 'type')) {
-    console.warn('Type property for this case not provided. Skipping ...');
-    continue;
-  }
-  if (!Object.prototype.hasOwnProperty.call(validationCase, 'content')) {
-    console.warn('Content property for this case not provided. Skipping ...');
-    continue;
-  }
+  caseIndex++;
+  const report = validateCase(validationCase);
+  const passed = casePassed(report);
+  if (passed) { passedCount++; } else { failedCount++; }
+  console.log(`\n#${caseIndex}`, passed ? '✅' : '❌');
+  console.log(util.inspect(report, { depth: 20, colors: true, compact: false }));
+}
 
-  const type = typesSchema.types[validationCase.type];
-  if (!type) {
-    console.warn(`Type: ${validationCase.type} not found in schema: ${schemaPath}`);
-    continue;
-  }
+console.log('\nSummary:');
+console.log('  Passed:', passedCount);
+console.log('  Failed:', failedCount);
 
-  const reportEntry = {};
-  reportEntry['Tested type'] = validationCase.type;
-  if (JSON.stringify(validationCase.content).length < 300) {
-    reportEntry['Tested value'] = validationCase.content;
-  } else {
-    reportEntry['Tested value'] = '... Too long to display ...';
-  }
+process.exit(failedCount);
 
-  reportEntry['Expected result'] = validationCase.expected;
+function validateCase (validationCase) {
+  const report = {};
 
   try {
-    const validationResult = validator.validate(validationCase.content, type);
-    reportEntry['Validation passed'] = validationResult;
+    if (!Object.prototype.hasOwnProperty.call(validationCase, 'type')) {
+      throw Error('Case is missing property "type"');
+    }
+    report['Tested type'] = validationCase.type;
 
-    const expectedResultInt = expectedResultToInt(validationCase.expected);
-    if (expectedResultInt === -1) {
-      expectedResultNotSpecified++;
-    } else if (expectedResultInt == validationResult) {
-      passed++;
+    if (!Object.prototype.hasOwnProperty.call(validationCase, 'content')) {
+      throw Error('Case is missing property "content"');
+    }
+    if (JSON.stringify(validationCase.content).length < 300) {
+      report['Tested content'] = validationCase.content;
     } else {
-      failed++;
-      reportEntry['Validation errors'] = validator.getLastErrors().map((err) => { return { message: err.message, path: err.path, code: err.code, params: err.params }; });
+      report['Tested content'] = '...Too long to display...';
+    }
+
+    const type = schema.types[validationCase.type];
+    if (!type) {
+      throw Error(`Type "${validationCase.type}" not found in schema file ${schemaPath}`);
+    }
+
+    const shouldValidate = expectedStringToBoolean(validationCase.expected);
+    report['Expected to validate'] = shouldValidate;
+    const didValidate = validator.validate(validationCase.content, type);
+    report['Did validate'] = didValidate;
+    if (shouldValidate !== didValidate) {
+      report['Validation errors'] = validator.getLastErrors().map((err) => {
+        return { message: err.message, path: err.path, code: err.code, params: err.params };
+      });
     }
   } catch (err) {
-    reportEntry.Error = err.message;
-    failed++;
+    report.ERROR = err.message;
   }
-
-  report.push(reportEntry);
-}
-const util = require('util');
-console.log('\nValidation results:\n', util.inspect(report, { depth: 20, colors: true }));
-console.log('\nPassed: ', passed);
-console.log('Failed: ', failed);
-if (expectedResultNotSpecified > 0) {
-  console.log('Expected result not specified: ', expectedResultNotSpecified);
+  return report;
 }
 
-function expectedResultToInt (outcome) {
-  if (!outcome) {
-    return -1;
+function expectedStringToBoolean (expectedString) {
+  if (!expectedString) {
+    throw Error('Case is missing property "expected"');
   }
-  if (outcome.toLowerCase().startsWith('success')) {
-    return 1;
+  if (expectedString.toLowerCase().startsWith('success')) {
+    return true;
+  } else if (expectedString.toLowerCase().startsWith('fail')) {
+    return false;
+  } else {
+    throw Error(`Unexpected value "${expectedString}" for property "expected"`);
   }
-  if (outcome.toLowerCase().startsWith('fail')) {
-    return 0;
-  }
-  return -1;
+}
+
+function casePassed (report) {
+  return !report.ERROR &&
+         report['Expected to validate'] === report['Did validate'];
 }

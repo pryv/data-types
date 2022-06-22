@@ -8,11 +8,11 @@ const _ = require('lodash');
 
 const version = require('../package.json').version;
 
-const SRC = path.resolve(__dirname, '../src/');
-const OPTIONALS = path.resolve(__dirname, '../optionals/');
-const DEST = path.resolve(__dirname, '../dist/');
+const srcPath = path.resolve(__dirname, '../src/');
+const optionalsPath = path.resolve(__dirname, '../optionals/');
+const destPath = path.resolve(__dirname, '../dist/');
 
-// -- data handlers
+// data handlers
 
 const flat = {
   version: version,
@@ -27,49 +27,52 @@ const hierchical = {
   extras: {}
 };
 
-// -- load all classes json files
-const classesFiles = fs.readdirSync(SRC).filter((e) => e.endsWith('.json'));
+// load all classes JSON files
+
+const classesFiles = fs.readdirSync(srcPath).filter((e) => e.endsWith('.json'));
 
 const classes = {};
 
+console.log('Reading source class files...');
 classesFiles.forEach((classFile) => {
-  console.log('Reading file: ' + classFile);
-  const classContent = require(path.resolve(SRC, classFile));
+  console.log(`  · ${classFile}`);
+  const classContent = require(path.resolve(srcPath, classFile));
   Object.assign(classes, classContent);
 });
 
-// -- load optionals
-const optionalFiles = fs.readdirSync(OPTIONALS).filter((e) => e.endsWith('.json'));
+// load optionals
+const optionalFiles = fs.readdirSync(optionalsPath).filter((e) => e.endsWith('.json'));
 
+console.log('Reading optional files...');
 optionalFiles.forEach((optionalFile) => {
-  console.log('Reading file: ' + optionalFile);
-  const optionalContent = require(path.resolve(OPTIONALS, optionalFile));
+  console.log(`  · ${optionalFile}`);
+  const optionalContent = require(path.resolve(optionalsPath, optionalFile));
   Object.assign(flat, optionalContent);
   Object.assign(hierchical, optionalContent);
 });
 
-// -- Loop thru classes
+// loop thru classes
 Object.keys(classes).sort().forEach((classKey) => {
   const classContent = classes[classKey];
 
-  // -- fill flat with classes and extra-classes
+  // fill flat with classes and extra-classes
   flat.classes[classKey] = _.cloneDeep(classContent);
   delete flat.classes[classKey].formats;
   if (flat.classes[classKey].extras) { delete flat.classes[classKey].extras.formats; }
 
-  // -- Handle Classe's own extras
+  // handle class extras
   if (classContent.extras) {
     hierchical.extras[classKey] = classContent.extras;
     delete classContent.extras;
   }
 
-  // -- Loop thru formats
   if (classContent.formats) {
+    // loop thru formats
     Object.keys(classContent.formats).forEach((formatKey) => {
       const formatContent = classContent.formats[formatKey];
       const formatFullKey = classKey + '/' + formatKey;
 
-      // -- Handling fromat extras
+      // handling format extras
       const fromatExtras = formatContent.extras;
       delete formatContent.extras;
       flat.types[formatFullKey] = formatContent;
@@ -85,9 +88,16 @@ Object.keys(classes).sort().forEach((classKey) => {
 });
 hierchical.classes = classes;
 
-fs.writeFileSync(path.resolve(DEST, 'event-types.json'), JSON.stringify(hierchical, null, 2));
-fs.writeFileSync(path.resolve(DEST, 'flat.json'), JSON.stringify(flat, null, 2));
-
 const flatMin = { version: flat.version, types: flat.types };
 
-fs.writeFileSync(path.resolve(DEST, 'flat.min.json'), JSON.stringify(flatMin, null, 2));
+console.log('\nGenerating files...');
+writeToDest('event-types.json', hierchical);
+writeToDest('flat.json', flat);
+writeToDest('flat.min.json', flatMin);
+
+function writeToDest (fileName, object) {
+  fs.writeFileSync(path.resolve(destPath, fileName), JSON.stringify(object, null, 2));
+  console.log(`  ✓ ${fileName}`);
+}
+
+console.log(); // HACK: blank line to separate with z-schema output

@@ -5,23 +5,30 @@
 const fs = require('fs');
 const path = require('path');
 
-const VALIDATION_CASES_FILENAME = 'validation-cases.json';
+const outputFilename = 'validation-cases.json';
 
 const batchPath = path.resolve(__dirname, '..', process.argv[2]);
 const batch = require(batchPath);
 
 const validationCases = [];
 
-batch.forEach(c => {
-  if (c.method === 'events.create') {
+let casesCount = 0;
+batch.forEach(call => {
+  if (call.method === 'events.create') {
     validationCases.push({
-      type: c.params.type,
-      content: c.params.content,
+      type: call.params.type,
+      content: call.params.content,
       expected: 'success'
     });
+    casesCount++;
   }
 });
 
-console.log(validationCases);
+if (casesCount === 0) {
+  console.error('No "events.create" calls found to create validation cases from.');
+  process.exit(1);
+}
 
-fs.writeFileSync(VALIDATION_CASES_FILENAME, JSON.stringify(validationCases, null, 2));
+fs.writeFileSync(outputFilename, JSON.stringify(validationCases, null, 2));
+
+console.log(`Validation cases successfully created in ${outputFilename}`);
