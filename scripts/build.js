@@ -8,7 +8,7 @@ const _ = require('lodash');
 
 const version = require('../package.json').version;
 
-const SRC = path.resolve(__dirname, '../src-classes/');
+const SRC = path.resolve(__dirname, '../src/');
 const OPTIONALS = path.resolve(__dirname, '../optionals/');
 const DEST = path.resolve(__dirname, '../dist/');
 

@@ -18,13 +18,13 @@
   },
   "license": "BSD-3-Clause",
   "author": "Pryv S.A. <info@pryv.com> (https://pryv.com)",
-  "main": "src/build.js",
+  "main": "scripts/build.js",
   "scripts": {
-    "batch-to-validate": "node src/batch-to-validation-cases.js",
-    "build": "node src/build.js && z-schema ./dist/flat.json",
+    "batch-to-validate": "node scripts/batch-to-validation-cases.js",
+    "build": "node scripts/build.js && z-schema ./dist/flat.json",
     "license": "source-licenser --config-file .licenser.yml ./",
     "lint": "semistandard",
-    "validate-content": "node src/validate.js",
+    "validate-content": "node scripts/validate.js",
     "validate-schema": "z-schema"
   },
   "dependencies": {

@@ -18,7 +18,7 @@ To add and modify your own data types, follow these steps:
 
 [Fork the repository](https://github.com/pryv/data-types/fork), then install dependencies for your local copy with `npm install`.
 
-#### 2. Add files in the directory `/src-classes`
+#### 2. Add definition files in `/src`
 
 Filenames are not important as long as they end with `.json`.
 
