@@ -4,7 +4,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const _ = require('lodash');
+const clone = require('clone');
 
 const version = require('../package.json').version;
 
@@ -56,7 +56,7 @@ Object.keys(classes).sort().forEach((classKey) => {
   const classContent = classes[classKey];
 
   // fill flat with classes and extra-classes
-  flat.classes[classKey] = _.cloneDeep(classContent);
+  flat.classes[classKey] = clone(classContent);
   delete flat.classes[classKey].formats;
   if (flat.classes[classKey].extras) { delete flat.classes[classKey].extras.formats; }
 

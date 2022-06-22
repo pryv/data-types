@@ -28,10 +28,10 @@
     "validate-schema": "z-schema"
   },
   "dependencies": {
+    "clone": "^2.1.2",
     "z-schema": "^5.0.3"
   },
   "devDependencies": {
-    "lodash": "^4.17.21",
     "semistandard": "^16.0.1",
     "source-licenser": "^2.0.5"
   }
