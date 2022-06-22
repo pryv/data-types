@@ -13,7 +13,7 @@
         }
       },
       "grad": {
-        "description": "Grade",
+        "description": "Gradians",
         "type": "number",
         "extras": {
           "name": {
