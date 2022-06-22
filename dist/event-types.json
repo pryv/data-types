@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "1.0.0",
   "classes": {
     "absorbed-dose-equivalent": {
       "formats": {
@@ -44,7 +44,7 @@
           "type": "number"
         },
         "grad": {
-          "description": "Grade",
+          "description": "Gradians",
           "type": "number"
         },
         "rad": {
