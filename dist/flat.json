@@ -849,7 +849,7 @@
       ]
     },
     "message/twitter": {
-      "description": "A Twitter post. Twitter property `created_at` maps to event `time`. Other Twitter properties (see [Twitter's API docs](https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid)) are allowed.",
+      "description": "A Twitter post. Twitter property `created_at` maps to event `time`. Other Twitter properties (see [Twitter's API docs](https://developer.twitter.com/en/docs/twitter-api)) are allowed.",
       "type": "object",
       "additionalProperties": true,
       "properties": {

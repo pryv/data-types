@@ -1,5 +1,4 @@
 .DS_Store
 data-types.iml
 node_modules
-dist
 validation-cases.json
