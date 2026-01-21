@@ -1,0 +1,90 @@
+{
+  "concentration": {
+    "formats": {
+      "mmol-l": {
+        "description": "Millimoles per liter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Millimoles/liter",
+            "fr": "Millimoles/litre"
+          },
+          "symbol": "mmol/L"
+        }
+      },
+      "iu-l": {
+        "description": "International Units per Liter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "International Units/liter",
+            "fr": "Unités Intenationales/litre"
+          },
+          "symbol": "IU/L"
+        }
+      },
+      "g-dl": {
+        "description": "Grams per deciliter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Grams/deciliter",
+            "fr": "Grammes/décilitre"
+          },
+          "symbol": "g/dL"
+        }
+      },
+      "g-l": {
+        "description": "Grams per liter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Grams/liter",
+            "fr": "Grammes/litre"
+          },
+          "symbol": "g/L"
+        }
+      },
+      "mg-l": {
+        "description": "Milligrams per liter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Milligrams/liter",
+            "fr": "Milligrammes/litre"
+          },
+          "symbol": "mg/L"
+        }
+      },
+      "ug-l": {
+        "description": "Microrams per liter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Micorgrams/liter",
+            "fr": "Microgrammes/litre"
+          },
+          "symbol": "µg/L"
+        }
+      },
+      "mg-dl": {
+        "description": "Milligrams per deciliter",
+        "type": "number",
+        "extras": {
+          "name": {
+            "en": "Milligrams/deciliter",
+            "fr": "Milligrammes/décilitre"
+          },
+          "symbol": "mg/dL"
+        }
+      }
+    },
+    "description": "The concentration of a material in a mixture or solution.",
+    "extras": {
+      "name": {
+        "en": "Concentration",
+        "fr": "Concentration"
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@ The format validation follows the [JSON Schema](https://json-schema.org) specifi
 
 ## Usage: how to customize data types
 
-Prerequisite: Node.js v12+
+Prerequisite: Node.js 
 
 To add and modify your own data types, follow these steps:
 

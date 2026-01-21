@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "classes": {
     "absorbed-dose-equivalent": {
       "formats": {
@@ -435,6 +435,39 @@
         }
       }
     },
+    "concentration": {
+      "formats": {
+        "mmol-l": {
+          "description": "Millimoles per liter",
+          "type": "number"
+        },
+        "iu-l": {
+          "description": "International Units per Liter",
+          "type": "number"
+        },
+        "g-dl": {
+          "description": "Grams per deciliter",
+          "type": "number"
+        },
+        "g-l": {
+          "description": "Grams per liter",
+          "type": "number"
+        },
+        "mg-l": {
+          "description": "Milligrams per liter",
+          "type": "number"
+        },
+        "ug-l": {
+          "description": "Microrams per liter",
+          "type": "number"
+        },
+        "mg-dl": {
+          "description": "Milligrams per deciliter",
+          "type": "number"
+        }
+      },
+      "description": "The concentration of a material in a mixture or solution."
+    },
     "contact": {
       "description": "To record events related to people (meeting someone special, business encounters, etc.).",
       "formats": {
@@ -532,20 +565,12 @@
     },
     "density": {
       "formats": {
-        "g-dl": {
-          "description": "Grams per deciliter",
-          "type": "number"
-        },
         "kg-m3": {
           "description": "Kilograms per cubic meter",
           "type": "number"
         },
-        "mmol-l": {
-          "description": "Millimoles per liter",
-          "type": "number"
-        },
-        "mg-dl": {
-          "description": "Milligrams per deciliter",
+        "g-cm3": {
+          "description": "Grams per cubic centimeter",
           "type": "number"
         }
       },
@@ -2351,6 +2376,63 @@
         }
       }
     },
+    "concentration": {
+      "name": {
+        "en": "Concentration",
+        "fr": "Concentration"
+      },
+      "formats": {
+        "mmol-l": {
+          "name": {
+            "en": "Millimoles/liter",
+            "fr": "Millimoles/litre"
+          },
+          "symbol": "mmol/L"
+        },
+        "iu-l": {
+          "name": {
+            "en": "International Units/liter",
+            "fr": "Unités Intenationales/litre"
+          },
+          "symbol": "IU/L"
+        },
+        "g-dl": {
+          "name": {
+            "en": "Grams/deciliter",
+            "fr": "Grammes/décilitre"
+          },
+          "symbol": "g/dL"
+        },
+        "g-l": {
+          "name": {
+            "en": "Grams/liter",
+            "fr": "Grammes/litre"
+          },
+          "symbol": "g/L"
+        },
+        "mg-l": {
+          "name": {
+            "en": "Milligrams/liter",
+            "fr": "Milligrammes/litre"
+          },
+          "symbol": "mg/L"
+        },
+        "ug-l": {
+          "name": {
+            "en": "Micorgrams/liter",
+            "fr": "Microgrammes/litre"
+          },
+          "symbol": "µg/L"
+        },
+        "mg-dl": {
+          "name": {
+            "en": "Milligrams/deciliter",
+            "fr": "Milligrammes/décilitre"
+          },
+          "symbol": "mg/dL"
+        }
+      }
+    },
     "count": {
       "name": {
         "en": "Count",
@@ -2448,13 +2530,6 @@
         "fr": "Densité"
       },
       "formats": {
-        "g-dl": {
-          "name": {
-            "en": "Grams/deciliter",
-            "fr": "Grammes/décilitre"
-          },
-          "symbol": "g/dL"
-        },
         "kg-m3": {
           "name": {
             "en": "Kilograms/cubic meter",
@@ -2462,19 +2537,12 @@
           },
           "symbol": "kg/m³"
         },
-        "mmol-l": {
+        "g-cm3": {
           "name": {
-            "en": "Millimoles/liter",
-            "fr": "Millimoles/litre"
+            "en": "Grams/cubic centimeter",
+            "fr": "Grammes/centimètre cube"
           },
-          "symbol": "mmol/L"
-        },
-        "mg-dl": {
-          "name": {
-            "en": "Milligrams/deciliter",
-            "fr": "Milligrammes/décilitre"
-          },
-          "symbol": "mg/dL"
+          "symbol": "g/cm³"
         }
       }
     },

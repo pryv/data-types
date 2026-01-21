@@ -1,17 +1,6 @@
 {
   "density": {
     "formats": {
-      "g-dl": {
-        "description": "Grams per deciliter",
-        "type": "number",
-        "extras": {
-          "name": {
-            "en": "Grams/deciliter",
-            "fr": "Grammes/décilitre"
-          },
-          "symbol": "g/dL"
-        }
-      },
       "kg-m3": {
         "description": "Kilograms per cubic meter",
         "type": "number",
@@ -23,26 +12,15 @@
           "symbol": "kg/m³"
         }
       },
-      "mmol-l": {
-        "description": "Millimoles per liter",
+      "g-cm3": {
+        "description": "Grams per cubic centimeter",
         "type": "number",
         "extras": {
           "name": {
-            "en": "Millimoles/liter",
-            "fr": "Millimoles/litre"
+            "en": "Grams/cubic centimeter",
+            "fr": "Grammes/centimètre cube"
           },
-          "symbol": "mmol/L"
-        }
-      },
-      "mg-dl": {
-        "description": "Milligrams per deciliter",
-        "type": "number",
-        "extras": {
-          "name": {
-            "en": "Milligrams/deciliter",
-            "fr": "Milligrammes/décilitre"
-          },
-          "symbol": "mg/dL"
+          "symbol": "g/cm³"
         }
       }
     },

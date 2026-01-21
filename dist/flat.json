@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "types": {
     "absorbed-dose/gy": {
       "description": "Gray",
@@ -345,6 +345,34 @@
         ]
       }
     },
+    "concentration/mmol-l": {
+      "description": "Millimoles per liter",
+      "type": "number"
+    },
+    "concentration/iu-l": {
+      "description": "International Units per Liter",
+      "type": "number"
+    },
+    "concentration/g-dl": {
+      "description": "Grams per deciliter",
+      "type": "number"
+    },
+    "concentration/g-l": {
+      "description": "Grams per liter",
+      "type": "number"
+    },
+    "concentration/mg-l": {
+      "description": "Milligrams per liter",
+      "type": "number"
+    },
+    "concentration/ug-l": {
+      "description": "Microrams per liter",
+      "type": "number"
+    },
+    "concentration/mg-dl": {
+      "description": "Milligrams per deciliter",
+      "type": "number"
+    },
     "contact/facebook": {
       "type": "object",
       "description": "A Facebook user as specified in the Graph API: https://developers.facebook.com/docs/reference/api/user/",
@@ -415,20 +443,12 @@
       "description": "The ISO 8601 format",
       "type": "string"
     },
-    "density/g-dl": {
-      "description": "Grams per deciliter",
-      "type": "number"
-    },
     "density/kg-m3": {
       "description": "Kilograms per cubic meter",
       "type": "number"
     },
-    "density/mmol-l": {
-      "description": "Millimoles per liter",
-      "type": "number"
-    },
-    "density/mg-dl": {
-      "description": "Milligrams per deciliter",
+    "density/g-cm3": {
+      "description": "Grams per cubic centimeter",
       "type": "number"
     },
     "dynamic-viscosity/pa-s": {
@@ -1982,6 +2002,55 @@
       },
       "symbol": "kat"
     },
+    "concentration/mmol-l": {
+      "name": {
+        "en": "Millimoles/liter",
+        "fr": "Millimoles/litre"
+      },
+      "symbol": "mmol/L"
+    },
+    "concentration/iu-l": {
+      "name": {
+        "en": "International Units/liter",
+        "fr": "Unités Intenationales/litre"
+      },
+      "symbol": "IU/L"
+    },
+    "concentration/g-dl": {
+      "name": {
+        "en": "Grams/deciliter",
+        "fr": "Grammes/décilitre"
+      },
+      "symbol": "g/dL"
+    },
+    "concentration/g-l": {
+      "name": {
+        "en": "Grams/liter",
+        "fr": "Grammes/litre"
+      },
+      "symbol": "g/L"
+    },
+    "concentration/mg-l": {
+      "name": {
+        "en": "Milligrams/liter",
+        "fr": "Milligrammes/litre"
+      },
+      "symbol": "mg/L"
+    },
+    "concentration/ug-l": {
+      "name": {
+        "en": "Micorgrams/liter",
+        "fr": "Microgrammes/litre"
+      },
+      "symbol": "µg/L"
+    },
+    "concentration/mg-dl": {
+      "name": {
+        "en": "Milligrams/deciliter",
+        "fr": "Milligrammes/décilitre"
+      },
+      "symbol": "mg/dL"
+    },
     "count/steps": {
       "name": {
         "en": "Steps",
@@ -2057,13 +2126,6 @@
       },
       "symbol": "Tb"
     },
-    "density/g-dl": {
-      "name": {
-        "en": "Grams/deciliter",
-        "fr": "Grammes/décilitre"
-      },
-      "symbol": "g/dL"
-    },
     "density/kg-m3": {
       "name": {
         "en": "Kilograms/cubic meter",
@@ -2071,19 +2133,12 @@
       },
       "symbol": "kg/m³"
     },
-    "density/mmol-l": {
+    "density/g-cm3": {
       "name": {
-        "en": "Millimoles/liter",
-        "fr": "Millimoles/litre"
+        "en": "Grams/cubic centimeter",
+        "fr": "Grammes/centimètre cube"
       },
-      "symbol": "mmol/L"
-    },
-    "density/mg-dl": {
-      "name": {
-        "en": "Milligrams/deciliter",
-        "fr": "Milligrammes/décilitre"
-      },
-      "symbol": "mg/dL"
+      "symbol": "g/cm³"
     },
     "dynamic-viscosity/pa-s": {
       "name": {
@@ -3667,6 +3722,15 @@
     },
     "clinical": {
       "description": "The clinical record stores information about a single condition, procedure, or result, along with a fhir resource underlying data from the user’s healthcare institution."
+    },
+    "concentration": {
+      "description": "The concentration of a material in a mixture or solution.",
+      "extras": {
+        "name": {
+          "en": "Concentration",
+          "fr": "Concentration"
+        }
+      }
     },
     "contact": {
       "description": "To record events related to people (meeting someone special, business encounters, etc.)."

@@ -1,6 +1,6 @@
 {
   "name": "pryv-data-types",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Pryv event type references",
   "keywords": [
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/pryv/data-types.git"
   },
   "license": "BSD-3-Clause",
-  "author": "Pryv S.A. <info@pryv.com> (https://pryv.com)",
+  "author": "Pryv <info@pryv.com> (https://pryv.com)",
   "main": "scripts/build.js",
   "scripts": {
     "batch-to-validate": "node scripts/batch-to-validation-cases.js",
