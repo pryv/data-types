@@ -1,0 +1,53 @@
+{
+  "notification": {
+    "description": "Asynchronous notifications delivered to a recipient — either alert-style messages (level + title + body) or acknowledgements of previously-received alerts. Designed for plugin-driven channels where the data-owner is notified out-of-band of state requiring attention.",
+    "formats": {
+      "alert-cmc": {
+        "description": "CMC system alert (`cmc/system-alert-v1` lineage). Sent on the per-counterparty collectors stream of an established CMC consent. Carries an alert level, localised title + body, and an optional ack request (`ackRequired` / `ackId`).",
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "string",
+            "enum": ["info", "warning", "critical"]
+          },
+          "title": {
+            "type": "object",
+            "description": "Localized text: language-code (2-3 lowercase letters) → string."
+          },
+          "body": {
+            "type": "object",
+            "description": "Localized body text."
+          },
+          "code": {
+            "type": "string",
+            "description": "Optional app-defined code identifying the alert kind (used for grouping / dedup)."
+          },
+          "ackRequired": {
+            "type": "boolean",
+            "description": "When true, the recipient is expected to send a `notification/ack-cmc` event back."
+          },
+          "ackId": {
+            "type": "string",
+            "description": "Optional explicit ack-id. When absent, the alert event-id is used as the ack reference."
+          }
+        },
+        "required": ["level", "title", "body"]
+      },
+      "ack-cmc": {
+        "description": "CMC system alert acknowledgement (`cmc/system-ack-v1` lineage). The recipient of a `notification/alert-cmc` writes one of these back referencing the original alert via `alertEventId` + `ackId`.",
+        "type": "object",
+        "properties": {
+          "alertEventId": { "type": "string", "minLength": 1 },
+          "ackId": { "type": "string", "minLength": 1 }
+        },
+        "required": ["alertEventId", "ackId"]
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Notification",
+        "fr": "Notification"
+      }
+    }
+  }
+}

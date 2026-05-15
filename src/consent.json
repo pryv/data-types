@@ -1,0 +1,213 @@
+{
+  "consent": {
+    "description": "A consent assertion exchanged between two Pryv accounts as part of a cross-account access lifecycle (request → accept | refuse → revoke). Each format represents one state-transition in the consent state machine, plus the post-acceptance handshake step and scope-change continuations. The class is shared by the CMC plugin (open-pryv.io `components/cmc`) and may be reused by other consent-style protocols.",
+    "formats": {
+      "request-cmc": {
+        "description": "Cross-account consent request issued by a requester (`cmc/request-v1` lineage). The plugin mints a single-use capability access from this trigger, embeds the URL in `content.capabilityUrl`, and delivers the request to the recipient.",
+        "type": "object",
+        "properties": {
+          "to": {
+            "description": "Recipient identity, or `null` for an open invite to be claimed via the capability URL."
+          },
+          "capabilityRequested": {
+            "description": "When true, the plugin mints a single-use capability URL the recipient can open out-of-band.",
+            "type": "boolean"
+          },
+          "request": {
+            "description": "The consent assertion: localised title/description/consent text + the requested permissions + optional features and expiry.",
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "object",
+                "description": "Localized text: language-code (2-3 lowercase letters) → string."
+              },
+              "description": {
+                "type": "object",
+                "description": "Localized text."
+              },
+              "consent": {
+                "type": "object",
+                "description": "Localized consent text."
+              },
+              "permissions": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "streamId": { "type": "string", "minLength": 1 },
+                    "level": {
+                      "type": "string",
+                      "enum": ["manage", "contribute", "read", "create-only", "none"]
+                    }
+                  },
+                  "required": ["streamId", "level"]
+                }
+              },
+              "features": {
+                "type": "object",
+                "properties": {
+                  "chat": { "type": "boolean" },
+                  "systemMessaging": { "type": "boolean" }
+                }
+              },
+              "expiresAt": { "type": "number", "description": "Unix timestamp (seconds)." }
+            },
+            "required": ["title", "description", "consent", "permissions"]
+          },
+          "requesterMeta": {
+            "type": "object",
+            "properties": {
+              "displayName": { "type": "string" },
+              "appId": { "type": "string" },
+              "appUrl": { "type": "string" }
+            }
+          }
+        },
+        "required": ["to", "request"]
+      },
+      "accept-cmc": {
+        "description": "Cross-account consent accept (`cmc/accept-v1` lineage). Has two shapes: LOCAL TRIGGER (carries `capabilityUrl`, written by the accepter's app to start the accept flow) OR PEER-DELIVERED (carries `grantedAccess.apiEndpoint` + server-stamped `from`, written by the accepter's plugin to the requester's responses stream / inbox).",
+        "type": "object",
+        "properties": {
+          "capabilityUrl": { "type": "string", "description": "Local-trigger shape: capability URL from the request." },
+          "accessName": { "type": "string", "description": "Optional name for the data-grant access the accepter mints." },
+          "extra": {
+            "type": "object",
+            "properties": {
+              "chat": { "type": "boolean" },
+              "systemMessaging": { "type": "boolean" }
+            }
+          },
+          "grantedAccess": {
+            "type": "object",
+            "description": "Peer-delivered shape: data-grant URL the accepter minted on their account.",
+            "properties": {
+              "apiEndpoint": { "type": "string" }
+            },
+            "required": ["apiEndpoint"]
+          },
+          "from": {
+            "type": "object",
+            "description": "Server-stamped at inbox-write time from the back-channel access's stored counterparty identity.",
+            "properties": {
+              "username": { "type": "string" },
+              "host": { "type": "string" }
+            },
+            "required": ["username", "host"]
+          }
+        }
+      },
+      "refuse-cmc": {
+        "description": "Cross-account consent refuse (`cmc/refuse-v1` lineage). Carries the capability URL of the request being refused + an optional localised reason.",
+        "type": "object",
+        "properties": {
+          "capabilityUrl": { "type": "string" },
+          "reason": {
+            "type": "object",
+            "description": "Localized reason text."
+          }
+        },
+        "required": ["capabilityUrl"]
+      },
+      "revoke-cmc": {
+        "description": "Cross-account consent revoke (`cmc/revoke-v1` lineage). Either party tears down an established access pair by writing this with the local data-grant access id + an optional localised reason.",
+        "type": "object",
+        "properties": {
+          "accessId": { "type": "string" },
+          "reason": {
+            "type": "object",
+            "description": "Localized reason text."
+          }
+        },
+        "required": ["accessId"]
+      },
+      "back-channel-cmc": {
+        "description": "Post-acceptance handshake step (`cmc/back-channel-v1` lineage). Delivered from the requester to the accepter's `:_cmc:inbox` via the data-grant URL, carrying the requester's back-channel apiEndpoint + remote stream-ids so the accepter can later POST chat / system messages back to the requester.",
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "object",
+            "properties": {
+              "username": { "type": "string" },
+              "host": { "type": "string" }
+            },
+            "required": ["username", "host"]
+          },
+          "apiEndpoint": { "type": "string" },
+          "remoteChatStreamId": { "type": "string" },
+          "remoteCollectorStreamId": { "type": "string" },
+          "appCode": { "type": "string" }
+        },
+        "required": ["from", "apiEndpoint"]
+      },
+      "scope-request-cmc": {
+        "description": "Collector-proposed scope change on an established consent (`cmc/system-scope-request-v1` lineage). The collector writes a proposal carrying the desired new permissions; the user-side app accepts or refuses by writing a corresponding `consent/scope-update-cmc` event.",
+        "type": "object",
+        "properties": {
+          "newPermissions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "streamId": { "type": "string", "minLength": 1 },
+                "level": {
+                  "type": "string",
+                  "enum": ["manage", "contribute", "read", "create-only", "none"]
+                }
+              },
+              "required": ["streamId", "level"]
+            }
+          },
+          "expires": { "type": "number", "description": "Unix timestamp (seconds)." },
+          "message": {
+            "type": "object",
+            "description": "Localized message accompanying the proposal."
+          }
+        },
+        "required": ["newPermissions"]
+      },
+      "scope-update-cmc": {
+        "description": "User-side scope change apply / notify (`cmc/system-scope-update-v1` lineage). Has two shapes: response-to-request (carries `scopeRequestEventId` + `accept`) OR self-initiated (carries `newPermissions`). The plugin updates the local data-grant access permissions and notifies the peer.",
+        "type": "object",
+        "properties": {
+          "scopeRequestEventId": { "type": "string" },
+          "accept": { "type": "boolean" },
+          "newPermissions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "streamId": { "type": "string", "minLength": 1 },
+                "level": {
+                  "type": "string",
+                  "enum": ["manage", "contribute", "read", "create-only", "none"]
+                }
+              },
+              "required": ["streamId", "level"]
+            }
+          },
+          "accessId": { "type": "string", "description": "Local data-grant access id (when self-initiated)." },
+          "previousPermissions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "streamId": { "type": "string" },
+                "level": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extras": {
+      "name": {
+        "en": "Consent",
+        "fr": "Consentement"
+      }
+    }
+  }
+}
