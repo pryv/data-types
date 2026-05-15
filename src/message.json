@@ -134,6 +134,20 @@
           "screen-name",
           "text"
         ]
+      },
+      "chat-cmc": {
+        "description": "Chat message exchanged on a CMC consent's per-counterparty chat stream (`cmc/chat-v1` lineage). Plain string up to 10 KB; the plugin handles delivery to the peer's matching chat stream.",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10240
+          }
+        },
+        "required": [
+          "content"
+        ]
       }
     }
   }
