@@ -790,6 +790,23 @@
               }
             }
           }
+        },
+        "invalidate-link-cmc": {
+          "description": "Requester-side invalidation of an open-link consent capability (`cmc/invalidate-link-v1` lineage). The plugin flips the capability access state to `'invalidated'` so further accepts are rejected. Already-established data-grant + back-channel relationships are UNTOUCHED — use `consent/revoke-cmc` for per-relationship teardown. Single-use capabilities are auto-consumed on first accept; calling invalidate on a single-use capability is a no-op.",
+          "type": "object",
+          "properties": {
+            "capabilityId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reason": {
+              "type": "object",
+              "description": "Localized reason text."
+            }
+          },
+          "required": [
+            "capabilityId"
+          ]
         }
       }
     },
