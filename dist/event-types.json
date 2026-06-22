@@ -340,6 +340,60 @@
         }
       }
     },
+    "calendar": {
+      "description": "Calendar entries bridged from the iCalendar standard (RFC 5545). Produced by the calendar adapter when ingesting an external calendar feed into a Pryv account.",
+      "formats": {
+        "ical-event": {
+          "description": "A single iCalendar VEVENT mapped to a Pryv event. The well-known fields are kept here for queryability; the verbatim VEVENT block is preserved in the event's `clientData._raw` for lossless round-trips. The event's own `time` / `duration` carry the canonical instant; `dtstart` / `dtend` mirror it as ISO 8601 strings.",
+          "type": "object",
+          "properties": {
+            "uid": {
+              "type": "string",
+              "description": "VEVENT UID — stable identity used to de-duplicate on re-ingest."
+            },
+            "summary": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "rrule": {
+              "type": "string",
+              "description": "Raw RRULE value, e.g. FREQ=DAILY;COUNT=10."
+            },
+            "organizer": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "description": "VEVENT STATUS, e.g. CONFIRMED / TENTATIVE / CANCELLED."
+            },
+            "sequence": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "dtstart": {
+              "type": "string",
+              "description": "Start as an ISO 8601 date-time (UTC)."
+            },
+            "dtend": {
+              "type": "string",
+              "description": "End as an ISO 8601 date-time (UTC), when present."
+            },
+            "dateOnly": {
+              "type": "boolean",
+              "description": "True for all-day (VALUE=DATE) entries."
+            }
+          },
+          "required": [
+            "dtstart"
+          ]
+        }
+      }
+    },
     "call": {
       "description": "To record references to phone calls (landline, mobile, Skype, etc.).",
       "formats": {
@@ -2762,6 +2816,11 @@
           },
           "symbol": "mi²"
         }
+      }
+    },
+    "calendar": {
+      "name": {
+        "en": "Calendar"
       }
     },
     "capacitance": {
