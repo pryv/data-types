@@ -580,6 +580,10 @@
                           },
                           "name": {
                             "type": "string"
+                          },
+                          "mandatory": {
+                            "type": "boolean",
+                            "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
                           }
                         },
                         "required": [
@@ -599,6 +603,10 @@
                             "enum": [
                               "forbidden"
                             ]
+                          },
+                          "mandatory": {
+                            "type": "boolean",
+                            "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
                           }
                         },
                         "required": [
@@ -623,6 +631,10 @@
                 "expiresAt": {
                   "type": "number",
                   "description": "Unix timestamp (seconds)."
+                },
+                "allowUserChoice": {
+                  "type": "boolean",
+                  "description": "Default false: the consent is ALL OR NOTHING (the user may only accept the whole permission set or deny). Set true to let the user cherry-pick entries on the consent screen (entries flagged `mandatory` stay locked)."
                 }
               },
               "required": [
@@ -864,6 +876,10 @@
                       },
                       "name": {
                         "type": "string"
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
                       }
                     },
                     "required": [
@@ -883,6 +899,10 @@
                         "enum": [
                           "forbidden"
                         ]
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
                       }
                     },
                     "required": [
@@ -944,6 +964,10 @@
                       },
                       "name": {
                         "type": "string"
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
                       }
                     },
                     "required": [
@@ -963,6 +987,10 @@
                         "enum": [
                           "forbidden"
                         ]
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
                       }
                     },
                     "required": [
