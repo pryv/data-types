@@ -556,26 +556,64 @@
                   "type": "array",
                   "minItems": 1,
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "streamId": {
-                        "type": "string",
-                        "minLength": 1
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "streamId": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "level": {
+                            "type": "string",
+                            "enum": [
+                              "manage",
+                              "contribute",
+                              "read",
+                              "create-only",
+                              "none"
+                            ]
+                          },
+                          "defaultName": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "mandatory": {
+                            "type": "boolean",
+                            "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
+                          }
+                        },
+                        "required": [
+                          "streamId",
+                          "level"
+                        ]
                       },
-                      "level": {
-                        "type": "string",
-                        "enum": [
-                          "manage",
-                          "contribute",
-                          "read",
-                          "create-only",
-                          "none"
+                      {
+                        "type": "object",
+                        "properties": {
+                          "feature": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "setting": {
+                            "type": "string",
+                            "enum": [
+                              "forbidden"
+                            ]
+                          },
+                          "mandatory": {
+                            "type": "boolean",
+                            "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
+                          }
+                        },
+                        "required": [
+                          "feature",
+                          "setting"
                         ]
                       }
-                    },
-                    "required": [
-                      "streamId",
-                      "level"
                     ]
                   }
                 },
@@ -593,6 +631,10 @@
                 "expiresAt": {
                   "type": "number",
                   "description": "Unix timestamp (seconds)."
+                },
+                "allowUserChoice": {
+                  "type": "boolean",
+                  "description": "Default false: the consent is ALL OR NOTHING (the user may only accept the whole permission set or deny). Set true to let the user cherry-pick entries on the consent screen (entries flagged `mandatory` stay locked)."
                 }
               },
               "required": [
@@ -633,6 +675,64 @@
             "accessName": {
               "type": "string",
               "description": "Optional name for the data-grant access the accepter mints."
+            },
+            "grantedPermissions": {
+              "type": "array",
+              "minItems": 1,
+              "description": "Optional consent downgrade: grant only this subset of the request's permissions (exact-entry identity; validated against the offer by the accepter's plugin).",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "streamId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "level": {
+                        "type": "string",
+                        "enum": [
+                          "manage",
+                          "contribute",
+                          "read",
+                          "create-only",
+                          "none"
+                        ]
+                      },
+                      "defaultName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "streamId",
+                      "level"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "feature": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "setting": {
+                        "type": "string",
+                        "enum": [
+                          "forbidden"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "feature",
+                      "setting"
+                    ]
+                  }
+                ]
+              }
             },
             "extra": {
               "type": "object",
@@ -752,26 +852,64 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "type": "object",
-                "properties": {
-                  "streamId": {
-                    "type": "string",
-                    "minLength": 1
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "streamId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "level": {
+                        "type": "string",
+                        "enum": [
+                          "manage",
+                          "contribute",
+                          "read",
+                          "create-only",
+                          "none"
+                        ]
+                      },
+                      "defaultName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
+                      }
+                    },
+                    "required": [
+                      "streamId",
+                      "level"
+                    ]
                   },
-                  "level": {
-                    "type": "string",
-                    "enum": [
-                      "manage",
-                      "contribute",
-                      "read",
-                      "create-only",
-                      "none"
+                  {
+                    "type": "object",
+                    "properties": {
+                      "feature": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "setting": {
+                        "type": "string",
+                        "enum": [
+                          "forbidden"
+                        ]
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
+                      }
+                    },
+                    "required": [
+                      "feature",
+                      "setting"
                     ]
                   }
-                },
-                "required": [
-                  "streamId",
-                  "level"
                 ]
               }
             },
@@ -802,26 +940,64 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "type": "object",
-                "properties": {
-                  "streamId": {
-                    "type": "string",
-                    "minLength": 1
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "streamId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "level": {
+                        "type": "string",
+                        "enum": [
+                          "manage",
+                          "contribute",
+                          "read",
+                          "create-only",
+                          "none"
+                        ]
+                      },
+                      "defaultName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
+                      }
+                    },
+                    "required": [
+                      "streamId",
+                      "level"
+                    ]
                   },
-                  "level": {
-                    "type": "string",
-                    "enum": [
-                      "manage",
-                      "contribute",
-                      "read",
-                      "create-only",
-                      "none"
+                  {
+                    "type": "object",
+                    "properties": {
+                      "feature": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "setting": {
+                        "type": "string",
+                        "enum": [
+                          "forbidden"
+                        ]
+                      },
+                      "mandatory": {
+                        "type": "boolean",
+                        "description": "Consent-layer flag: this entry is required for the requesting app to function - an accept must include it (the consent UI locks it; the user's alternative is denying the whole request)."
+                      }
+                    },
+                    "required": [
+                      "feature",
+                      "setting"
                     ]
                   }
-                },
-                "required": [
-                  "streamId",
-                  "level"
                 ]
               }
             },
