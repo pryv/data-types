@@ -635,6 +635,14 @@
                 "allowUserChoice": {
                   "type": "boolean",
                   "description": "Default false: the consent is ALL OR NOTHING (the user may only accept the whole permission set or deny). Set true to let the user cherry-pick entries on the consent screen (entries flagged `mandatory` stay locked)."
+                },
+                "accessType": {
+                  "type": "string",
+                  "enum": [
+                    "shared",
+                    "app"
+                  ],
+                  "description": "Pryv access type the accepted data-grant is minted as. Default `shared` (a non-delegable grant that cannot call `accesses.*`). Set `app` to make the grant delegable: the approved requester can `accesses.create` scoped, individually-named sub-accesses (permissions ⊆ the grant) for least-privilege re-delegation with per-actor audit attribution."
                 }
               },
               "required": [
