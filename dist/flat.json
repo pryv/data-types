@@ -4521,7 +4521,7 @@
       }
     },
     "encrypted": {
-      "description": "For client-side-encrypted events. The decrypted plaintext is expected to be the UTF-8 JSON serialization of an object with the regular <code>type</code> and <code>content</code> properties (e.g. <code>{ \"type\": \"..\", \"content\": \"..\" }</code>); extra properties are allowed and carried along on decryption. All other event fields (id, streamIds, time, …) stay in plaintext. If the event has attached files, each is encrypted with the same method and key as the event's content, as raw binary <code>iv || ciphertext || authentication tag</code> (no Base64)."
+      "description": "For client-side-encrypted events. The decrypted plaintext is expected to be the UTF-8 JSON serialization of an object with the regular <code>type</code> and <code>content</code> properties (e.g. <code>{ \"type\": \"..\", \"content\": \"..\" }</code>); extra properties are allowed and carried along on decryption. All other event fields (id, streamIds, time, …) stay in plaintext. If the event has attached files, each is encrypted with the same method and key as the event's content, as raw binary in the method's payload byte layout — i.e. exactly the bytes that Base64-decoding a <code>payload</code> would yield (e.g. <code>iv || ciphertext || tag</code> for <code>aes-256-gcm</code>), without Base64 encoding."
     },
     "energy": {
       "description": "The capacity of a physical system to perform work.",
