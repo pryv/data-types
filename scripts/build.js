@@ -15,14 +15,14 @@ const destPath = path.resolve(__dirname, '../dist/');
 // data handlers
 
 const flat = {
-  version: version,
+  version,
   types: {},
   extras: {},
   classes: {}
 };
 
 const hierchical = {
-  version: version,
+  version,
   classes: {},
   extras: {}
 };
