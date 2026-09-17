@@ -6,7 +6,7 @@
             "description": "A type to record severity of a symptom such as bloating or abdominal cramps.",
             "type": "string",
             "enum": ["notPresent", "mild", "moderate", "severe", "unspecified"]
-        }, 
+        },
         "appetite-changes": {
             "description": "A type to represent change in appetite.",
             "type": "string",
