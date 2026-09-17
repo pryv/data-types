@@ -1,6 +1,6 @@
 {
   "volume": {
-    "description": "The quantity of three-dimensional space enclosed by some closed boundary.",
+    "description": "The quantity of three-dimensional space enclosed by some closed boundary.",
     "formats": {
       "l": {
         "description": "Liters",

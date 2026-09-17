@@ -13,7 +13,7 @@
         }
       }
     },
-    "description": "The wavelength-weighted power emitted by a light source.",
+    "description": "The wavelength-weighted power emitted by a light source.",
     "extras": {
       "name": {
         "en": "Luminous intensity",

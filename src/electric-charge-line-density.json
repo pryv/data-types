@@ -13,7 +13,7 @@
         }
       }
     },
-    "description": "The electric charge per unit volume of space, in one, two or three dimensions.",
+    "description": "The electric charge per unit volume of space, in one, two or three dimensions.",
     "extras": {
       "name": {
         "en": "Electric charge line density",

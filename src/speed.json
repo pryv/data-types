@@ -90,7 +90,7 @@
         }
       }
     },
-    "description": "The magnitude of the velocity of an object.",
+    "description": "The magnitude of the velocity of an object.",
     "extras": {
       "name": {
         "en": "Speed",

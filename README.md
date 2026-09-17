@@ -24,7 +24,7 @@ Filenames are not important as long as they end with `.json`.
 
 The type of an event indicates how to handle its content and is specified as `{class}/{format}`. We recommend declaring each class into a separate files with corresponding filename for the sake of readability.
 
-##### Contents of a `{class}.json` file
+##### Contents of a `{class}.json` file
 
 Your custom data type should be specified as a JSON object with the following properties:
 

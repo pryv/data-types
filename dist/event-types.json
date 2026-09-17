@@ -8,7 +8,7 @@
           "type": "number"
         }
       },
-      "description": "The radiation absorbed by a fixed mass of biological tissue."
+      "description": "The radiation absorbed by a fixed mass of biological tissue."
     },
     "absorbed-dose-rate": {
       "formats": {
@@ -61,7 +61,7 @@
           "type": "number"
         }
       },
-      "description": "The rate of change of angular velocity."
+      "description": "The rate of change of angular velocity."
     },
     "angular-speed": {
       "formats": {
@@ -418,7 +418,7 @@
           "type": "number"
         }
       },
-      "description": "The ability of a body to store an electrical charge."
+      "description": "The ability of a body to store an electrical charge."
     },
     "catalytic-activity": {
       "formats": {
@@ -427,7 +427,7 @@
           "type": "number"
         }
       },
-      "description": "The  increase in rate of a chemical reaction due to the participation of a substance called a catalyst."
+      "description": "The increase in rate of a chemical reaction due to the participation of a substance called a catalyst."
     },
     "clinical": {
       "description": "The clinical record stores information about a single condition, procedure, or result, along with a fhir resource underlying data from the user’s healthcare institution.",
@@ -1132,7 +1132,7 @@
           "type": "number"
         }
       },
-      "description": "Unit of information in computing and digital communications."
+      "description": "Unit of information in computing and digital communications."
     },
     "date": {
       "description": "To record a date and time.",
@@ -1154,7 +1154,7 @@
           "type": "number"
         }
       },
-      "description": "The density of a material (volumetric mass density)."
+      "description": "The density of a material (volumetric mass density)."
     },
     "dynamic-viscosity": {
       "formats": {
@@ -1172,7 +1172,7 @@
           "type": "number"
         }
       },
-      "description": "The electric charge per unit volume of space, in one, two or three dimensions."
+      "description": "The electric charge per unit volume of space, in one, two or three dimensions."
     },
     "electric-charge": {
       "formats": {
@@ -1190,7 +1190,7 @@
           "type": "number"
         }
       },
-      "description": "A flow of electric charge."
+      "description": "A flow of electric charge."
     },
     "electrical-conductivity": {
       "formats": {
@@ -1364,7 +1364,7 @@
           "type": "number"
         }
       },
-      "description": "A push or pull upon an object resulting from the object's interaction with another object."
+      "description": "A push or pull upon an object resulting from the object's interaction with another object."
     },
     "frequency": {
       "description": "The number of occurrences of a repeating event per unit time.",
@@ -1416,7 +1416,7 @@
       }
     },
     "gas-consumption": {
-      "description": "The quantity of gas consumed.",
+      "description": "The quantity of gas consumed.",
       "formats": {
         "mlpkgmin": {
           "description": "Milliliters per kilogram and minute",
@@ -1515,7 +1515,7 @@
       }
     },
     "linear-acceleration": {
-      "description": "The rate of change of linear velocity.",
+      "description": "The rate of change of linear velocity.",
       "formats": {
         "m-s2": {
           "description": "Meters per second squared",
@@ -1530,7 +1530,7 @@
           "type": "number"
         }
       },
-      "description": "The wavelength-weighted power emitted by a light source."
+      "description": "The wavelength-weighted power emitted by a light source."
     },
     "mass": {
       "description": "The heaviness of an object.",
@@ -1734,7 +1734,7 @@
       }
     },
     "mol": {
-      "description": "The size of an ensemble of elementary entities, such as atoms, molecules, electrons, and other particles.",
+      "description": "The size of an ensemble of elementary entities, such as atoms, molecules, electrons, and other particles.",
       "formats": {
         "mol": {
           "description": "Mole ",
@@ -2408,7 +2408,7 @@
       "description": "A set of numerical values.",
       "formats": {
         "*": {
-          "description": "The format key is freely defined.\n\nFor example, a heart measurement with type `numset/heart` and content:\n```\n{ \n  \"systolic\": { \"pressure/mmhg\": 105 },\n  \"diastolic\": { \"pressure/mmhg\": 64 },\n  \"rate\": { \"frequency/bpm\": 88 }\n}\n```\n\n ",
+          "description": "The format key is freely defined.\n\nFor example, a heart measurement with type `numset/heart` and content:\n```\n{\n  \"systolic\": { \"pressure/mmhg\": 105 },\n  \"diastolic\": { \"pressure/mmhg\": 64 },\n  \"rate\": { \"frequency/bpm\": 88 }\n}\n```",
           "type": "object",
           "patternProperties": {
             "^(/[^/]+)+$": {
@@ -2523,7 +2523,7 @@
           "type": "number"
         }
       },
-      "description": "The rate at which energy is transferred, used, or transformed."
+      "description": "The rate at which energy is transferred, used, or transformed."
     },
     "pressure": {
       "formats": {
@@ -2807,7 +2807,7 @@
           "type": "number"
         }
       },
-      "description": "The magnitude of the velocity of an object."
+      "description": "The magnitude of the velocity of an object."
     },
     "symptoms": {
       "description": "To record medical symptoms, such as abdominal cramps or chest pain.",
@@ -2915,7 +2915,7 @@
       }
     },
     "volume": {
-      "description": "The quantity of three-dimensional space enclosed by some closed boundary.",
+      "description": "The quantity of three-dimensional space enclosed by some closed boundary.",
       "formats": {
         "l": {
           "description": "Liters",

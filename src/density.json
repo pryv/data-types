@@ -24,7 +24,7 @@
         }
       }
     },
-    "description": "The density of a material (volumetric mass density).",
+    "description": "The density of a material (volumetric mass density).",
     "extras": {
       "name": {
         "en": "Density",
