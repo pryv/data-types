@@ -87,7 +87,7 @@ function validateCase (validationCase) {
       type = wildcardType;
     }
     // A schema that does not compile makes cores refuse every event of the type.
-    const validateContent = createAjv().compile(structuredClone(type));
+    const validateContent = createAjv().compile(type);
     const didValidate = validateContent(validationCase.content);
     report['Did validate'] = didValidate;
     if (shouldValidate !== didValidate) {

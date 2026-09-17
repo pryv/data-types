@@ -6,7 +6,9 @@
 //
 // Checks a file the way Pryv cores use it. For an event-types catalogue (a file
 // with `types`):
-// - the catalogue as a whole must compile (cores check it on download);
+// - the catalogue as a whole must compile (cores compile it on download; with
+//   `strict: false` that barely checks anything, the per-type loop below is the
+//   check that matters);
 // - every type's schema must compile, or cores refuse every event of that type,
 //   because their validator cannot build it. A malformed keyword (e.g.
 //   `"additionalProperties": "true"`, a string) or misnested braces (`required`
@@ -23,7 +25,7 @@ const content = require(filePath);
 const invalid = [];
 const check = (label, schema) => {
   try {
-    createAjv().compile(structuredClone(schema));
+    createAjv().compile(schema);
   } catch (err) {
     invalid.push(`  ${label}\n    ${err.message}`);
   }
