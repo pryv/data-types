@@ -18,8 +18,8 @@ if (!args[0]) {
 }
 
 const path = require('path');
-const ZSchema = require('z-schema');
 const util = require('util');
+const { createAjv } = require('./json-schema-validator');
 
 const rootPath = path.resolve(__dirname, '..');
 const validationCasesPath = path.resolve(rootPath, args[0]);
@@ -27,8 +27,6 @@ const schemaPath = args[1] ? path.resolve(rootPath, args[1]) : path.resolve(root
 
 const schema = require(schemaPath);
 const validationCases = require(validationCasesPath);
-
-const validator = new ZSchema();
 
 console.log('Validation results:');
 
@@ -87,11 +85,13 @@ function validateCase (validationCase) {
       report.Note = `validated against the wildcard format "${wildcardKey}", which cores do not enforce`;
       type = wildcardType;
     }
-    const didValidate = validator.validate(validationCase.content, type);
+    // A schema that does not compile makes cores refuse every event of the type.
+    const validateContent = createAjv().compile(structuredClone(type));
+    const didValidate = validateContent(validationCase.content);
     report['Did validate'] = didValidate;
     if (shouldValidate !== didValidate) {
-      report['Validation errors'] = validator.getLastErrors().map((err) => {
-        return { message: err.message, path: err.path, code: err.code, params: err.params };
+      report['Validation errors'] = (validateContent.errors || []).map((err) => {
+        return { message: err.message, path: err.instancePath, keyword: err.keyword, params: err.params };
       });
     }
   } catch (err) {

@@ -5,7 +5,7 @@ Events are the primary units of content in the Pryv.io data model. Depending on 
 We provide a list of **standard event types** for Pryv.io that you can customize to suit your needs as explained below.
 The event types effectively in use by default are published on [our API site](https://api.pryv.com/event-types/).
 
-The format validation follows the [JSON Schema](https://json-schema.org) specification, and Pryv.io uses the [z-schema](https://github.com/zaggino/z-schema) library for validation.
+The format validation follows the [JSON Schema](https://json-schema.org) specification (draft-04), and Pryv.io uses the [ajv](https://ajv.js.org) library for validation. `npm run build` checks that the catalogue and every type schema compile with the same validator setup.
 
 
 ## Usage: how to customize data types

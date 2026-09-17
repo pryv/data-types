@@ -21,22 +21,23 @@
   "main": "scripts/build.js",
   "scripts": {
     "batch-to-validate": "node scripts/batch-to-validation-cases.js",
-    "build": "node scripts/build.js && z-schema ./dist/flat.json",
+    "build": "node scripts/build.js && node scripts/check-type-schemas.js",
     "license": "source-licenser --config-file .licenser.yml ./",
     "lint": "eslint .",
     "validate-content": "node scripts/validate.js",
-    "validate-schema": "z-schema"
+    "validate-schema": "node scripts/check-type-schemas.js"
   },
   "dependencies": {
-    "clone": "^2.1.2",
-    "z-schema": "^5.0.3"
+    "ajv": "^8.20.0",
+    "ajv-draft-04": "^1.0.0",
+    "ajv-formats": "^3.0.1",
+    "clone": "^2.1.2"
   },
   "devDependencies": {
     "neostandard": "^0.12.2",
     "source-licenser": "^2.0.6"
   },
   "overrides": {
-    "validator": "^13.15.20",
     "js-yaml": "^4.3.0",
     "lodash": "^4.18.1"
   }

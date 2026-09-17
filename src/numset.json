@@ -5,13 +5,15 @@
       "*": {
         "description": "The format key is freely defined.\n\nFor example, a heart measurement with type `numset/heart` and content:\n```\n{\n  \"systolic\": { \"pressure/mmhg\": 105 },\n  \"diastolic\": { \"pressure/mmhg\": 64 },\n  \"rate\": { \"frequency/bpm\": 88 }\n}\n```",
         "type": "object",
-        "patternProperties": {
-          "^(/[^/]+)+$": {
-            "type": "number"
-          }
-        },
-        "additionalProperties": "false",
-        "required": []
+        "additionalProperties": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z0-9-]+/[a-z0-9-]+$": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
       }
     }
   }

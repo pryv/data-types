@@ -5,7 +5,7 @@
       "facebook": {
         "type": "object",
         "description": "A Facebook user as specified in the Graph API: https://developers.facebook.com/docs/reference/api/user/",
-        "additionalProperties": "true",
+        "additionalProperties": true,
         "properties": {
           "id": {
             "type": "string"
