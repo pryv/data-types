@@ -67,8 +67,9 @@ function validateCase (validationCase) {
     }
 
     let type = schema.types[validationCase.type];
-    const wildcardKey = validationCase.type.split('/')[0] + '/*';
-    const wildcardType = type ? null : schema.types[wildcardKey];
+    const slash = typeof validationCase.type === 'string' ? validationCase.type.indexOf('/') : -1;
+    const wildcardKey = slash > 0 ? validationCase.type.slice(0, slash) + '/*' : null;
+    const wildcardType = (type || wildcardKey == null) ? null : schema.types[wildcardKey];
     if (!type && !wildcardType) {
       throw Error(`Type "${validationCase.type}" not found in schema file ${schemaPath}`);
     }
