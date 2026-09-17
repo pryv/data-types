@@ -13,7 +13,7 @@
         }
       }
     },
-    "description": "The radiation absorbed by a fixed mass of biological tissue.",
+    "description": "The radiation absorbed by a fixed mass of biological tissue.",
     "extras": {
       "name": {
         "en": "Dose equivalent",

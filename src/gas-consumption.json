@@ -1,6 +1,6 @@
 {
     "gas-consumption": {
-      "description": "The quantity of gas consumed.",
+      "description": "The quantity of gas consumed.",
       "formats": {
         "mlpkgmin": {
           "description": "Milliliters per kilogram and minute",

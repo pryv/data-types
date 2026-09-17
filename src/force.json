@@ -35,7 +35,7 @@
         }
       }
     },
-    "description": "A push or pull upon an object resulting from the object's interaction with another object.",
+    "description": "A push or pull upon an object resulting from the object's interaction with another object.",
     "extras": {
       "name": {
         "en": "Force",

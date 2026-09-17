@@ -1,6 +1,6 @@
 {
   "mol": {
-    "description": "The size of an ensemble of elementary entities, such as atoms, molecules, electrons, and other particles.",
+    "description": "The size of an ensemble of elementary entities, such as atoms, molecules, electrons, and other particles.",
     "formats": {
       "mol": {
         "description": "Mole ",

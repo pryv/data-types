@@ -1,6 +1,6 @@
 {
   "linear-acceleration": {
-    "description": "The rate of change of linear velocity.",
+    "description": "The rate of change of linear velocity.",
     "formats": {
       "m-s2": {
         "description": "Meters per second squared",

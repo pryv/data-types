@@ -57,7 +57,7 @@
         }
       }
     },
-    "description": "The rate at which energy is transferred, used, or transformed.",
+    "description": "The rate at which energy is transferred, used, or transformed.",
     "extras": {
       "name": {
         "en": "Power",

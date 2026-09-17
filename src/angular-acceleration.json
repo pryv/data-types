@@ -13,7 +13,7 @@
         }
       }
     },
-    "description": "The rate of change of angular velocity.",
+    "description": "The rate of change of angular velocity.",
     "extras": {
       "name": {
         "en": "Angular acceleration",
