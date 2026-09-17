@@ -2,7 +2,17 @@
  * @license
  * [BSD-3-Clause](https://github.com/pryv/data-types/blob/master/LICENSE)
  */
-if (!process.argv[2]) {
+// Usage: validate.js <cases.json> [schema.json] [--enforce-wildcards]
+//
+// A type is looked up by its exact key, as Pryv cores do. A type that only
+// matches a wildcard format (e.g. `numset/heart` against `numset/*`) is unknown
+// to a core, which accepts it with ANY content; by default it is reported that
+// way. `--enforce-wildcards` validates it against the wildcard format instead,
+// which describes the intended content but is not enforced by cores.
+const args = process.argv.slice(2).filter((arg) => arg !== '--enforce-wildcards');
+const enforceWildcards = process.argv.includes('--enforce-wildcards');
+
+if (!args[0]) {
   console.error('Json file with validation cases not provided');
   process.exit(1);
 }
@@ -12,8 +22,8 @@ const ZSchema = require('z-schema');
 const util = require('util');
 
 const rootPath = path.resolve(__dirname, '..');
-const validationCasesPath = path.resolve(rootPath, process.argv[2]);
-const schemaPath = process.argv[3] ? path.resolve(rootPath, process.argv[3]) : path.resolve(rootPath, 'dist/flat.json');
+const validationCasesPath = path.resolve(rootPath, args[0]);
+const schemaPath = args[1] ? path.resolve(rootPath, args[1]) : path.resolve(rootPath, 'dist/flat.json');
 
 const schema = require(schemaPath);
 const validationCases = require(validationCasesPath);
@@ -58,13 +68,25 @@ function validateCase (validationCase) {
       report['Tested content'] = '...Too long to display...';
     }
 
-    const type = schema.types[validationCase.type];
-    if (!type) {
+    let type = schema.types[validationCase.type];
+    const wildcardKey = validationCase.type.split('/')[0] + '/*';
+    const wildcardType = type ? null : schema.types[wildcardKey];
+    if (!type && !wildcardType) {
       throw Error(`Type "${validationCase.type}" not found in schema file ${schemaPath}`);
     }
 
     const shouldValidate = expectedStringToBoolean(validationCase.expected);
     report['Expected to validate'] = shouldValidate;
+    if (wildcardType && !enforceWildcards) {
+      // Mirror a core: an unknown type is accepted whatever its content.
+      report.Note = `"${validationCase.type}" only matches the wildcard format "${wildcardKey}", which cores do not enforce: accepted with any content (use --enforce-wildcards to validate against "${wildcardKey}")`;
+      report['Did validate'] = true;
+      return report;
+    }
+    if (wildcardType) {
+      report.Note = `validated against the wildcard format "${wildcardKey}", which cores do not enforce`;
+      type = wildcardType;
+    }
     const didValidate = validator.validate(validationCase.content, type);
     report['Did validate'] = didValidate;
     if (shouldValidate !== didValidate) {
