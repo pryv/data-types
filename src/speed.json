@@ -77,9 +77,9 @@
           },
           "symbol": "mph"
         }
-      }, 
+      },
       "lpm": {
-        "description": "Liters/minute", 
+        "description": "Liters/minute",
         "type": "number",
         "extras": {
           "name": {

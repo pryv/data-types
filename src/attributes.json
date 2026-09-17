@@ -6,12 +6,12 @@
             "description": "An attribute type for the user’s sex",
             "type": "string",
             "enum": ["notSet", "female", "male", "other"]
-        }, 
+        },
         "blood-type": {
             "description": "An attribute type for the user’s blood type",
             "type": "string",
             "enum": ["notSet", "aPositive", "bPositive", "oPositive", "abPositive", "aNegative", "bNegative", "abNegative", "oNegative"]
-        }, 
+        },
         "skin-type": {
             "description": "An attribute type for the user’s skin type",
             "type": "string",

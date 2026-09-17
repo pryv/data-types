@@ -110,7 +110,7 @@
           },
           "symbol": "psi"
         }
-      }, 
+      },
       "db": {
         "description": "Decibels",
         "type": "number",

@@ -2,23 +2,31 @@
  * @license
  * [BSD-3-Clause](https://github.com/pryv/data-types/blob/master/LICENSE)
  */
-if (!process.argv[2]) {
+// Usage: validate.js <cases.json> [schema.json] [--enforce-wildcards]
+//
+// A type is looked up by its exact key, as Pryv cores do. A type that only
+// matches a wildcard format (e.g. `numset/heart` against `numset/*`) is unknown
+// to a core, which accepts it with ANY content; by default it is reported that
+// way. `--enforce-wildcards` validates it against the wildcard format instead,
+// which describes the intended content but is not enforced by cores.
+const args = process.argv.slice(2).filter((arg) => arg !== '--enforce-wildcards');
+const enforceWildcards = process.argv.includes('--enforce-wildcards');
+
+if (!args[0]) {
   console.error('Json file with validation cases not provided');
   process.exit(1);
 }
 
 const path = require('path');
-const ZSchema = require('z-schema');
 const util = require('util');
+const { createAjv } = require('./json-schema-validator');
 
 const rootPath = path.resolve(__dirname, '..');
-const validationCasesPath = path.resolve(rootPath, process.argv[2]);
-const schemaPath = process.argv[3] ? path.resolve(rootPath, process.argv[3]) : path.resolve(rootPath, 'dist/flat.json');
+const validationCasesPath = path.resolve(rootPath, args[0]);
+const schemaPath = args[1] ? path.resolve(rootPath, args[1]) : path.resolve(rootPath, 'dist/flat.json');
 
 const schema = require(schemaPath);
 const validationCases = require(validationCasesPath);
-
-const validator = new ZSchema();
 
 console.log('Validation results:');
 
@@ -58,18 +66,33 @@ function validateCase (validationCase) {
       report['Tested content'] = '...Too long to display...';
     }
 
-    const type = schema.types[validationCase.type];
-    if (!type) {
+    let type = schema.types[validationCase.type];
+    const slash = typeof validationCase.type === 'string' ? validationCase.type.indexOf('/') : -1;
+    const wildcardKey = slash > 0 ? validationCase.type.slice(0, slash) + '/*' : null;
+    const wildcardType = (type || wildcardKey == null) ? null : schema.types[wildcardKey];
+    if (!type && !wildcardType) {
       throw Error(`Type "${validationCase.type}" not found in schema file ${schemaPath}`);
     }
 
     const shouldValidate = expectedStringToBoolean(validationCase.expected);
     report['Expected to validate'] = shouldValidate;
-    const didValidate = validator.validate(validationCase.content, type);
+    if (wildcardType && !enforceWildcards) {
+      // Mirror a core: an unknown type is accepted whatever its content.
+      report.Note = `"${validationCase.type}" only matches the wildcard format "${wildcardKey}", which cores do not enforce: accepted with any content (use --enforce-wildcards to validate against "${wildcardKey}")`;
+      report['Did validate'] = true;
+      return report;
+    }
+    if (wildcardType) {
+      report.Note = `validated against the wildcard format "${wildcardKey}", which cores do not enforce`;
+      type = wildcardType;
+    }
+    // A schema that does not compile makes cores refuse every event of the type.
+    const validateContent = createAjv().compile(type);
+    const didValidate = validateContent(validationCase.content);
     report['Did validate'] = didValidate;
     if (shouldValidate !== didValidate) {
-      report['Validation errors'] = validator.getLastErrors().map((err) => {
-        return { message: err.message, path: err.path, code: err.code, params: err.params };
+      report['Validation errors'] = (validateContent.errors || []).map((err) => {
+        return { message: err.message, path: err.instancePath, keyword: err.keyword, params: err.params };
       });
     }
   } catch (err) {

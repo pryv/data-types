@@ -5,12 +5,12 @@ Events are the primary units of content in the Pryv.io data model. Depending on 
 We provide a list of **standard event types** for Pryv.io that you can customize to suit your needs as explained below.
 The event types effectively in use by default are published on [our API site](https://api.pryv.com/event-types/).
 
-The format validation follows the [JSON Schema](https://json-schema.org) specification, and Pryv.io uses the [z-schema](https://github.com/zaggino/z-schema) library for validation.
+The format validation follows the [JSON Schema](https://json-schema.org) specification (draft-04), and Pryv.io uses the [ajv](https://ajv.js.org) library for validation. `npm run build` checks that the catalogue and every type schema compile with the same validator setup.
 
 
 ## Usage: how to customize data types
 
-Prerequisite: Node.js 
+Prerequisite: Node.js
 
 To add and modify your own data types, follow these steps:
 
@@ -100,7 +100,7 @@ For example, here is what an `angle.json` describing a class `angle` with format
 
 #### 3. Rebuild the generated files into `dist/`
 
-Run `npm run build`, which generates files `event-types.json`, `flat.json` and `flat.min.json` in `dist/`, then validates `flat.json`.
+Run `npm run build`, which generates files `event-types.json`, `flat.json` and `flat.min.json` in `dist/`, then checks that `flat.json` and every type schema in it compile.
 
 #### 4. Publish the generated files on a web server
 
@@ -110,9 +110,9 @@ More information on the content validation for your custom data types can be fou
 
 ### Validating your data types
 
-Validation of your type definitions is already performed when generating the files (see above), but you can validate the structure of any file containing JSON schemas by running `npm run validate-schema <schema_path>`, where `<schema_path>` is a full path to the JSON file to validate.
+Validation of your type definitions is already performed when generating the files (see above), but you can check any file by running `npm run validate-schema -- <schema_path>`, where `<schema_path>` is a path to the JSON file to check: an event-types catalogue (a file with `types`) is checked as a whole and type by type, any other file as a single JSON schema.
 
-Furthermore, you can define validation cases for your data types and execute them by running `npm run validate-content <content_validation_cases_path> <schema_path>`, where:
+Furthermore, you can define validation cases for your data types and execute them by running `npm run validate-content -- <content_validation_cases_path> [<schema_path>] [--enforce-wildcards]`, where:
 
 - `<content_validation_cases_path>` is a full path to a JSON file with validation cases defined as in the following example:
   ```json
@@ -130,6 +130,9 @@ Furthermore, you can define validation cases for your data types and execute the
     ]
   ```
 - `<schema_path>` (optional) is a full path to the data types JSON file to use as reference. If not provided, `dist/flat.json` is used.
+- `--enforce-wildcards` (optional): a type that only matches a wildcard format (e.g. `numset/heart` against `numset/*`) is unknown to a Pryv.io core, which matches types by exact key and accepts an unknown type with any content. By default such a case is reported that way, with a note. With this flag it is validated against the wildcard format instead, which describes the intended content.
+
+The `--` after the script name is required for npm to pass the arguments through.
 
 #### Generating a validation cases file from a Pryv.io API batch call
 
