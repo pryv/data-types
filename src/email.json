@@ -3,7 +3,7 @@
     "description": "To record an email address.",
     "formats": {
       "string": {
-        "description": "An email address as a plain string, e.g. the account email address. Whether ownership of the account address was proved is given by the accompanying `verification/email` event.",
+        "description": "An email address as a plain string, e.g. the account email address. Whether ownership of the account address was proved is given by the accompanying `verification/email` event, returned when requested by type.",
         "type": "string"
       }
     }

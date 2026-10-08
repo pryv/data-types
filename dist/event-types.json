@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "classes": {
     "absorbed-dose-equivalent": {
       "formats": {
@@ -1267,7 +1267,7 @@
       "description": "To record an email address.",
       "formats": {
         "string": {
-          "description": "An email address as a plain string, e.g. the account email address. Whether ownership of the account address was proved is given by the accompanying `verification/email` event.",
+          "description": "An email address as a plain string, e.g. the account email address. Whether ownership of the account address was proved is given by the accompanying `verification/email` event, returned when requested by type.",
           "type": "string"
         }
       }
@@ -2955,7 +2955,7 @@
       "description": "To record whether a piece of account data has been verified, and how. Verification events are read-only and derived by the server: they accompany the data they qualify and cannot be created or updated by apps.",
       "formats": {
         "email": {
-          "description": "The verification state of the account email address. It accompanies the account email event (same stream, type `email/string`). `verified` is the answer to rely on; `method` and `verifiedAt` say how and when, and the list of methods may grow without changing what `verified` means.",
+          "description": "The verification state of the account email address. It accompanies the account email event (same stream, type `email/string`) and is returned when requested by type (`verification/email` or `verification/*`): a read of that stream without types returns the email event only. `verified` describes the address currently in that email event and is the answer to rely on; `method` and `verifiedAt` say how and when, and the list of methods may grow without changing what `verified` means.",
           "type": "object",
           "properties": {
             "verified": {
