@@ -997,7 +997,7 @@
       ]
     },
     "consent/member-access-cmc": {
-      "description": "A group member asks the group's core for a short-lived access on a patient's account. Written on the group account, on a scope stream the member's membership access holds `contribute` on (or by the group's personal token). The group's core mints a `shared` child access on the patient's core through the data-grant it holds, named and attributed by the server, and returns its apiEndpoint once, in the `memberAccess` field of the synchronous `events.create` response (never stored on the event). Server-owned fields (`status`, `failure`, `memberAccess`, `member`, `relationshipAccessId`) are written by the platform after dispatch and never by a client.",
+      "description": "A group member asks the group's core for a short-lived access on a patient's account. Written on the group account, on a scope stream the member's membership access holds `contribute` on (or by the group's personal token). The group's core mints a `shared` child access on the patient's core through the data-grant it holds, named and attributed by the server, and returns its apiEndpoint once, in the `memberAccess` field of the synchronous `events.create` response (never stored on the event). Server-owned fields (`status`, `failure`, `memberAccess`, `member`, `relationshipAccessId`) are written by the platform after dispatch and never by a client: a client-supplied value is discarded on create, and the stored value is kept on update.",
       "type": "object",
       "properties": {
         "counterparty": {
@@ -1010,7 +1010,8 @@
             },
             "host": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "description": "The counterparty's canonical host, as stored on the group's relationship access (`clientData.cmc.counterparty.host`), not the hostname of a per-user API URL."
             }
           },
           "required": [
@@ -1053,11 +1054,19 @@
         },
         "expireAfter": {
           "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": true,
           "description": "Lifetime of the child access, in seconds. Default and bounds are per core (`cmc:memberAccess:defaultTtl`, `minTtl`, `maxTtl`; 24 hours, 60 seconds and 7 days by default), and never beyond the data-grant's own expiry."
         },
         "status": {
           "type": "string",
-          "description": "Server-owned: dispatch state of the trigger (e.g. `pending`, `completed`, `failed`)."
+          "enum": [
+            "pending",
+            "delivered",
+            "completed",
+            "failed"
+          ],
+          "description": "Server-owned: dispatch state of the trigger."
         },
         "failure": {
           "type": [
@@ -1132,7 +1141,7 @@
       ]
     },
     "consent/member-revoke-cmc": {
-      "description": "Offboarding of a group member: removes the child accesses minted for that member on patients' cores. Written by the platform on the group's scope stream whenever a membership ends (revoked, deleted, expired, narrowed, delegation detached, account deleted); a client write is refused with `cmc-protected-event-write`. Records who was offboarded and what was removed, with the outcome per child access.",
+      "description": "Offboarding of a group member: removes the child accesses minted for that member on patients' cores. Written by the platform on the group's scope stream whenever a membership ends (revoked, deleted, expired, narrowed, delegation detached, account deleted); a client write is refused with `cmc-protected-event-write`, and every field is server-owned (a client-supplied value is discarded on create, and the stored value is kept on update). Records who was offboarded and what was removed, with the outcome per child access.",
       "type": "object",
       "properties": {
         "member": {
@@ -1208,19 +1217,41 @@
         },
         "status": {
           "type": "string",
-          "description": "Server-owned: dispatch state of the trigger (e.g. `pending`, `completed`, `failed`)."
+          "enum": [
+            "pending",
+            "delivered",
+            "completed",
+            "failed"
+          ],
+          "description": "Server-owned: dispatch state of the trigger."
         },
         "failure": {
           "type": [
             "object",
             "null"
           ],
-          "description": "Server-owned, present when `status` is `failed`: `reason` is an error id (e.g. `cmc-member-revoke-residual`).",
+          "description": "Server-owned, present when `status` is `failed`: `reason` is an error id (e.g. `cmc-member-revoke-residual`); `detail` carries at most `childAccessId`, `peerErrorId` and `httpStatus`, never a peer response body.",
           "properties": {
             "reason": {
               "type": "string"
             },
-            "detail": {}
+            "detail": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "childAccessId": {
+                  "type": "string"
+                },
+                "peerErrorId": {
+                  "type": "string"
+                },
+                "httpStatus": {
+                  "type": "number"
+                }
+              }
+            }
           }
         },
         "outcome": {
