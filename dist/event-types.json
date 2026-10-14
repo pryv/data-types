@@ -841,7 +841,7 @@
           ]
         },
         "revoke-cmc": {
-          "description": "Cross-account consent revoke (`cmc/revoke-v1` lineage). Either party tears down an established access pair by writing this with the local data-grant access id + an optional localised reason. The notice delivered to the counterparty also carries server-written correlation fields (`acceptEventId`, `revokedAt`).",
+          "description": "Cross-account consent revoke (`cmc/revoke-v1` lineage). Either party tears down an established access pair by writing this with the local data-grant access id + an optional localised reason. The notice delivered to the counterparty also carries server-written correlation fields (`acceptEventId`, `revokedAt`); an inbox arrival the receiving core dropped as stale is marked `superseded`.",
           "type": "object",
           "properties": {
             "accessId": {
@@ -858,6 +858,13 @@
             "revokedAt": {
               "type": "number",
               "description": "Server-written on the delivered notice: when the revoke was issued (Unix timestamp, seconds). A notice delivered late (re-sent by the retry loop) keeps accesses the receiver created after this time. Absent when the sender's core predates it."
+            },
+            "superseded": {
+              "type": "string",
+              "enum": [
+                "relationship-re-established"
+              ],
+              "description": "Server-written on inbox arrivals only (never set by the sender): the receiving core dropped this late notice because the relationship was re-established since (it pairs with a later accept). Nothing was torn down; apps must ignore such an arrival and keep the endpoints they hold for that counterparty and scope. Absent on a notice that was acted upon, and when the receiver's core predates it."
             }
           },
           "required": [
