@@ -714,6 +714,10 @@
             "username",
             "host"
           ]
+        },
+        "acceptEventId": {
+          "type": "string",
+          "description": "Peer-delivered shape, server-written: the id of the accepter's accept trigger, on the accepter's account. The requester's core records it on its relationship access, so a later `consent/revoke-cmc` naming an earlier accept does not tear down a relationship re-established since. Absent when the accepter's core predates it."
         }
       }
     },
@@ -734,7 +738,7 @@
       ]
     },
     "consent/revoke-cmc": {
-      "description": "Cross-account consent revoke (`cmc/revoke-v1` lineage). Either party tears down an established access pair by writing this with the local data-grant access id + an optional localised reason.",
+      "description": "Cross-account consent revoke (`cmc/revoke-v1` lineage). Either party tears down an established access pair by writing this with the local data-grant access id + an optional localised reason. The notice delivered to the counterparty also carries server-written correlation fields (`acceptEventId`, `revokedAt`).",
       "type": "object",
       "properties": {
         "accessId": {
@@ -743,6 +747,14 @@
         "reason": {
           "type": "object",
           "description": "Localized reason text."
+        },
+        "acceptEventId": {
+          "type": "string",
+          "description": "Server-written: the accept the revoked relationship descends from. On a notice sent by the accepter, the accepter's accept trigger id; a receiving core whose relationship pairs with another accept (re-established since) records the notice and tears nothing down. On the accepter's own arrival, the id its accept trigger was stamped with."
+        },
+        "revokedAt": {
+          "type": "number",
+          "description": "Server-written on the delivered notice: when the revoke was issued (Unix timestamp, seconds). A notice delivered late (re-sent by the retry loop) keeps accesses the receiver created after this time. Absent when the sender's core predates it."
         }
       },
       "required": [
@@ -1174,7 +1186,15 @@
             "account-deleted",
             "vanished"
           ],
-          "description": "What ended the membership. `vanished`: the membership access was found gone by the periodic check while its child accesses remained (deleted by a path that did not offboard, or interrupted before it did)."
+          "description": "What ended the membership. `vanished`: the membership access was found gone by the periodic check while its child accesses remained (deleted by a path that did not offboard, or interrupted before it did). `narrowed`: an `accesses.update` removed teams, or a team stream was deleted (see `uncovered`)."
+        },
+        "uncovered": {
+          "type": "array",
+          "description": "Server-owned, on a `narrowed` record caused by the deletion of a team stream: the stream(s) deleted. The record is then written on the deleted stream's parent (or `:_cmc:apps`).",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "records": {
           "type": "array",
