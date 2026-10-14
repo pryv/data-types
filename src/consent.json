@@ -715,7 +715,7 @@
         ]
       },
       "member-revoke-cmc": {
-        "description": "Offboarding of a group member: removes the child accesses minted for that member on patients' cores. Written by the platform on the group's scope stream whenever a membership ends (revoked, deleted, expired, narrowed, delegation detached, account deleted); a client write is refused with `cmc-protected-event-write`, and every field is server-owned (a client-supplied value is discarded on create, and the stored value is kept on update). Records who was offboarded and what was removed, with the outcome per child access.",
+        "description": "Offboarding of a group member: removes the child accesses minted for that member on patients' cores. Written by the platform on the group's scope stream whenever a membership ends (revoked, deleted, expired, narrowed, delegation detached, account deleted, or found gone by the periodic check); a client write is refused with `cmc-protected-event-write`, and every field is server-owned (a client-supplied value is discarded on create, and the stored value is kept on update). Records who was offboarded and what was removed, with the outcome per child access.",
         "type": "object",
         "properties": {
           "member": {
@@ -745,9 +745,10 @@
               "expired",
               "narrowed",
               "detach",
-              "account-deleted"
+              "account-deleted",
+              "vanished"
             ],
-            "description": "What ended the membership."
+            "description": "What ended the membership. `vanished`: the membership access was found gone by the periodic check while its child accesses remained (deleted by a path that did not offboard, or interrupted before it did)."
           },
           "records": {
             "type": "array",
