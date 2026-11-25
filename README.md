@@ -141,7 +141,7 @@ You can convert the request body of a [batch call](https://api.pryv.com/referenc
 
 ## Contents of the generated files in `dist/`
 
-### [`events-types.json`](dist/event-types.json)
+### [`event-types.json`](dist/event-types.json)
 
 Event types represented in a hierarchical, mainly used for documentation generation purposes.
 
@@ -246,7 +246,7 @@ Identical to `flat.json` file with only the mandatory fields (version and types)
 
 `npm run license` updates license information with [source-licenser](https://github.com/pryv/source-licenser).
 
-`npm run lint` checks the code, which follows the [Semi-Standard](https://github.com/standard/semistandard) style.
+`npm run lint` checks the code, which follows the [neostandard](https://github.com/neostandard/neostandard) style with semicolons.
 
 
 ## License
