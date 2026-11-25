@@ -1924,10 +1924,11 @@
                       "absent",
                       "residual"
                     ],
-                    "description": "`deleted`: removed now. `absent`: already gone or expired. `residual`: still present (patient's core unreachable or refusing); retried, and bounded by the child's own expiry."
+                    "description": "`deleted`: removed now. `absent`: confirmed gone by the patient's core, or expired. `residual`: not confirmed gone (the patient's core unreachable or refusing, or the access made through another grant); retried, and bounded by the child's own expiry."
                   },
                   "reason": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Why a `residual` or `absent` result was reached, e.g. `peer-rejected`, `grant-gone`, `grant-replaced`, `grant-unknown`."
                   }
                 },
                 "required": [
