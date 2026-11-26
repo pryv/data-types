@@ -369,7 +369,7 @@
             "type": "object",
             "properties": {
               "username": {
-                "description": "Deletion: the username of the account",
+                "description": "Deletion, in records written by earlier servers only: the username of the account (no longer written: the record outlives the account)",
                 "type": "string"
               },
               "userId": {
@@ -582,19 +582,19 @@
         ]
       },
       "account": {
-        "description": "The account was created on this core: `account.created`, the first record of its audit log, written by the server once the account exists (by a registration, by an administrator of the platform, or by a delegate). It is also the record of the account's first personal access, when one was made.",
+        "description": "A record the server writes about the account itself, in its own audit log. `account.created`: the account was created on this core, the first record of its audit log, written once the account exists (by a registration, by an administrator of the platform, or by a delegate); it is also the record of the account's first personal access, when one was made. `account.deleted`: the account is being erased (by its holder, an administrator, the automatic deletion, a replay of the erasure ledger, or the server rolling back a creation), written before any of its data goes and only where the audit log outlives the account. `account.restored`: the account was restored from a backup, written once the restore keeps it.",
         "type": "object",
         "properties": {
           "source": {
-            "description": "The part of the server that created the account",
+            "description": "Who or what did it",
             "type": "object",
             "properties": {
               "name": {
-                "description": "Its name: `registration`, `system` (an administrator) or `delegation` (a delegate)",
+                "description": "Its name. Creation: `registration`, `system` (an administrator) or `delegation` (a delegate). Deletion: `holder`, `admin` (an administrator), `auto-deletion`, `ledger-replay`, `system` (the server) or `unknown`. Restore: `backup`",
                 "type": "string"
               },
               "ip": {
-                "description": "Registration only: the IP address of the client, when known",
+                "description": "A registration, or a deletion by the holder, only: the IP address of the client, when known",
                 "type": "string"
               }
             },
@@ -607,15 +607,31 @@
             "type": "string"
           },
           "record": {
-            "description": "The creation. Ids only: no username, address, password, token, app id or invitation.",
+            "description": "What was done. Ids and fixed words only: no username, address, password, token, app id, invitation or free text.",
             "type": "object",
             "properties": {
               "accessId": {
-                "description": "The personal access made with the account, when one was",
+                "description": "Creation: the personal access made with the account, when one was. Deletion by the holder: the personal access that asked",
                 "type": "string"
               },
               "accessType": {
                 "description": "Its type, `personal`",
+                "type": "string"
+              },
+              "trigger": {
+                "description": "Deletion: what decided it, the word the erasure ledger keeps (`holder`, `admin`, `date`, `inactivity`, `transfer-fallback`, `ledger-replay`, `unfinished-registration`, `system` or `unknown`)",
+                "type": "string"
+              },
+              "backupDate": {
+                "description": "Restore: the date (UTC, `YYYY-MM-DD`) of the backup's data of the account, when the backup says",
+                "type": "string"
+              },
+              "target": {
+                "description": "Restore: `new`, or `existing` when the restore replaced an account of the core",
+                "type": "string"
+              },
+              "afterErasure": {
+                "description": "Restore: `completed` when the account had been erased after the backup, `unfinished` when the restore withdrew an erasure that had stopped",
                 "type": "string"
               }
             }
