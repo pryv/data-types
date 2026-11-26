@@ -580,6 +580,52 @@
           "action",
           "record"
         ]
+      },
+      "account": {
+        "description": "The account was created on this core: `account.created`, the first record of its audit log, written by the server once the account exists (by a registration, by an administrator of the platform, or by a delegate). It is also the record of the account's first personal access, when one was made.",
+        "type": "object",
+        "properties": {
+          "source": {
+            "description": "The part of the server that created the account",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Its name: `registration`, `system` (an administrator) or `delegation` (a delegate)",
+                "type": "string"
+              },
+              "ip": {
+                "description": "Registration only: the IP address of the client, when known",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "action": {
+            "description": "The action id",
+            "type": "string"
+          },
+          "record": {
+            "description": "The creation. Ids only: no username, address, password, token, app id or invitation.",
+            "type": "object",
+            "properties": {
+              "accessId": {
+                "description": "The personal access made with the account, when one was",
+                "type": "string"
+              },
+              "accessType": {
+                "description": "Its type, `personal`",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "source",
+          "action",
+          "record"
+        ]
       }
     }
   }
